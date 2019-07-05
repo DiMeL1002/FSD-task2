@@ -1,0 +1,66 @@
+include ../logo/logo.pug
+include ../image/image.pug
+include ../color-sample/color-sample.pug
+include ../text-sample/text-sample.pug
+
+section.colorsAndType
+    +logo({elementOfBlock: "colorsAndType"})
+    .colorsAndType-content
+        .colorsAndType-colors
+            +color-sample({
+                text: "Dark Shade 100%",
+                code: "#1F2041"
+            })
+            +color-sample({
+                text: "Dark Shade 75%",
+                code: "#1F2041",
+                opacity: 75
+            })
+            +color-sample({
+                text: "Dark Shade 50%",
+                code: "#1F2041",
+                opacity: 50
+            })
+            +color-sample({
+                text: "Dark Shade 25%", 
+                code: "#1F2041",
+                opacity: 25
+            })
+            +color-sample({
+                text: "Dark Shade 5%",
+                code: "#1F2041",
+                opacity: 5
+            })
+            +color-sample({
+                text: "Purple",
+                code: "#BC9CFF",
+                color: "purple"
+            })
+            +color-sample({
+                text: "Green",
+                code: "#6FCF97",
+                color: "green",
+            })
+        .colorsAndType-texts
+            +text-sample({
+                title: "H1",
+                text: "This one is the sub-section or widget title",
+                mixinClass: "page_text_h1"
+            })
+            +text-sample({
+                title: "H2",
+                text: "Next one is the item title inside widgets",
+                mixinClass: "page_text_h2"
+            })
+            +text-sample({
+                title: "H3",
+                text: "This is a label or CTA text",
+                mixinClass: "page_text_h3"
+            })
+            +text-sample({
+                title: "Body",
+                text: "This is the body text which is used for most of the design, like\
+                        paragraphs, lists, etc.",
+                mixinClass: "page_text_body"
+            })
+                

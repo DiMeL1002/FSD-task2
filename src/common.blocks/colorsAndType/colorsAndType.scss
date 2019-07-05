@@ -1,0 +1,56 @@
+.colorsAndType{
+    box-sizing: border-box;
+    max-width: $containerMaxWidth;
+    width: 100%;
+    margin: 0 auto;
+    border: 1px solid $dark-shade-50;
+    &__logo {
+        margin-top: 30px;
+        margin-left: 30px;
+    }
+    &-content {
+        display: flex;
+        justify-content: space-between; 
+        padding: 67px 10.42% 145px 13.26%;
+        @media screen and (max-width: $tableWidth) {
+            padding-left: $tableOffset;
+            padding-right: $tableOffset;
+        }
+        @media screen and (max-width: 500px) {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+    &-colors {
+        width: calc(100% / 12 * 6);
+        .color-sample:not(:last-child) {
+            margin-bottom: 20px;
+        }
+        @media screen and (max-width: $tableWidth) {
+            max-width: 250px;
+        }
+        @media screen and (max-width: 500px) {
+            width: calc(100% / 12 * 11);
+        }
+    }
+    &-texts {
+        max-width: 403px;
+        width: calc(100% / 12 * 5);
+        .text-sample:not(:last-child) {
+            margin-bottom: 50px;
+            &:first-child {
+                margin-left: 8px;
+            }
+            &:nth-child(2) {
+                margin-left: 10px;
+            }
+            &:nth-child(3) {
+                margin-left: 20px;
+            }
+        }
+        @media screen and (max-width: 500px) {
+            width: calc(100% / 12 * 11);
+            margin-top: 50px;   
+        }
+    }
+}
