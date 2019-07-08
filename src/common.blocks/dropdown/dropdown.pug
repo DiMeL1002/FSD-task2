@@ -1,0 +1,28 @@
+include ../text-form/text-form.pug
+
+mixin dropdown (options)
+    - dropdownClassName = "dropdown"
+    - dropdownFullClassName = dropdownClassName
+
+    if (options.elementOfBlock)
+        - dropdownFullClassName += " " + options.elementOfBlock + "__" + dropdownClassName
+
+    case options.mods.size
+        when "s"
+            - dropdownFullClassName += " " + dropdownClassName + "_size_s"
+        when "m"
+            - dropdownFullClassName += " " + dropdownClassName + "_size_m"
+
+    div(class = dropdownFullClassName)
+        .dropdown__head
+            +text-form({
+                elementOfBlock: dropdownClassName,
+                title: options.title,
+                stateDescription: options.stateDescription,
+                mods: {
+                    inputValue: options.mods.inputValue,
+                    inputType: 'text',
+                    theme: "dropdown"
+                }
+            })
+            i(class = "material-icons " + dropdownClassName + "__icon") expand_more

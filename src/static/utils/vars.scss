@@ -1,33 +1,34 @@
 // Fonts
-$mainRegularFont: 'Montserrat-Regular', Arial, sans-serif;
-$mainBoldFont: 'Montserrat-Bold', Arial, sans-serif;
+$main-regular-font: 'Montserrat-Regular', Arial, sans-serif;
+$main-bold-font: 'Montserrat-Bold', Arial, sans-serif;
 
-$secondaryBoldFont: 'Quicksand-Bold', Arial, sans-serif;
+$secondary-bold-font: 'Quicksand-Bold', Arial, sans-serif;
 
 // Size
-$mainFontSize            : 14px;
+$main-font-size           : 14px;
+$main-line-height         : 17px;
 
-$desktopWidth            : 1200px;
-$smDesktopWidth          : 992px;
-$tableWidth              : 768px;
-$phoneWidth              : 576px;
-$minWidth                : 320px;
+$desktop-width            : 1200px;
+$sm-desktop-width         : 992px;
+$table-width              : 768px;
+$phone-width              : 576px;
+$min-width                : 320px;
 
-$desktopOffset           : 30px;
-$tableOffset             : 15px;
+$desktop-offset           : 30px;
+$table-offset             : 15px;
 
-$containerMaxWidth       : 1440px;
+$container-max-width      : 1440px;
 
 // Colors
-$white-color             : #ffffff;
-$dark-color              : #1F2041;
+$white-color              : #ffffff;
+$dark-color               : #1F2041;
 
-$dark-shade-100          : rgba(31, 32, 65, 1);
-$dark-shade-75           : rgba(31, 32, 65, 0.75);
-$dark-shade-50           : rgba(31, 32, 65, 0.50);
-$dark-shade-25           : rgba(31, 32, 65, 0.25);
-$dark-shade-5            : rgba(31, 32, 65, 0.05);
-$primary-color           : #BC9CFF;
-$green                   : #6FCF97;
+$dark-shade-100           : rgba(31, 32, 65, 1);
+$dark-shade-75            : rgba(31, 32, 65, 0.75);
+$dark-shade-50            : rgba(31, 32, 65, 0.50);
+$dark-shade-25            : rgba(31, 32, 65, 0.25);
+$dark-shade-5             : rgba(31, 32, 65, 0.05);
+$primary-color            : #BC9CFF;
+$green                    : #6FCF97;
 
-$primary-gradient        : linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+$primary-gradient         : linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);

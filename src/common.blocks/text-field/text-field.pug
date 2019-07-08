@@ -1,0 +1,24 @@
+mixin text-field (options)
+    - var textFieldClassName = "text-field"
+    - var textFieldFullClassName = textFieldClassName
+
+    if (options.elementOfBlock)
+        - textFieldFullClassName += " " + options.elementOfBlock + "__" + textFieldClassName
+
+    if (options.mixinClass)
+        - textFieldFullClassName += " " + options.mixinClass
+
+    - textFieldFullClassName += options.mods.focused ? " " + textFieldClassName + "_focused" : ""
+
+    case options.mods.theme
+        when "dropdown"
+            - textFieldFullClassName += " " + textFieldClassName + "_theme_dropdown"
+            - options.mods.readonly = true
+
+    input(
+            class = textFieldFullClassName,
+            type = options.mods.type,
+            placeholder = options.mods.placeholderText,
+            value = options.mods.value,
+            readonly = options.mods.readonly
+        )

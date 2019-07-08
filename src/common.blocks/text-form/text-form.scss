@@ -1,0 +1,14 @@
+.text-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 320px;
+    color: $dark-shade-50;
+    font-family: $main-regular-font;
+    font-size: 0.86rem;
+    line-height: 1.25;
+    text-transform: uppercase;
+    &__text-field {
+        margin-top: 5px;
+    }
+}

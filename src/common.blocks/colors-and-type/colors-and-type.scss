@@ -1,39 +1,34 @@
-.colorsAndType{
-    box-sizing: border-box;
-    max-width: $containerMaxWidth;
-    width: 100%;
-    margin: 0 auto;
-    border: 1px solid $dark-shade-50;
+.colors-and-type{
     &__logo {
         margin-top: 30px;
         margin-left: 30px;
     }
-    &-content {
+    &__content {
         display: flex;
         justify-content: space-between; 
         padding: 67px 10.42% 145px 13.26%;
-        @media screen and (max-width: $tableWidth) {
-            padding-left: $tableOffset;
-            padding-right: $tableOffset;
+        @media screen and (max-width: $table-width) {
+            padding-left: $table-offset;
+            padding-right: $table-offset;
         }
         @media screen and (max-width: 500px) {
             flex-direction: column;
             align-items: center;
         }
     }
-    &-colors {
+    &__colors {
         width: calc(100% / 12 * 6);
         .color-sample:not(:last-child) {
             margin-bottom: 20px;
         }
-        @media screen and (max-width: $tableWidth) {
+        @media screen and (max-width: $table-width) {
             max-width: 250px;
         }
         @media screen and (max-width: 500px) {
             width: calc(100% / 12 * 11);
         }
     }
-    &-texts {
+    &__texts {
         max-width: 403px;
         width: calc(100% / 12 * 5);
         .text-sample:not(:last-child) {

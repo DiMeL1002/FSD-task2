@@ -1,0 +1,19 @@
+mixin text (options)
+    - var textClassName = "text"
+    - var textFullClassName = textClassName
+
+    if (options.elementOfBlock)
+        - textFullClassName += " " + options.elementOfBlock + "__" + textClassName
+
+    if (options.mixinClass)
+        - textFullClassName += " " + options.mixinClass
+
+    case options.textType
+        when "h1"
+            - textFullClassName += " " + textClassName + "_h1"
+        when "h2"
+            - textFullClassName += " " + textClassName + "_h2"
+        when "h3"
+            - textFullClassName += " " + textClassName + "_h3"
+
+    span(class = textFullClassName)= options.content

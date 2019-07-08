@@ -1,8 +1,25 @@
 @import "../static/utils/vars";
 
-@import "../common.blocks/page/_text/page_text";
+@import "../common.blocks/text/text";
 
 @import "../common.blocks/logo/logo";
-@import "../common.blocks/colorsAndType/colorsAndType";
+@import "../common.blocks/colors-and-type/colors-and-type";
+@import "../common.blocks//form-elements/form-elements";
 @import "../common.blocks/color-sample/color-sample";
 @import "../common.blocks/text-sample/text-sample";
+@import "../common.blocks/text-form/text-form";
+@import "../common.blocks/text-field/text-field";
+@import "../common.blocks/dropdown/dropdown";
+@import "../common.blocks/subscribe-form/subscribe-form";
+
+
+section {
+    box-sizing: border-box;
+    max-width: $container-max-width;
+    width: 100%;
+    margin: 0 auto;
+    border: 1px solid $dark-shade-50;
+    &:not(:first-child) {
+        margin-top: 50px;
+    }
+}

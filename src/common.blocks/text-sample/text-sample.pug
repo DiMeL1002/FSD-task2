@@ -1,3 +1,5 @@
+include ../text/text.pug
+
 mixin text-sample(options)
     - var textSampleClassName = "text-sample"
     - var textSampleFullClassName = textSampleClassName
@@ -5,13 +7,15 @@ mixin text-sample(options)
     if (options.elementOfBlock)
         - textSampleFullClassName += " " + options.elementOfBlock + "__" + textSampleClassName
 
-    if (options.mods)
-        each val in options.mods
-            - textSampleFullClassName += " " + textSampleClassName + "_" + val
-
-    if (options.mixinClass)
-        - textSampleFullClassName += " " + options.mixinClass
-
     div(class = textSampleFullClassName)
-        span(class = textSampleClassName + "__title")= options.title
-        span(class = textSampleClassName + "__text")= options.text
+        +text({
+            elementOfBlock: textSampleClassName,
+            mixinClass: textSampleClassName + "__title",
+            textType: options.textType,
+            content: options.title
+        })
+        +text({
+            elementOfBlock: textSampleClassName,
+            textType: options.textType,
+            content: options.content
+        })

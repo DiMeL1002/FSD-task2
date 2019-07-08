@@ -1,0 +1,25 @@
+include ../text-form/text-form.pug
+
+mixin subscribe-form (options)
+    - subscribeFormClassName = "subscribe-form"
+    - subscribeFormFullClassName = subscribeFormClassName
+
+    if (options.elementOfBlock)
+        - subscribeFormFullClassName += " " + options.elementOfBlock + "__" + subscribeFormClassName
+
+    case options.mods.size
+        when "m"
+            - subscribeFormFullClassName += " " + subscribeFormClassName + "_size_m"
+
+    div(class = subscribeFormFullClassName)
+        .dropdown__head
+            +text-form({
+                elementOfBlock: subscribeFormClassName,
+                title: options.title,
+                stateDescription: options.stateDescription,
+                mods: {
+                    inputplaceholderText: options.mods.inputplaceholderText,
+                    inputType: 'email'
+                }
+            })
+            i(class = "material-icons " + subscribeFormClassName + "__icon") arrow_forward

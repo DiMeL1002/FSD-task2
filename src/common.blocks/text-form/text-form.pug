@@ -1,0 +1,30 @@
+include ../text-field/text-field.pug
+include ../text/text.pug
+
+mixin text-form (options)
+    - var textFormClassName = "text-form"
+    - var textFormFullClassName = textFormClassName
+
+    if (options.elementOfBlock)
+        - textFormFullClassName += " " + options.elementOfBlock + "__" + textFormClassName
+
+    if (options.mixinClass)
+        - textFormFullClassName += " " + options.mixinClass
+
+    div(class = textFormFullClassName)
+        +text({
+            elementOfBlock: textFormClassName,
+            content: options.title,
+            textType: "h3"
+        })
+        span(class = textFormClassName + "__state-description")=options.stateDescription
+        +text-field({
+            elementOfBlock: textFormClassName,
+            mods: {
+                type: options.mods.inputType,
+                placeholderText: options.mods.inputplaceholderText,
+                focused: options.mods.focused,
+                value: options.mods.inputValue,
+                theme: options.mods.theme
+            }
+        })

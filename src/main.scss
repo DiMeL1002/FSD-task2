@@ -4,13 +4,16 @@
 
 html {
     height: 100%;
-    font-size: $mainFontSize;
+    color: $dark-shade-50;
+    font-size: $main-font-size;
+    line-height: $main-line-height;
 }
   
 body {
     padding: 0;
     margin: 0;
     height: 100%;
+    background-color: $white-color;
     color: $dark-shade-50;
 }
 
