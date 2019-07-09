@@ -4,8 +4,12 @@
         margin-left: 30px;
     }
     &__content {
-        max-width: 320px;
+        display: flex;
         padding: 65px 9.79% 150px 9.79%;
+    }
+    &__input-fields {
+        max-width: 320px;
+        margin-right: 126px;
     }
     &__text-form:nth-child(2), &__text-form:nth-child(4), &__dropdown:nth-child(3){
         margin-top: 20px;

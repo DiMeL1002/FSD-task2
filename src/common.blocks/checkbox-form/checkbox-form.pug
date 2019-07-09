@@ -1,0 +1,19 @@
+include ../text-style/text-style.pug
+
+mixin checkbox-form (options)
+    - var checkboxFormClassName = "checkbox-form"
+    - var checkboxFormFullClassName = checkboxFormClassName
+
+    if (options.elementOfBlock)
+        - checkboxFormFullClassName += " " + options.elementOfBlock + "__" + checkboxFormClassName
+
+    div(class = checkboxFormClassName)
+        +text-style ({
+            elementOfBlock: checkboxFormClassName,
+            content: options.title,
+            textType: "h3"
+        })
+        each val in options.items
+            label(class = checkboxFormClassName + "__item")
+                input(class = checkboxFormClassName + "__input", type="checkbox", value = val.text checked = val.checked)
+                div(class = checkboxFormClassName + "__text")=val.text

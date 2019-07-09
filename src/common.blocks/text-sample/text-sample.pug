@@ -1,4 +1,4 @@
-include ../text/text.pug
+include ../text-style/text-style.pug
 
 mixin text-sample(options)
     - var textSampleClassName = "text-sample"
@@ -8,13 +8,13 @@ mixin text-sample(options)
         - textSampleFullClassName += " " + options.elementOfBlock + "__" + textSampleClassName
 
     div(class = textSampleFullClassName)
-        +text({
+        +text-style({
             elementOfBlock: textSampleClassName,
             mixinClass: textSampleClassName + "__title",
             textType: options.textType,
             content: options.title
         })
-        +text({
+        +text-style({
             elementOfBlock: textSampleClassName,
             textType: options.textType,
             content: options.content

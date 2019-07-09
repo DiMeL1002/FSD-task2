@@ -1,6 +1,7 @@
 include ../text-form/text-form.pug
 include ../dropdown/dropdown.pug
 include ../subscribe-form/subscribe-form.pug
+include ../checkbox-form/checkbox-form.pug
 
 section.form-elements
     +logo({elementOfBlock: "form-elements"})
@@ -74,4 +75,22 @@ section.form-elements
                         inputplaceholderText: "Email",
                         size: "m"
                     }
+            })
+        .form-elements__block2
+            +checkbox-form({
+                elementOfBlock: "form-elements",
+                title: "Checkbox buttons",
+                items: [
+                    {
+                        text: "Можно курить",
+                    },
+                    {
+                        text: "Можно с питомцами",
+                        checked: true
+                    },
+                    {
+                        text: "Можно пригласить гостей (до 10 человек)",
+                        checked: true
+                    }
+                ]
             })

@@ -1,0 +1,44 @@
+.checkbox-form {
+    max-width: 222px;
+    width: 100%;
+    &__item {
+        display: block;
+        padding-left: 30px;
+        font-family: $main-regular-font;
+        color: $dark-shade-50;
+        font-size: 1rem;
+        line-height: 1.29;
+        cursor: pointer;
+        &:first-of-type {
+            margin-top: 17px;
+        }
+        &:not(:last-child) {
+            margin-bottom: 10px;
+        }
+    }
+    &__input {
+        display: none;
+        &:checked + .checkbox-form__text::before{
+            text-align: center;
+            border-color: $primary-color;
+            background: url("/img/icon-done.svg") center no-repeat;
+            background-size: 12px;
+            color: $primary-color;
+        }
+    }
+    &__text {
+        &::before {
+            display: inline-block;
+            content: "";
+            box-sizing: border-box;
+            vertical-align: bottom;
+            width: 20px;
+            height: 20px;
+            margin-left: -30px;
+            margin-right: 10px;
+            border: 1px solid $dark-shade-25;
+            border-radius: 4px;
+            transition: 0.2s;
+        }
+    }
+}

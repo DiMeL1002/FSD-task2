@@ -28,7 +28,8 @@ module.exports = {
     },
     output: { // точка выхода
         filename: './js/[name].[hash].js',
-        path: path.resolve(__dirname, 'build')  // указание абсолютного пути, __dirname - путь к текущей директории,
+        path: path.resolve(__dirname, 'build'),  // указание абсолютного пути, __dirname - путь к текущей директории,
+        publicPath: "/"
     },
 
     // optimization: {
@@ -101,8 +102,8 @@ module.exports = {
                         loader: 'file-loader',
                         options: {
                             name: '[name].[ext]',
-                            outputPath: './img/',
-                            useRelativePath: true
+                            outputPath: 'img/',
+                            // publicPath: '../img/',
                         }
                     }
                 ]
@@ -122,7 +123,7 @@ module.exports = {
         new CleanWebpackPlugin(),
 
         new MiniCssExtractPlugin({
-            filename: './css/[name].[hash].css'
+            filename: 'css/[name].[hash].css'
         }),
 
         new webpack.ProvidePlugin({

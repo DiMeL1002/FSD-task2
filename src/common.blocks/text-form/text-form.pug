@@ -1,5 +1,5 @@
 include ../text-field/text-field.pug
-include ../text/text.pug
+include ../text-style/text-style.pug
 
 mixin text-form (options)
     - var textFormClassName = "text-form"
@@ -12,7 +12,7 @@ mixin text-form (options)
         - textFormFullClassName += " " + options.mixinClass
 
     div(class = textFormFullClassName)
-        +text({
+        +text-style({
             elementOfBlock: textFormClassName,
             content: options.title,
             textType: "h3"

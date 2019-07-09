@@ -1,8 +1,8 @@
 include ../text-form/text-form.pug
 
 mixin subscribe-form (options)
-    - subscribeFormClassName = "subscribe-form"
-    - subscribeFormFullClassName = subscribeFormClassName
+    - var subscribeFormClassName = "subscribe-form"
+    - var subscribeFormFullClassName = subscribeFormClassName
 
     if (options.elementOfBlock)
         - subscribeFormFullClassName += " " + options.elementOfBlock + "__" + subscribeFormClassName
