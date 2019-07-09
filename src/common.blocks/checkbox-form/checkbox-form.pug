@@ -15,5 +15,10 @@ mixin checkbox-form (options)
         })
         each val in options.items
             label(class = checkboxFormClassName + "__item")
-                input(class = checkboxFormClassName + "__input", type="checkbox", value = val.text checked = val.checked)
+                input(
+                    class = checkboxFormClassName + "__input",
+                    type="checkbox",
+                    value = val.text
+                    checked = val.checked
+                )
                 div(class = checkboxFormClassName + "__text")=val.text

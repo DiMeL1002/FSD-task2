@@ -19,9 +19,8 @@
     &__input {
         display: none;
         &:checked + .checkbox-form__text::before{
-            text-align: center;
             border-color: $primary-color;
-            background: url("/img/icon-done.svg") center no-repeat;
+            background: url("/img/checkbox-icon.svg") center no-repeat;
             background-size: 12px;
             color: $primary-color;
         }
@@ -34,10 +33,12 @@
             vertical-align: bottom;
             width: 20px;
             height: 20px;
-            margin-left: -30px;
             margin-right: 10px;
+            margin-left: -30px;
             border: 1px solid $dark-shade-25;
             border-radius: 4px;
+            background-size: 0;
+            background-position: center;
             transition: 0.2s;
         }
     }

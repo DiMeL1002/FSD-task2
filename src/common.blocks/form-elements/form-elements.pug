@@ -2,6 +2,7 @@ include ../text-form/text-form.pug
 include ../dropdown/dropdown.pug
 include ../subscribe-form/subscribe-form.pug
 include ../checkbox-form/checkbox-form.pug
+include ../radio-form/radio-form.pug
 
 section.form-elements
     +logo({elementOfBlock: "form-elements"})
@@ -91,6 +92,19 @@ section.form-elements
                     {
                         text: "Можно пригласить гостей (до 10 человек)",
                         checked: true
+                    }
+                ]
+            })
+            +radio-form({
+                elementOfBlock: "form-elements",
+                title: "Radio buttons",
+                items: [
+                    {
+                        text: "Мужчина",
+                        checked: true
+                    },
+                    {
+                        text: "Женщина",
                     }
                 ]
             })

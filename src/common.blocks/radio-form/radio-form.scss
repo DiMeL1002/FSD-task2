@@ -1,0 +1,43 @@
+.radio-form {
+    max-width: 221px;
+    width: 100%;
+    margin-top: 41px;
+    &__buttons {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 16px;
+        .radio-form__text-style {
+            color: $dark-shade-50;
+            &::before {
+                display: inline-block;
+                box-sizing: border-box;
+                vertical-align: top;
+                width: 20px;
+                height: 20px;
+                margin-right: 10px;
+                margin-left: -30px;
+                content: "";
+                border: 1px solid $dark-shade-25;
+                border-radius: 10px;
+                background-size: 0;
+                background-position: center;
+                transition: 0.2s;
+            }
+        }
+    }
+    &__item {
+        padding-left: 30px;
+        cursor: pointer;
+    }
+    &__input {
+        display: none;
+        &:checked + .radio-form__text-style {
+            color: $dark-shade-75;
+            &::before {
+                background: url("/img/radio-icon.svg") center no-repeat;
+                background-size: 12px;
+                border-color: $primary-color;
+            }
+        }
+    }
+}

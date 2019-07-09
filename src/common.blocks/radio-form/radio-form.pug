@@ -1,0 +1,30 @@
+include ../text-style/text-style.pug
+
+mixin radio-form (options)
+    - var radioFormClassName = "radio-form"
+    - var radioFormFullClassName = radioFormClassName
+
+    if (options.elementOfBlock)
+        - radioFormFullClassName += " " + options.elementOfBlock + "__" + radioFormClassName
+
+    div(class = radioFormFullClassName)
+        +text-style ({
+            elementOfBlock: radioFormClassName,
+            content: options.title,
+            textType: "h3"
+        })
+        div(class = radioFormClassName + "__buttons")
+            each val in options.items
+                label(class = radioFormClassName + "__item")
+                    input(
+                        class = radioFormClassName + "__input",
+                        type="radio",
+                        name="gender",
+                        value = val.text,
+                        checked = val.checked
+                    )
+                    +text-style ({
+                        elementOfBlock: radioFormClassName,
+                        content: val.text,
+                        textType: "body"
+                    })
