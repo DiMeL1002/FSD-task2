@@ -1,0 +1,15 @@
+mixin btn-like (options)
+    - var btnLikeClassName = "btn-like"
+    - var btnLikeFullClassName = btnLikeClassName
+    - var icon = "favorite_border"
+
+    if (options.elementOfBlock)
+        - btnLikeFullClassName += " " + options.elementOfBlock + "__" + btnLikeClassName
+
+    if (options.isActive)
+        - btnLikeFullClassName += " " + btnLikeClassName + "_is-active"
+        - icon = "favorite"
+
+    a(class = btnLikeFullClassName)
+        i(class = btnLikeClassName + "__icon" + " material-icons")= icon
+        span(class = btnLikeClassName + "__count")= options.total

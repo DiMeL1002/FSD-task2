@@ -30,7 +30,19 @@
             margin-top: 16px;
         }
         &__toggle-form {
-            margin-top: 14px;
+            margin-top: 10px;
         }
     }
+    &__like-buttons-block {
+        margin-top: 40px;
+    }
+    .like-buttons-block {
+        &__buttons {
+            display: flex;
+            margin-top: 16px;
+        }
+        &__btn-like:not(:last-child) {
+            margin-right: 10px;
+        }
+    }  
 }

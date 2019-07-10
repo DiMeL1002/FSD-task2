@@ -5,6 +5,7 @@ include ../subscribe-form/subscribe-form.pug
 include ../checkbox-form/checkbox-form.pug
 include ../radio-form/radio-form.pug
 include ../toggle-form/toggle-form.pug
+include ../btn-like/btn-like.pug
 
 section.form-elements
     +logo({elementOfBlock: "form-elements"})
@@ -125,3 +126,19 @@ section.form-elements
                     elementOfBlock: "toggle-block",
                     title: "Получать спецпредложения",
                 })
+            .like-buttons-block.form-elements__like-buttons-block
+                +text-style({
+                    elementOfBlock: "like-buttons-block",
+                    content: "like button",
+                    textType: "h3"
+                })
+                .like-buttons-block__buttons
+                    +btn-like({
+                        elementOfBlock: "like-buttons-block",
+                        total: 2
+                    })
+                    +btn-like({
+                        elementOfBlock: "like-buttons-block",
+                        total: 12,
+                        isActive: true
+                    })
