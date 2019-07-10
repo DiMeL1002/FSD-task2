@@ -22,4 +22,15 @@
     &__dropdown:nth-child(6), &__subscribe-form:nth-child(7) {
         margin-top: 40px;
     }
+    &__toggle-block {
+        margin-top: 37px;
+    }
+    .toggle-block {
+        &__toggle-form:nth-child(2){
+            margin-top: 16px;
+        }
+        &__toggle-form {
+            margin-top: 14px;
+        }
+    }
 }

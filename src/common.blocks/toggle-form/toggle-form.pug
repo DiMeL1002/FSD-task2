@@ -1,0 +1,22 @@
+include ../text-style/text-style.pug
+
+mixin toggle-form (options)
+    - var toggleClassName = "toggle-form"
+    - var toggleFullClassName = toggleClassName
+
+    if (options.elementOfBlock)
+        - toggleFullClassName += " " + options.elementOfBlock + "__" + toggleClassName
+
+    div(class = toggleFullClassName)
+        label(class = toggleClassName + "__item")
+            input(
+                class = toggleClassName + "__input",
+                type="checkbox",
+                checked = options.checked
+            )
+            div(class = toggleClassName + "__btn")
+            +text-style ({
+                elementOfBlock: toggleClassName,
+                content: options.title,
+                textType: "body"
+            })

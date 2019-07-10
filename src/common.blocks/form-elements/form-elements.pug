@@ -1,8 +1,10 @@
+include ../text-style/text-style.pug
 include ../text-form/text-form.pug
 include ../dropdown/dropdown.pug
 include ../subscribe-form/subscribe-form.pug
 include ../checkbox-form/checkbox-form.pug
 include ../radio-form/radio-form.pug
+include ../toggle-form/toggle-form.pug
 
 section.form-elements
     +logo({elementOfBlock: "form-elements"})
@@ -108,3 +110,18 @@ section.form-elements
                     }
                 ]
             })
+            .toggle-block.form-elements__toggle-block
+                +text-style({
+                    elementOfBlock: "toggle-block",
+                    content: "Toggle",
+                    textType: "h3"
+                })
+                +toggle-form({
+                    elementOfBlock: "toggle-block",
+                    title: "Получать спецпредложения",
+                    checked: true
+                })
+                +toggle-form({
+                    elementOfBlock: "toggle-block",
+                    title: "Получать спецпредложения",
+                })

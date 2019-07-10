@@ -20,8 +20,11 @@
         &:checked ~ .text-style {
             color: $dark-shade-75;
         }
-        &:checked + .radio-form__circle::after {
-            transform: translate(-50%, -50%) scale(1);
+        &:checked + .radio-form__circle {
+            border-color: $primary-color;
+            &::after {
+                transform: translate(-50%, -50%) scale(1);
+            }
         }
     }
     &__circle {
