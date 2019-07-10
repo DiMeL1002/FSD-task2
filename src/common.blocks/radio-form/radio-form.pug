@@ -23,6 +23,7 @@ mixin radio-form (options)
                         value = val.text,
                         checked = val.checked
                     )
+                    span(class = radioFormClassName + "__circle")
                     +text-style ({
                         elementOfBlock: radioFormClassName,
                         content: val.text,

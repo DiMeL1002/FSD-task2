@@ -6,38 +6,45 @@
         display: flex;
         justify-content: space-between;
         margin-top: 16px;
-        .radio-form__text-style {
+        .text-style {
             color: $dark-shade-50;
-            &::before {
-                display: inline-block;
-                box-sizing: border-box;
-                vertical-align: top;
-                width: 20px;
-                height: 20px;
-                margin-right: 10px;
-                margin-left: -30px;
-                content: "";
-                border: 1px solid $dark-shade-25;
-                border-radius: 10px;
-                background-size: 0;
-                background-position: center;
-                transition: 0.2s;
-            }
         }
     }
     &__item {
+        position: relative;
         padding-left: 30px;
         cursor: pointer;
     }
     &__input {
         display: none;
-        &:checked + .radio-form__text-style {
+        &:checked ~ .text-style {
             color: $dark-shade-75;
-            &::before {
-                background: url("/img/radio-icon.svg") center no-repeat;
-                background-size: 12px;
-                border-color: $primary-color;
-            }
+        }
+        &:checked + .radio-form__circle::after {
+            transform: translate(-50%, -50%) scale(1);
+        }
+    }
+    &__circle {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        height: 20px;
+        border: 1px solid $dark-shade-25;
+        border-radius: 50%;
+        &::after {
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            width: 12px;
+            height: 12px;
+            border-radius: 10px;
+            content: "";
+            background: $primary-gradient;
+            transition: 0.2s;
         }
     }
 }
