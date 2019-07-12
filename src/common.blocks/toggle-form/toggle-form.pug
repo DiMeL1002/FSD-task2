@@ -1,11 +1,14 @@
-include ../text-style/text-style.pug
+include ../title/title.pug
 
-mixin toggle-form (options)
+mixin toggle-form (options = false)
     - var toggleClassName = "toggle-form"
     - var toggleFullClassName = toggleClassName
 
-    if (options.elementOfBlock)
-        - toggleFullClassName += " " + options.elementOfBlock + "__" + toggleClassName
+    if (options.mix)
+        - toggleFullClassName += " " + options.mix.block + "__" + options.mix.elem
+
+    if (options.mixBlock)
+        - toggleFullClassName += " " + options.mixBlock
 
     div(class = toggleFullClassName)
         label(class = toggleClassName + "__item")
@@ -15,8 +18,4 @@ mixin toggle-form (options)
                 checked = options.checked
             )
             div(class = toggleClassName + "__btn")
-            +text-style ({
-                elementOfBlock: toggleClassName,
-                content: options.title,
-                textType: "body"
-            })
+            span(class = toggleClassName + "__value-text")= options.title

@@ -1,88 +1,89 @@
-include ../text-style/text-style.pug
-include ../text-form/text-form.pug
+include ../title/title.pug
+include ../input-form/input-form.pug
 include ../dropdown/dropdown.pug
 include ../subscribe-form/subscribe-form.pug
 include ../checkbox-form/checkbox-form.pug
 include ../radio-form/radio-form.pug
 include ../toggle-form/toggle-form.pug
 include ../btn-like/btn-like.pug
+include ../rate/rate.pug
 
 section.form-elements
-    +logo({elementOfBlock: "form-elements"})
+    +logo({
+        mix: { 
+            block: "form-elements",
+            elem: "logo"
+        }
+    })
     .form-elements__content
-        .form-elements__input-fields
-            +text-form({
-                elementOfBlock: "form-elements",
-                title: "Text field",
-                stateDescription: "Default",
+        .form-elements__input-forms
+            +input-form({
                 mods: {
-                    inputplaceholderText: "Email",
+                    placeholder: "Email",
                     inputType: "email",
-                }
+                },
+                title: "Text field"
             })
-            +text-form({
-                elementOfBlock: "form-elements",
-                title: "Text field",
-                stateDescription: "Hover/focus",
+            +input-form({
                 mods: {
                     inputValue: "This is pretty awesome",
                     inputType: "text",
                     focused: true,
-                }
+                },
+                title: "Text field"
             })
             +dropdown({
-                elementOfBlock: "form-elements",
-                title: "Dropdown",
-                stateDescription: "Default",
                 mods: {
                     inputValue: "Сколько гостей"
-                }
+                },
+                title: "Dropdown"
             })
-            +text-form({
-                elementOfBlock: "form-elements",
-                title: "Masked text field",
-                stateDescription: "Default",
+            +input-form({
                 mods: {
-                    inputplaceholderText: "ДД.ММ.ГГГГ",
+                    placeholder: "ДД.ММ.ГГГГ",
                     inputType: "text",
-                }
+                },
+                title: "Masked text field"
             })
             .form-elements__date-dropdowns
                 +dropdown({
-                    elementOfBlock: "form-elements",
-                    title: "Date dropdown",
                     mods: {
                         inputValue: "ДД.ММ.ГГГГ",
                         size: "s"
-                    }
+                    },
+                    title: "Date dropdown"
                 })
                 +dropdown({
-                    elementOfBlock: "form-elements",
-                    title: "Date dropdown",
                     mods: {
                         inputValue: "19.08.2019",
                         size: "s"
-                    }
+                    },
+                    title: "Date dropdown"
                 })
             +dropdown({
-                    elementOfBlock: "form-elements",
-                    title: "filter date dropdown",
+                    mix: {
+                        block: "form-elements",
+                        elem: "dropdown-filter"
+                    },
                     mods: {
                         inputValue: "19 авг - 23 авг",
                         size: "m"
-                    }
+                    },
+                    title: "filter date dropdown"
             })
             +subscribe-form({
-                    elementOfBlock: "form-elements",
-                    title: "subscription text field",
+                    mix: {
+                        block: "form-elements",
+                        elem: "sub"
+                    },
                     mods: {
                         inputplaceholderText: "Email",
                         size: "m"
-                    }
+                    },
+                    title: "subscription text field"
             })
-        .form-elements__block2
+        .form-elements__small-buttons
             +checkbox-form({
-                elementOfBlock: "form-elements",
                 title: "Checkbox buttons",
                 items: [
                     {
@@ -99,7 +100,6 @@ section.form-elements
                 ]
             })
             +radio-form({
-                elementOfBlock: "form-elements",
                 title: "Radio buttons",
                 items: [
                     {
@@ -111,34 +111,40 @@ section.form-elements
                     }
                 ]
             })
-            .toggle-block.form-elements__toggle-block
-                +text-style({
-                    elementOfBlock: "toggle-block",
-                    content: "Toggle",
-                    textType: "h3"
+            .form-elements__toggles
+                +title({
+                    mods: { level: 3 },
+                    content: "Toggle"
                 })
                 +toggle-form({
-                    elementOfBlock: "toggle-block",
                     title: "Получать спецпредложения",
                     checked: true
                 })
                 +toggle-form({
-                    elementOfBlock: "toggle-block",
                     title: "Получать спецпредложения",
                 })
-            .like-buttons-block.form-elements__like-buttons-block
-                +text-style({
-                    elementOfBlock: "like-buttons-block",
+            .form-elements__like-buttons
+                +title({
+                    mods: { level: 3 },
                     content: "like button",
-                    textType: "h3"
                 })
-                .like-buttons-block__buttons
+                .form-elements__like-buttons-block
                     +btn-like({
-                        elementOfBlock: "like-buttons-block",
                         total: 2
                     })
                     +btn-like({
-                        elementOfBlock: "like-buttons-block",
                         total: 12,
-                        isActive: true
+                        mods: { isActive: true }  
+                    })
+            .form-elements__rate-buttons
+                +title({
+                    mods: { level: 3 },
+                    content: "rate button"
+                })
+                .form-elements__rate-buttons-block
+                    +rate({
+                        count: [ "star_rate", "star_rate", "star_rate", "star_rate", "star_border" ]
+                    })
+                    +rate({
+                        count: [ "star_rate", "star_rate", "star_rate", "star_rate", "star_rate" ]
                     })

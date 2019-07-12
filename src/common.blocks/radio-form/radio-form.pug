@@ -1,19 +1,21 @@
-include ../text-style/text-style.pug
+include ../title/title.pug
 
-mixin radio-form (options)
+mixin radio-form (options = false)
     - var radioFormClassName = "radio-form"
     - var radioFormFullClassName = radioFormClassName
 
-    if (options.elementOfBlock)
-        - radioFormFullClassName += " " + options.elementOfBlock + "__" + radioFormClassName
+    if (options.mix)
+        - radioFormFullClassName += " " + options.mix.block + "__" + options.mix.elem
+
+    if (options.mixBlock)
+        - radioFormFullClassName += " " + options.mixBlock
 
     div(class = radioFormFullClassName)
-        +text-style ({
-            elementOfBlock: radioFormClassName,
-            content: options.title,
-            textType: "h3"
+        +title ({
+            mods: { level: 3 },
+            content: options.title
         })
-        div(class = radioFormClassName + "__buttons")
+        div(class = radioFormClassName + "__items")
             each val in options.items
                 label(class = radioFormClassName + "__item")
                     input(
@@ -24,8 +26,4 @@ mixin radio-form (options)
                         checked = val.checked
                     )
                     span(class = radioFormClassName + "__circle")
-                    +text-style ({
-                        elementOfBlock: radioFormClassName,
-                        content: val.text,
-                        textType: "body"
-                    })
+                    span(class = radioFormClassName + "__value-text")= val.text

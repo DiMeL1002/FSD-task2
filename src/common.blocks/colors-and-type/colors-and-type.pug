@@ -4,62 +4,66 @@ include ../color-sample/color-sample.pug
 include ../text-sample/text-sample.pug
 
 section.colors-and-type
-    +logo({elementOfBlock: "colors-and-type"})
+    +logo({ 
+        mix: {
+            block: "colors-and-type",
+            elem: "logo"
+        }
+    })
     .colors-and-type__content
         .colors-and-type__colors
             +color-sample({
                 text: "Dark Shade 100%",
+                code: "#1F2041",
+            })
+            +color-sample({
+                mods: { opacity: 75 },
+                text: "Dark Shade 75%",
                 code: "#1F2041"
             })
             +color-sample({
-                text: "Dark Shade 75%",
-                code: "#1F2041",
-                opacity: 75
-            })
-            +color-sample({
+                mods: { opacity: 50 },
                 text: "Dark Shade 50%",
-                code: "#1F2041",
-                opacity: 50
+                code: "#1F2041"
             })
             +color-sample({
+                mods: { opacity: 25 },
                 text: "Dark Shade 25%", 
                 code: "#1F2041",
-                opacity: 25
             })
             +color-sample({
+                mods: { opacity: 5 },
                 text: "Dark Shade 5%",
-                code: "#1F2041",
-                opacity: 5
+                code: "#1F2041"
             })
             +color-sample({
+                mods: { color: "purple" },
                 text: "Purple",
                 code: "#BC9CFF",
-                color: "purple"
             })
             +color-sample({
+                mods: { color: "green" },
                 text: "Green",
                 code: "#6FCF97",
-                color: "green",
             })
         .colors-and-type__texts
             +text-sample({
                 title: "H1",
                 content: "This one is the sub-section or widget title",
-                textType: "h1"
+                textLevel: 1
             })
             +text-sample({
                 title: "H2",
                 content: "Next one is the item title inside widgets",
-                textType: "h2"
+                textLevel: 2
             })
             +text-sample({
                 title: "H3",
                 content: "This is a label or CTA text",
-                textType: "h3"
+                textLevel: 3
             })
             +text-sample({
                 title: "Body",
                 content: "This is the body text which is used for most of the design, like\
                         paragraphs, lists, etc.",
             })
-                

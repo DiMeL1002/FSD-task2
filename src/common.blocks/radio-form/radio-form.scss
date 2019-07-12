@@ -2,13 +2,10 @@
     max-width: 221px;
     width: 100%;
     margin-top: 41px;
-    &__buttons {
+    &__items {
         display: flex;
         justify-content: space-between;
         margin-top: 16px;
-        .text-style {
-            color: $dark-shade-50;
-        }
     }
     &__item {
         position: relative;
@@ -17,14 +14,14 @@
     }
     &__input {
         display: none;
-        &:checked ~ .text-style {
-            color: $dark-shade-75;
-        }
         &:checked + .radio-form__circle {
             border-color: $primary-color;
             &::after {
                 transform: translate(-50%, -50%) scale(1);
             }
+        }
+        &:not(:checked) ~ .radio-form__value-text {
+            color: $dark-shade-50;
         }
     }
     &__circle {

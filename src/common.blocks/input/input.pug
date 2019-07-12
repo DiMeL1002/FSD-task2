@@ -1,12 +1,12 @@
-mixin text-field (options)
-    - var textFieldClassName = "text-field"
+mixin input (options = false)
+    - var textFieldClassName = "input"
     - var textFieldFullClassName = textFieldClassName
 
-    if (options.elementOfBlock)
-        - textFieldFullClassName += " " + options.elementOfBlock + "__" + textFieldClassName
+    if (options.mix)
+        - textFieldFullClassName += " " + options.mix.block + "__" + options.mix.elem
 
-    if (options.mixinClass)
-        - textFieldFullClassName += " " + options.mixinClass
+    if (options.mixBlock)
+        - textFieldFullClassName += " " + options.mixBlock
 
     - textFieldFullClassName += options.mods.focused ? " " + textFieldClassName + "_focused" : ""
 
@@ -18,7 +18,8 @@ mixin text-field (options)
     input(
             class = textFieldFullClassName,
             type = options.mods.type,
-            placeholder = options.mods.placeholderText,
+            placeholder = options.mods.placeholder,
             value = options.mods.value,
             readonly = options.mods.readonly
+            required
         )

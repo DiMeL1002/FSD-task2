@@ -1,16 +1,12 @@
-mixin image(options)
+mixin image(options = false)
     - var imageClassName = "image"
     - var imageFullClassName = imageClassName
 
-    if (options.elementOfBlock)
-        - imageFullClassName += " " + options.elementOfBlock + "__" + imageClassName
+    if (options.mix)
+        - imageFullClassName += " " + options.mix.block + "__" + options.mix.elem
 
-    if (options.mods)
-        each val in options.mods
-            - imageFullClassName += " " + imageClassName + "_" + val
-
-    if (options.mixinClass)
-        - imageFullClassName += " " + options.mixinClass
+    if (options.mixBlock)
+        - imageFullClassName += " " + options.mixBlock
 
     //- html
     img(class = imageFullClassName, src = options.src, alt = options.alt)

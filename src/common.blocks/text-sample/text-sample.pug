@@ -1,21 +1,23 @@
-include ../text-style/text-style.pug
+include ../title/title.pug
 
-mixin text-sample(options)
+mixin text-sample(options = false)
     - var textSampleClassName = "text-sample"
     - var textSampleFullClassName = textSampleClassName
 
-    if (options.elementOfBlock)
-        - textSampleFullClassName += " " + options.elementOfBlock + "__" + textSampleClassName
+    if (options.mix)
+        - textSampleFullClassName += " " + options.mix.block + "__" + options.mix.elem
+
+    if (options.mixBlock)
+        - textSampleFullClassName += " " + options.mixBlock
 
     div(class = textSampleFullClassName)
-        +text-style({
-            elementOfBlock: textSampleClassName,
-            mixinClass: textSampleClassName + "__title",
-            textType: options.textType,
+        +title({
+            mix: {block: textSampleClassName, elem: "title"},
+            mods: {level: options.textLevel},
             content: options.title
         })
-        +text-style({
-            elementOfBlock: textSampleClassName,
-            textType: options.textType,
+        +title({
+            mix: {block: textSampleClassName, elem: "text"},
+            mods: {level: options.textLevel},
             content: options.content
         })

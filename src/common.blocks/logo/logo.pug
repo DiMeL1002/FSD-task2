@@ -1,23 +1,18 @@
 include ../image/image.pug
 
-mixin logo(options)
+mixin logo(options = false)
     - var logoClassName = "logo"
     - var logoFullClassName = logoClassName
 
-    if (options.elementOfBlock)
-        - logoFullClassName += " " + options.elementOfBlock + "__" + logoClassName
+    if (options.mix)
+        - logoFullClassName += " " + options.mix.block + "__" + options.mix.elem
 
-    if (options.mods)
-        each val in options.mods
-            - logoFullClassName += " " + logoClassName + "_" + val
-
-    if (options.mixinClass)
-        - logoFullClassName += " " + options.mixinClass
+    if (options.mixBlock)
+        - logoFullClassName += " " + options.mixBlock
 
     //- html
     div(class = logoFullClassName)
         +image({
             src: "/img/logo.svg",
             alt: "Logo",
-            elementOfBlock: "logo"
         })

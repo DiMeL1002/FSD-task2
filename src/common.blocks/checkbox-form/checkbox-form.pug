@@ -1,17 +1,19 @@
-include ../text-style/text-style.pug
+include ../title/title.pug
 
 mixin checkbox-form (options)
     - var checkboxFormClassName = "checkbox-form"
     - var checkboxFormFullClassName = checkboxFormClassName
 
-    if (options.elementOfBlock)
-        - checkboxFormFullClassName += " " + options.elementOfBlock + "__" + checkboxFormClassName
+    if (options.mix)
+        - checkboxFormFullClassName += " " + options.mix.block + "__" + options.mix.elem
+
+    if (options.mixBlock)
+        - checkboxFormFullClassName += " " + options.mixBlock
 
     div(class = checkboxFormClassName)
-        +text-style ({
-            elementOfBlock: checkboxFormClassName,
+        +title ({
             content: options.title,
-            textType: "h3"
+            mods: {level: 3}
         })
         each val in options.items
             label(class = checkboxFormClassName + "__item")

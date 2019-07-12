@@ -1,11 +1,14 @@
-include ../text-form/text-form.pug
+include ../input-form/input-form.pug
 
-mixin dropdown (options)
+mixin dropdown (options = false)
     - var dropdownClassName = "dropdown"
     - var dropdownFullClassName = dropdownClassName
 
-    if (options.elementOfBlock)
-        - dropdownFullClassName += " " + options.elementOfBlock + "__" + dropdownClassName
+    if (options.mix)
+        - dropdownFullClassName += " " + options.mix.block + "__" + options.mix.elem
+
+    if (options.mixBlock)
+        - dropdownFullClassName += " " + options.mixBlock
 
     case options.mods.size
         when "s"
@@ -14,15 +17,13 @@ mixin dropdown (options)
             - dropdownFullClassName += " " + dropdownClassName + "_size_m"
 
     div(class = dropdownFullClassName)
-        .dropdown__head
-            +text-form({
-                elementOfBlock: dropdownClassName,
-                title: options.title,
-                stateDescription: options.stateDescription,
+        div(class = dropdownClassName + "__head")
+            +input-form({
                 mods: {
                     inputValue: options.mods.inputValue,
                     inputType: 'text',
                     theme: "dropdown"
-                }
+                },
+                title: options.title
             })
             i(class = "material-icons " + dropdownClassName + "__icon") expand_more

@@ -3,46 +3,68 @@
         margin-top: 30px;
         margin-left: 30px;
     }
+
     &__content {
         display: flex;
         padding: 65px 9.79% 150px 9.79%;
     }
-    &__input-fields {
-        max-width: 320px;
+    
+    &__input-forms {
+        flex-basis: 320px;
         margin-right: 126px;
+        & > * {
+            margin-top: 20px;
+        }
+        .input-form:first-child {
+            margin-top: 0;
+        }
     }
-    &__text-form:nth-child(2), &__text-form:nth-child(4), &__dropdown:nth-child(3){
-        margin-top: 20px;
-    }
+
     &__date-dropdowns {
         display: flex;
         justify-content: space-between;
         margin-top: 40px;
     }
-    &__dropdown:nth-child(6), &__subscribe-form:nth-child(7) {
+
+    &__dropdown-filter, &__sub {
         margin-top: 40px;
     }
-    &__toggle-block {
-        margin-top: 37px;
+
+    &__small-buttons {
+        flex-basis: 260px;
     }
-    .toggle-block {
-        &__toggle-form:nth-child(2){
+
+    &__toggles {
+        margin-top: 37px;
+        .toggle-form{
             margin-top: 16px;
         }
-        &__toggle-form {
+        .toggle-form:not(:first-of-type) {
             margin-top: 10px;
         }
     }
-    &__like-buttons-block {
+
+    &__like-buttons {
         margin-top: 40px;
     }
-    .like-buttons-block {
-        &__buttons {
+
+    &__like-buttons-block {
             display: flex;
             margin-top: 16px;
+        .btn-like:not(:first-child) {
+            margin-left: 10px;
         }
-        &__btn-like:not(:last-child) {
-            margin-right: 10px;
+    }
+
+    &__rate-buttons {
+        margin-top: 40px
+    }
+
+    &__rate-buttons-block {
+        display: flex;
+        margin-top: 16px;
+        .rate:not(:first-child) {
+            margin-left: 20px;
         }
-    }  
+    }
 }

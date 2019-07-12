@@ -1,28 +1,25 @@
-mixin color-sample(options)
-   
+mixin color-sample(options = false)
+    
     //- block
     - var colorSampleClassName = "color-sample"
     - var colorSampleFullClassName = colorSampleClassName
+    
+    if (options.mix)
+        - colorSampleFullClassName += " " + options.mix.block + "__" + options.mix.elem
 
-    if (options.elementOfBlock)
-        - colorSampleFullClassName += " " + options.elementOfBlock + "__" + colorSampleClassName
-
-    if (options.mods)
-        each val in options.mods
-            - colorSampleFullClassName += " " + colorSampleClassName + "_" + val
-
-    if (options.mixinClass)
-        - colorSampleFullClassName += " " + options.mixinClass
+    if (options.mixBlock)
+        - colorSampleFullClassName += " " + options.mixBlock
 
     //- elements
     - var squareClassName = colorSampleClassName + "__square"
     - var squareFullClassName = squareClassName
 
-    if (options.color)
-        - squareFullClassName += " " + squareClassName + "_" + options.color
+    if (options.mods)
+        if (options.mods.color)
+            - squareFullClassName += " " + squareClassName + "_" + options.mods.color
 
-    if (options.opacity)
-        - squareFullClassName += " " + squareClassName + "_opacity_" + options.opacity
+        if (options.mods.opacity)
+            - squareFullClassName += " " + squareClassName + "_opacity_" + options.mods.opacity
 
     //- html
     div(class = colorSampleFullClassName)

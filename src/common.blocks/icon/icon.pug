@@ -1,0 +1,11 @@
+mixin icon(options = false)
+    - var iconClassName = "icon"
+    - var iconFullClassName = iconClassName
+
+    if (options.mix)
+        - iconFullClassName += " " + options.mix.block + "__" + options.mix.elem
+
+    if (options.mixBlock)
+        - iconFullClassName += " " + options.mixBlock
+
+    span(class = iconFullClassName)= options.content 

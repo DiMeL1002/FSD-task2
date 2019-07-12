@@ -1,0 +1,29 @@
+mixin title (options = false)
+    - var titleClassName = "title"
+    - var titleFullClassName = titleClassName
+
+    if (options.mix)
+        - titleFullClassName += " " + options.mix.block + "__" + options.mix.elem
+
+    if (options.mixBlock)
+        - titleFullClassName += " " + options.mixBlock
+
+    if (options.mods)
+        case options.mods.level
+            when 1
+                - titleFullClassName += " " + titleClassName + "_level_1"
+
+                h1(class = titleFullClassName)= options.content
+
+            when 2
+                - titleFullClassName += " " + titleClassName + "_level_2"
+
+                h2(class = titleFullClassName)= options.content
+
+            when 3
+                - titleFullClassName += " " + titleClassName + "_level_3"
+
+                h3(class = titleFullClassName)= options.content
+        
+            default
+                span(class = titleFullClassName)= options.content

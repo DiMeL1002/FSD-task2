@@ -1,0 +1,13 @@
+.rate {
+    display: flex;
+    flex-basis: 120px;
+    width: 120px;
+    &__icon {
+        position: relative;
+        width: 24px;
+        background: $primary-gradient;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: $primary-color;
+    }
+}
