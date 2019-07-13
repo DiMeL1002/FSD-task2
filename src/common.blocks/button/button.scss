@@ -1,0 +1,71 @@
+.button {
+    position: relative;
+    max-width: 99px;
+    width: 100%;
+    height: 44px;
+    padding: 0;
+    border: none;
+    border-radius: 22px;
+    background: $primary-gradient;
+    color: $white-color;
+    font-family: $main-bold-font;
+    font-size: 0.86rem;
+    line-height: 1.07rem;
+    white-space: nowrap;
+    text-transform: uppercase;
+    cursor: pointer;
+    &_hovered {
+        opacity: 0.5;
+    }
+    &_size_l {
+        max-width: 320px;
+    }
+    &__icon {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: 0;
+        right: 0;
+        font-size: 24px;
+        line-height: 1;
+        width: 44px;
+        height: 44px;
+        color: $white-color;
+    }
+}
+
+.button_theme_border {
+    position: relative;
+    padding: 2px;
+    background: $white-color;
+    background-clip: content-box;
+    color: $primary-color;
+    opacity: 1;
+    &::before {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+        border-radius: 22px;
+        content: '';
+        background-image: $primary-gradient;
+    }
+    &.button_hovered {
+        &::before {
+            opacity: 0.5;
+        }
+    }
+}
+
+.button_theme_plain {
+    width: auto;
+    height: auto;
+    background: $white-color;
+    color: $primary-color;
+    &.button_pressed {
+        color: $dark-shade-50;
+    }
+}

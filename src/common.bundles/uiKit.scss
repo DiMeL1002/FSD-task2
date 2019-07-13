@@ -1,4 +1,5 @@
 @import "../static/utils/vars";
+@import "../static/utils/mixins";
 
 @import "../common.blocks/title/title";
 
@@ -17,6 +18,7 @@
 @import "../common.blocks/btn-like/btn-like";
 @import "../common.blocks/icon/icon";
 @import "../common.blocks/rate/rate";
+@import "../common.blocks/button/button";
 
 
 section {

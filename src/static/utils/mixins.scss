@@ -4,3 +4,10 @@
     ::-moz-placeholder          {@content};
     :-ms-input-placeholder      {@content};
 }
+
+@mixin text-gradient($gradient, $default-color) {
+    color: $default-color;
+    background: $gradient;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

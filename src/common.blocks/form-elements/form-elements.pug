@@ -7,6 +7,7 @@ include ../radio-form/radio-form.pug
 include ../toggle-form/toggle-form.pug
 include ../btn-like/btn-like.pug
 include ../rate/rate.pug
+include ../button/button.pug
 
 section.form-elements
     +logo({
@@ -16,7 +17,7 @@ section.form-elements
         }
     })
     .form-elements__content
-        .form-elements__input-forms
+        .form-elements__input-forms-block
             +input-form({
                 mods: {
                     placeholder: "Email",
@@ -82,7 +83,7 @@ section.form-elements
                     },
                     title: "subscription text field"
             })
-        .form-elements__small-buttons
+        .form-elements__small-buttons-block
             +checkbox-form({
                 title: "Checkbox buttons",
                 items: [
@@ -148,3 +149,50 @@ section.form-elements
                     +rate({
                         count: [ "star_rate", "star_rate", "star_rate", "star_rate", "star_rate" ]
                     })
+        .form-elements__buttons-block
+            .form-elements__buttons
+                +title({
+                    mods: { level: 3 },
+                    content: "buttons"
+                })
+                .form-elements__buttons-body
+                    +button({
+                        text: "click me"
+                    })
+                    +button({
+                        mods: { hovered: true },
+                        text: "click me"
+                    })
+                    +button({
+                        mods: { theme: "border" },
+                        text: "click me"
+                    })
+                    +button({
+                        mods: { 
+                            theme: "border",
+                            hovered: true    
+                        },
+                        text: "click me"
+                    })
+                    +button({
+                        mods: { theme: "plain" },
+                        text: "click me"
+                    })
+                    +button({
+                        mods: { 
+                            theme: "plain",
+                            pressed: true
+                        },
+                        text: "click me"
+                    })
+            +button({
+                mix: {
+                    block: "form-elements",
+                    elem: "button-pay"
+                },
+                mods: {
+                    size: "l",
+                    arrow: true
+                },
+                text: "перейти к оплате"
+            })

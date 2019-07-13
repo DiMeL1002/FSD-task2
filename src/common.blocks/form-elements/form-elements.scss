@@ -6,12 +6,12 @@
 
     &__content {
         display: flex;
+        justify-content: space-between;
         padding: 65px 9.79% 150px 9.79%;
     }
     
-    &__input-forms {
+    &__input-forms-block {
         flex-basis: 320px;
-        margin-right: 126px;
         & > * {
             margin-top: 20px;
         }
@@ -30,7 +30,7 @@
         margin-top: 40px;
     }
 
-    &__small-buttons {
+    &__small-buttons-block {
         flex-basis: 260px;
     }
 
@@ -66,5 +66,28 @@
         .rate:not(:first-child) {
             margin-left: 20px;
         }
+    }
+
+    &__buttons-block {
+        flex-basis: 320px;
+    }
+
+    &__buttons {
+        max-width: 218px;
+        &-body {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-content: space-between;
+            min-height: 163px;
+            margin-top: 16px;
+            .button:last-child {
+                margin-right: auto;
+                margin-left: 20px;
+            }
+        }
+    }
+    &__button-pay {
+        margin-top: 30px;
     }
 }

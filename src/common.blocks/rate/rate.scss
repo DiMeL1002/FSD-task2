@@ -5,9 +5,6 @@
     &__icon {
         position: relative;
         width: 24px;
-        background: $primary-gradient;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-        color: $primary-color;
+        @include text-gradient($primary-gradient, $primary-color)
     }
 }

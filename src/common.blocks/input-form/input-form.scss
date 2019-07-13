@@ -3,6 +3,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     max-width: 320px;
+    width: 100%;
     color: $dark-shade-50;
     font-family: $main-regular-font;
     font-size: 0.86rem;
@@ -11,4 +12,5 @@
     &__input {
         margin-top: 5px;
     }
+    @include placeholder {color: $dark-shade-25; }
 }

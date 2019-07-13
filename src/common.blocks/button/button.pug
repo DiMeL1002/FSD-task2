@@ -1,0 +1,47 @@
+include ../icon/icon.pug
+
+mixin button(options = false)
+    - var buttonClassName = "button"
+    - var buttonFullClassName = buttonClassName
+
+    if (options.mix)
+        - buttonFullClassName += " " + options.mix.block + "__" + options.mix.elem
+
+    if (options.mixBlock)
+        - buttonFullClassName += " " + options.mixBlock
+
+    if (options.mods)
+
+        if (options.mods.view)
+            - buttonFullClassName += " " + buttonClassName + "_view_" + options.mods.view
+
+        if (options.mods.pressed)
+            - buttonFullClassName += " " + buttonClassName + "_pressed"
+
+        if (options.mods.hovered)
+            - buttonFullClassName += " " + buttonClassName + "_hovered"
+
+        if (options.mods.theme)
+            - buttonFullClassName += " " + buttonClassName + "_theme_" + options.mods.theme
+
+        if (options.mods.size)
+            - buttonFullClassName += " " + buttonClassName + "_size_" + options.mods.size
+            
+        if (options.mods.arrow)
+            - buttonFullClassName += " " + buttonClassName + "_size_" + options.mods.size
+
+            button(class = buttonFullClassName, type = options.type)= options.text
+                +icon({
+                    mix: {
+                        block: buttonClassName,
+                        elem: "icon"
+                    },
+                    mixBlock: "material-icons",
+                    content: "arrow_forward"
+                })
+        
+        else
+            button(class = buttonFullClassName, type = options.type)= options.text
+
+    else
+        button(class = buttonFullClassName, type = options.type)= options.text

@@ -1,4 +1,5 @@
 .btn-like {
+    position: relative;
     display: flex;
     align-items: center;
     box-sizing: border-box;
@@ -8,6 +9,7 @@
     border-radius: 10px;
     color: $dark-shade-25;
     line-height: 20px;
+    background: $white-color;
     cursor: pointer;
     &__icon {
         width: 20px;
@@ -19,8 +21,21 @@
         line-height: 1.2;
     }
     &_is-active {
-        border-color: $primary-color;
+        padding: 1px;
+        border: none;
+        background-clip: content-box;
         color: $primary-color;
+        &::before {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: -1;
+            border-radius: 10px;
+            content: "";
+            background-image: $primary-gradient;
+        }
         .btn-like__icon {
             color: $primary-color;
         }
