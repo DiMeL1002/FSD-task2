@@ -1,0 +1,37 @@
+.pagination {
+    max-width: 241px;
+    text-align: center;
+    &__band {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__page-number {
+        text-align: center;
+        vertical-align: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 22px;
+        color: $dark-shade-50;
+        font-size: 0.86;
+        line-height: 40px;
+        &_active {
+            background-image: $primary-gradient;
+            color: $white-color;
+            font-family: $main-bold-font;
+        }
+    }
+    &__btn-next {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 22px;
+        background-image: $secondary-gradient;
+        color: $white-color;
+    }
+    &__text {
+        display: inline-block;
+        margin-top: 10px;
+    }
+}

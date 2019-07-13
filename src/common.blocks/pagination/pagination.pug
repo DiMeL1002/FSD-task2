@@ -1,0 +1,29 @@
+include ../icon/icon.pug
+
+mixin pagination (options = false)
+    - var paginationClassName = "pagination"
+    - var paginationFullClassName = paginationClassName
+
+    if (options.mix)
+        - paginationFullClassName += " " + options.mix.block + "__" + options.mix.elem
+
+    if (options.mixBlock)
+        - paginationFullClassName += " " + options.mixBlock
+
+    div(class = paginationFullClassName)
+        div(class = paginationClassName + "__band")
+            span(class = paginationClassName + "__page-number"
+                + " " + paginationClassName + "__page-number_active") 1
+            span(class = paginationClassName + "__page-number") 2
+            span(class = paginationClassName + "__page-number") 3
+            span(class = paginationClassName + "__page-number") ...
+            span(class = paginationClassName + "__page-number") 15
+            +icon({
+                mix: {
+                    block: paginationClassName,
+                    elem: "btn-next"
+                },
+                mixBlock: "material-icons",
+                content: "arrow_forward"
+            })
+        span(class = paginationClassName + "__text") 1 – 12 из 100+ вариантов аренды

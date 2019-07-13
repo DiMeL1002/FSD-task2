@@ -8,6 +8,7 @@ include ../toggle-form/toggle-form.pug
 include ../btn-like/btn-like.pug
 include ../rate/rate.pug
 include ../button/button.pug
+include ../pagination/pagination.pug
 
 section.form-elements
     +logo({
@@ -196,3 +197,14 @@ section.form-elements
                 },
                 text: "перейти к оплате"
             })
+            .form-elements__pagination-block
+                +title({
+                    mods: { level: 3 },
+                    content: "pagination"
+                })
+                +pagination({
+                    mix: {
+                        block: "form-elements",
+                        elem: "pagination"
+                    },
+                })
