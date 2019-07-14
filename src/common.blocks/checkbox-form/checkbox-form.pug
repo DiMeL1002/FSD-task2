@@ -13,7 +13,7 @@ mixin checkbox-form (options = false)
     div(class = checkboxFormClassName)
         +title ({
             content: options.title,
-            mods: {level: 3}
+            mods: { level: 3 }
         })
         each val in options.items
             label(class = checkboxFormClassName + "__item")
@@ -23,4 +23,4 @@ mixin checkbox-form (options = false)
                     value = val.text
                     checked = val.checked
                 )
-                span(class = checkboxFormClassName + "__text")=val.text
+                span(class = checkboxFormClassName + "__text")= val.text

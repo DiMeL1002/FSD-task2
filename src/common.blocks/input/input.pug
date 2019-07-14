@@ -10,16 +10,11 @@ mixin input (options = false)
 
     - textFieldFullClassName += options.mods.focused ? " " + textFieldClassName + "_focused" : ""
 
-    case options.mods.theme
-        when "dropdown"
-            - textFieldFullClassName += " " + textFieldClassName + "_theme_dropdown"
-            - options.mods.readonly = true
-
     input(
-            class = textFieldFullClassName,
-            type = options.mods.type,
-            placeholder = options.mods.placeholder,
-            value = options.mods.value,
-            readonly = options.mods.readonly
-            required
-        )
+        class = textFieldFullClassName,
+        type = options.mods.type,
+        placeholder = options.mods.placeholder,
+        value = options.mods.value,
+        readonly = options.mods.readonly
+        required
+    )

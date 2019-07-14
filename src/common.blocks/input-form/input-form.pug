@@ -2,19 +2,19 @@ include ../input/input.pug
 include ../title/title.pug
 
 mixin input-form (options = false)
-    - var textFormClassName = "input-form"
-    - var textFormFullClassName = textFormClassName
+    - var inputFormClassName = "input-form"
+    - var inputFormFullClassName = inputFormClassName
 
     if (options.mix)
-        - textFormFullClassName += " " + options.mix.block + "__" + options.mix.elem
+        - inputFormFullClassName += " " + options.mix.block + "__" + options.mix.elem
 
     if (options.mixBlock)
-        - textFormFullClassName += " " + options.mixBlock
+        - inputFormFullClassName += " " + options.mixBlock
 
-    div(class = textFormFullClassName)
+    div(class = inputFormFullClassName)
         +title({
             mix: {
-                block: textFormClassName,
+                block: inputFormClassName,
                 elem: 'title'
             },
             mods: { level: 3 },
@@ -22,7 +22,7 @@ mixin input-form (options = false)
         })
         +input({
             mix: {
-                block: textFormClassName,
+                block: inputFormClassName,
                 elem: 'input'
             },
             mods: {
@@ -30,6 +30,5 @@ mixin input-form (options = false)
                 placeholder: options.mods.placeholder,
                 focused: options.mods.focused,
                 value: options.mods.inputValue,
-                theme: options.mods.theme
             }
         })

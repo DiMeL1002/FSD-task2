@@ -40,3 +40,5 @@ html {
     font-size: $main-font-size;
     line-height: $main-line-height;
 }
+
+@include placeholder { color: $dark-shade-25; }

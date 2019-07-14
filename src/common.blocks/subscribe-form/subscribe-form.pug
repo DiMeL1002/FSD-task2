@@ -11,11 +11,29 @@ mixin subscribe-form (options = false)
         - subscribeFormFullClassName += " " + options.mixBlock
 
     div(class = subscribeFormFullClassName)
-        +input-form({
-            mods: {
-                placeholder: options.mods.placeholder,
-                inputType: 'email'
+        +title({
+            mix: {
+                block: subscribeFormClassName,
+                elem: 'title'
             },
-            title: options.title,
+            mods: { level: 3 },
+            content: options.title
         })
-        i(class = "material-icons " + subscribeFormClassName + "__icon") arrow_forward  
+        +input({
+            mix: {
+                block: subscribeFormClassName,
+                elem: 'input'
+            },
+            mods: {
+                type: 'email',
+                placeholder: 'Email',
+            }
+        })
+        +icon({
+            mix: {
+                block: subscribeFormClassName,
+                elem: "icon"
+            },
+            mixBlock: "material-icons",
+            content: "arrow_forward"
+        })

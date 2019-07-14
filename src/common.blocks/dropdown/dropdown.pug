@@ -1,4 +1,5 @@
 include ../input-form/input-form.pug
+include ../icon/icon.pug
 
 mixin dropdown (options = false)
     - var dropdownClassName = "dropdown"
@@ -15,15 +16,35 @@ mixin dropdown (options = false)
             - dropdownFullClassName += " " + dropdownClassName + "_size_s"
         when "m"
             - dropdownFullClassName += " " + dropdownClassName + "_size_m"
+        when "l"
+            - dropdownFullClassName += " " + dropdownClassName + "_size_l"
 
     div(class = dropdownFullClassName)
-        div(class = dropdownClassName + "__head")
-            +input-form({
-                mods: {
-                    inputValue: options.mods.inputValue,
-                    inputType: 'text',
-                    theme: "dropdown"
+        +title({
+            mix: {
+                block: dropdownClassName,
+                elem: 'title'
+            },
+            mods: { level: 3 },
+            content: options.title
+        })
+        div(class = dropdownClassName + "__header")
+            +input({
+                mix: {
+                    block: dropdownClassName,
+                    elem: 'input'
                 },
-                title: options.title
+                mods: {
+                    type: "text",
+                    value: options.inputValue,
+                    readonly: true
+                }
             })
-            i(class = "material-icons " + dropdownClassName + "__icon") expand_more
+            +icon({
+                mix: {
+                    block: dropdownClassName,
+                    elem: "icon"
+                },
+                mixBlock: "material-icons",
+                content: "expand_more"
+            })

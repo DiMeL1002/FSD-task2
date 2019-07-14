@@ -10,7 +10,6 @@ mixin logo(options = false)
     if (options.mixBlock)
         - logoFullClassName += " " + options.mixBlock
 
-    //- html
     div(class = logoFullClassName)
         +image({
             src: "/img/logo.svg",

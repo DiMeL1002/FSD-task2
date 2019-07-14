@@ -35,9 +35,8 @@ section.form-elements
                 title: "Text field"
             })
             +dropdown({
-                mods: {
-                    inputValue: "Сколько гостей"
-                },
+                mods: {size: "l"},
+                inputValue: "Сколько гостей",
                 title: "Dropdown"
             })
             +input-form({
@@ -49,17 +48,13 @@ section.form-elements
             })
             .form-elements__date-dropdowns
                 +dropdown({
-                    mods: {
-                        inputValue: "ДД.ММ.ГГГГ",
-                        size: "s"
-                    },
+                    mods: { size: "s" },
+                    inputValue: "ДД.ММ.ГГГГ",
                     title: "Date dropdown"
                 })
                 +dropdown({
-                    mods: {
-                        inputValue: "19.08.2019",
-                        size: "s"
-                    },
+                    mods: { size: "s" },
+                    inputValue: "19.08.2019",
                     title: "Date dropdown"
                 })
             +dropdown({
@@ -67,20 +62,14 @@ section.form-elements
                         block: "form-elements",
                         elem: "dropdown-filter"
                     },
-                    mods: {
-                        inputValue: "19 авг - 23 авг",
-                        size: "m"
-                    },
+                    mods: { size: "m" },
+                    inputValue: "19 авг - 23 авг",
                     title: "filter date dropdown"
             })
             +subscribe-form({
                     mix: {
                         block: "form-elements",
                         elem: "sub"
-                    },
-                    mods: {
-                        inputplaceholderText: "Email",
-                        size: "m"
                     },
                     title: "subscription text field"
             })
