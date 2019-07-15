@@ -1,0 +1,27 @@
+mixin checkbox (options = false)
+    - var checkboxClassName = "checkbox"
+    - var checkboxFullClassName = checkboxClassName
+
+    if (options.mix)
+        - checkboxFullClassName += " " + options.mix.block + "__" + options.mix.elem
+
+    if (options.mixBlock)
+        - checkboxFullClassName += " " + options.mixBlock
+
+    if (options.mods)
+        if (options.mods.theme)
+            - checkboxFullClassName += " " + checkboxClassName + "_theme_" + options.mods.theme
+
+    label(class = checkboxFullClassName)
+        input(
+            class = checkboxClassName + "__input",
+            type="checkbox",
+            value = options.value
+            checked = options.mods.checked
+        )
+        if (options.mods)
+            if (options.mods.theme)
+                span(class = checkboxClassName + "__text")= options.title
+                span(class = checkboxClassName + "__description")= options.value
+            else
+                span(class = checkboxClassName + "__text")= options.value

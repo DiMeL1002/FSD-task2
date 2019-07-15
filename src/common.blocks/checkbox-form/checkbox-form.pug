@@ -1,4 +1,5 @@
 include ../title/title.pug
+include ../checkbox/checkbox.pug
 
 mixin checkbox-form (options = false)
     - var checkboxFormClassName = "checkbox-form"
@@ -10,17 +11,32 @@ mixin checkbox-form (options = false)
     if (options.mixBlock)
         - checkboxFormFullClassName += " " + options.mixBlock
 
-    div(class = checkboxFormClassName)
-        +title ({
+    if (options.mods)
+        if (options.mods.theme)
+            - checkboxFormFullClassName += " " + checkboxFormClassName + "_theme_" + options.mods.theme
+    else
+        - options.mods = ""
+
+    div(class = checkboxFormFullClassName)
+        +title({
+            mix: {
+                block: checkboxFormClassName,
+                elem: "title"
+            },
             content: options.title,
             mods: { level: 3 }
         })
-        each val in options.items
-            label(class = checkboxFormClassName + "__item")
-                input(
-                    class = checkboxFormClassName + "__input",
-                    type="checkbox",
-                    value = val.text
-                    checked = val.checked
-                )
-                span(class = checkboxFormClassName + "__text")= val.text
+        div(class = checkboxFormClassName + "__checkboxes")
+            each val in options.items           
+                +checkbox({
+                    mix: {
+                        block: checkboxFormClassName,
+                        elem: "checkbox"
+                    },
+                    mods: {
+                        checked: val.checked,
+                        theme: options.mods.theme
+                    },
+                    title: val.title,
+                    value: val.text,
+                })

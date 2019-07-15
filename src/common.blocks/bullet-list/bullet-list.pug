@@ -1,0 +1,24 @@
+include ../title/title.pug
+
+mixin bullet-list (options = false)
+    - var bulletListClassName = "bullet-list"
+    - var bulletListFullClassName = bulletListClassName
+
+    if (options.mix)
+        - bulletListFullClassName += " " + options.mix.block + "__" + options.mix.elem
+
+    if (options.mixBlock)
+        - bulletListFullClassName += " " + options.mixBlock
+
+    div(class = bulletListFullClassName)
+        +title({
+            mix: {
+                block: checkboxFormClassName,
+                elem: "title"
+            },
+            content: options.title,
+            mods: { level: 3 }
+        })
+        div(class = bulletListClassName + "__items")
+            each val in options.items
+                span(class = bulletListClassName + "__text")= val

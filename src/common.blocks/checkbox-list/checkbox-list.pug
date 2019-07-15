@@ -1,0 +1,42 @@
+mixin checkbox-list (options = false)
+    - var checkboxListClassName = "checkbox-list"
+    - var checkboxListFullClassName = checkboxListClassName
+
+    if (options.mix)
+        - checkboxListFullClassName += " " + options.mix.block + "__" + options.mix.elem
+
+    if (options.mixBlock)
+        - checkboxListFullClassName += " " + options.mixBlock
+
+    if (options.mods)
+        if (options.mods.opened)
+            - checkboxListFullClassName += " " + checkboxListClassName + "_opened"
+
+    div(class = checkboxListFullClassName)
+        div(class = checkboxListClassName + "__head")
+            +title({
+                mix: {
+                    block: checkboxListClassName,
+                    elem: "title"
+                },
+                content: options.title,
+                mods: { level: 3 }
+            })
+            +icon({
+                mix: {
+                    block: checkboxListClassName,
+                    elem: "icon"
+                },
+                mixBlock: "material-icons",
+                content: "expand_more"
+            })
+        div(class = checkboxListClassName + "__body")
+            each val in options.items
+                +checkbox({
+                    mix: {
+                        block: checkboxListClassName,
+                        elem: "checkbox"
+                    },
+                    mods: { checked: val.checked },
+                    value: val.text
+                })

@@ -3,12 +3,14 @@ include ../input-form/input-form.pug
 include ../dropdown/dropdown.pug
 include ../subscribe-form/subscribe-form.pug
 include ../checkbox-form/checkbox-form.pug
+include ../checkbox-list/checkbox-list.pug
 include ../radio-form/radio-form.pug
 include ../toggle-form/toggle-form.pug
 include ../btn-like/btn-like.pug
 include ../rate/rate.pug
 include ../button/button.pug
 include ../pagination/pagination.pug
+include ../bullet-list/bullet-list.pug
 
 section.form-elements
     +logo({
@@ -91,9 +93,7 @@ section.form-elements
                 +checkbox-form({
                     title: "Checkbox buttons",
                     items: [
-                        {
-                            text: "Можно курить",
-                        },
+                        { text: "Можно курить" },
                         {
                             text: "Можно с питомцами",
                             checked: true
@@ -111,9 +111,7 @@ section.form-elements
                             text: "Мужчина",
                             checked: true
                         },
-                        {
-                            text: "Женщина",
-                        }
+                        { text: "Женщина" }
                     ]
                 })
                 .form-elements__toggles
@@ -260,4 +258,80 @@ section.form-elements
                         },
                         inputValue: "3 гостя",
                         title: "Dropdown"
+                    })
+        .form-elements__checkboxes
+            .form-elements__row
+                .form-elements__col
+                    +checkbox-list({
+                        title: "expandable checkbox list",
+                        items: [
+                            { text: "Завтрак" },
+                            {
+                                text: "Письменный стол",
+                                checked: true
+                            },
+                            {
+                                text: "Стул для кормления",
+                                checked: true
+                            },
+                            {
+                                text: "Кроватка",
+                                checked: true
+                            },
+                            { text: "Телевизор" },
+                            { text: "Шампунь" },
+                            { text: "Телевизор" },
+                            { text: "Шампунь" }
+                        ]
+                    })
+                    +checkbox-list({
+                        mix: {
+                            block: "form-elements",
+                            elem: "checkbox-list-opened"
+                        },
+                        mods: { opened: true },
+                        title: "expandable checkbox list",
+                        items: [
+                            { text: "Завтрак" },
+                            {
+                                text: "Письменный стол",
+                                checked: true
+                            },
+                            {
+                                text: "Стул для кормления",
+                                checked: true
+                            },
+                            {
+                                text: "Кроватка",
+                                checked: true
+                            },
+                            { text: "Телевизор" },
+                            { text: "Шампунь" },
+                            { text: "Телевизор" },
+                            { text: "Шампунь" }
+                        ]
+                    })
+                .form-elements__col
+                    +checkbox-form({
+                        mods: { theme: "rich" },
+                        title: "Rich Checkbox Buttons",
+                        items: [
+                            {
+                                title: "Широкий коридор",
+                                text: "Ширина коридоров в номере не менее 91 см."
+                            },
+                            {
+                                title: "Помощник для инвалидов",
+                                text: "На 1 этаже вас встретит специалист и проводит до номера."
+                            }
+                        ]
+                    })
+                .form-elements__col
+                    +bullet-list({
+                        title: "Bullet list",
+                        items: [
+                            "Нельзя с питомцами",
+                            "Без вечеринок и мероприятий",
+                            "Время прибытия — после 13:00, а выезд до 12:00"
+                        ]
                     })

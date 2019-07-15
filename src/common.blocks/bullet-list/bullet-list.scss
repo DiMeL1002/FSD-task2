@@ -1,0 +1,25 @@
+.bullet-list {
+    max-width: 292px;
+    &__items {
+        margin-top: 16px;
+    }
+    &__text {
+        display: inline-block;
+        max-width: 242px;
+        padding-left: 20px;
+        
+        &:not(:first-child) {
+            margin-top: 10px;
+        }
+        &::before {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            margin-left: -20px;
+            margin-right: 10px;
+            border-radius: 5px;
+            content: "";
+            background-color: $dark-shade-25;
+        }
+    }
+}
