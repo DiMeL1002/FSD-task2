@@ -18,182 +18,246 @@ section.form-elements
         }
     })
     .form-elements__content
-        .form-elements__input-forms-block
-            +input-form({
-                mods: {
-                    placeholder: "Email",
-                    inputType: "email",
-                },
-                title: "Text field"
-            })
-            +input-form({
-                mods: {
-                    inputValue: "This is pretty awesome",
-                    inputType: "text",
-                    focused: true,
-                },
-                title: "Text field"
-            })
-            +dropdown({
-                mods: {size: "l"},
-                inputValue: "Сколько гостей",
-                title: "Dropdown"
-            })
-            +input-form({
-                mods: {
-                    placeholder: "ДД.ММ.ГГГГ",
-                    inputType: "text",
-                },
-                title: "Masked text field"
-            })
-            .form-elements__date-dropdowns
-                +dropdown({
-                    mods: { size: "s" },
-                    inputValue: "ДД.ММ.ГГГГ",
-                    title: "Date dropdown"
-                })
-                +dropdown({
-                    mods: { size: "s" },
-                    inputValue: "19.08.2019",
-                    title: "Date dropdown"
-                })
-            +dropdown({
-                    mix: {
-                        block: "form-elements",
-                        elem: "dropdown-filter"
-                    },
-                    mods: { size: "m" },
-                    inputValue: "19 авг - 23 авг",
-                    title: "filter date dropdown"
-            })
-            +subscribe-form({
-                    mix: {
-                        block: "form-elements",
-                        elem: "sub"
-                    },
-                    title: "subscription text field"
-            })
-        .form-elements__small-buttons-block
-            +checkbox-form({
-                title: "Checkbox buttons",
-                items: [
-                    {
-                        text: "Можно курить",
-                    },
-                    {
-                        text: "Можно с питомцами",
-                        checked: true
-                    },
-                    {
-                        text: "Можно пригласить гостей (до 10 человек)",
-                        checked: true
-                    }
-                ]
-            })
-            +radio-form({
-                title: "Radio buttons",
-                items: [
-                    {
-                        text: "Мужчина",
-                        checked: true
-                    },
-                    {
-                        text: "Женщина",
-                    }
-                ]
-            })
-            .form-elements__toggles
-                +title({
-                    mods: { level: 3 },
-                    content: "Toggle"
-                })
-                +toggle-form({
-                    title: "Получать спецпредложения",
-                    checked: true
-                })
-                +toggle-form({
-                    title: "Получать спецпредложения",
-                })
-            .form-elements__like-buttons
-                +title({
-                    mods: { level: 3 },
-                    content: "like button",
-                })
-                .form-elements__like-buttons-block
-                    +btn-like({
-                        total: 2
-                    })
-                    +btn-like({
-                        total: 12,
-                        mods: { isActive: true }  
-                    })
-            .form-elements__rate-buttons
-                +title({
-                    mods: { level: 3 },
-                    content: "rate button"
-                })
-                .form-elements__rate-buttons-block
-                    +rate({
-                        count: [ "star_rate", "star_rate", "star_rate", "star_rate", "star_border" ]
-                    })
-                    +rate({
-                        count: [ "star_rate", "star_rate", "star_rate", "star_rate", "star_rate" ]
-                    })
-        .form-elements__buttons-block
-            .form-elements__buttons
-                +title({
-                    mods: { level: 3 },
-                    content: "buttons"
-                })
-                .form-elements__buttons-body
-                    +button({
-                        text: "click me"
-                    })
-                    +button({
-                        mods: { hovered: true },
-                        text: "click me"
-                    })
-                    +button({
-                        mods: { theme: "border" },
-                        text: "click me"
-                    })
-                    +button({
-                        mods: { 
-                            theme: "border",
-                            hovered: true    
+        .form-elements__row
+            .form-elements__col
+                .form-elements__input-forms-block
+                    +input-form({
+                        mods: {
+                            placeholder: "Email",
+                            inputType: "email",
                         },
-                        text: "click me"
+                        title: "Text field"
                     })
-                    +button({
-                        mods: { theme: "plain" },
-                        text: "click me"
-                    })
-                    +button({
-                        mods: { 
-                            theme: "plain",
-                            pressed: true
+                    +input-form({
+                        mods: {
+                            inputValue: "This is pretty awesome",
+                            inputType: "text",
+                            focused: true,
                         },
-                        text: "click me"
+                        title: "Text field"
                     })
-            +button({
-                mix: {
-                    block: "form-elements",
-                    elem: "button-pay"
-                },
-                mods: {
-                    size: "l",
-                    arrow: true
-                },
-                text: "перейти к оплате"
-            })
-            .form-elements__pagination-block
-                +title({
-                    mods: { level: 3 },
-                    content: "pagination"
+                    +dropdown({
+                        mods: {
+                            size: "l",
+                            items: []
+                        },
+                        inputValue: "Сколько гостей",
+                        title: "Dropdown"
+                    })
+                    +input-form({
+                        mods: {
+                            placeholder: "ДД.ММ.ГГГГ",
+                            inputType: "text",
+                        },
+                        title: "Masked text field"
+                    })
+                    .form-elements__date-dropdowns
+                        +dropdown({
+                            mods: {
+                                size: "s",
+                                items: []
+                            },
+                            inputValue: "ДД.ММ.ГГГГ",
+                            title: "Date dropdown"
+                        })
+                        +dropdown({
+                            mods: {
+                                size: "s",
+                                items: []
+                            },
+                            inputValue: "19.08.2019",
+                            title: "Date dropdown"
+                        })
+                    +dropdown({
+                            mix: {
+                                block: "form-elements",
+                                elem: "dropdown-filter"
+                            },
+                            mods: {
+                                size: "m",
+                                items: []
+                            },
+                            inputValue: "19 авг - 23 авг",
+                            title: "filter date dropdown"
+                    })
+                    +subscribe-form({
+                            mix: {
+                                block: "form-elements",
+                                elem: "sub"
+                            },
+                            title: "subscription text field"
+                    })
+            .form-elements__col
+                +checkbox-form({
+                    title: "Checkbox buttons",
+                    items: [
+                        {
+                            text: "Можно курить",
+                        },
+                        {
+                            text: "Можно с питомцами",
+                            checked: true
+                        },
+                        {
+                            text: "Можно пригласить гостей (до 10 человек)",
+                            checked: true
+                        }
+                    ]
                 })
-                +pagination({
+                +radio-form({
+                    title: "Radio buttons",
+                    items: [
+                        {
+                            text: "Мужчина",
+                            checked: true
+                        },
+                        {
+                            text: "Женщина",
+                        }
+                    ]
+                })
+                .form-elements__toggles
+                    +title({
+                        mods: { level: 3 },
+                        content: "Toggle"
+                    })
+                    +toggle-form({
+                        title: "Получать спецпредложения",
+                        checked: true
+                    })
+                    +toggle-form({
+                        title: "Получать спецпредложения",
+                    })
+                .form-elements__like-buttons
+                    +title({
+                        mods: { level: 3 },
+                        content: "like button",
+                    })
+                    .form-elements__like-buttons-block
+                        +btn-like({
+                            total: 2
+                        })
+                        +btn-like({
+                            total: 12,
+                            mods: { isActive: true }  
+                        })
+                .form-elements__rate-buttons
+                    +title({
+                        mods: { level: 3 },
+                        content: "rate button"
+                    })
+                    .form-elements__rate-buttons-block
+                        +rate({
+                            count: [ "star_rate", "star_rate", "star_rate", "star_rate", "star_border" ]
+                        })
+                        +rate({
+                            count: [ "star_rate", "star_rate", "star_rate", "star_rate", "star_rate" ]
+                        })
+            .form-elements__col
+                .form-elements__buttons
+                    +title({
+                        mods: { level: 3 },
+                        content: "buttons"
+                    })
+                    .form-elements__buttons-body
+                        +button({
+                            text: "click me"
+                        })
+                        +button({
+                            mods: { hovered: true },
+                            text: "click me"
+                        })
+                        +button({
+                            mods: { theme: "border" },
+                            text: "click me"
+                        })
+                        +button({
+                            mods: { 
+                                theme: "border",
+                                hovered: true    
+                            },
+                            text: "click me"
+                        })
+                        +button({
+                            mods: { theme: "plain" },
+                            text: "click me"
+                        })
+                        +button({
+                            mods: { 
+                                theme: "plain",
+                                pressed: true
+                            },
+                            text: "click me"
+                        })
+                +button({
                     mix: {
                         block: "form-elements",
-                        elem: "pagination"
+                        elem: "button-pay"
                     },
+                    mods: {
+                        size: "l",
+                        arrow: true
+                    },
+                    text: "перейти к оплате"
                 })
+                .form-elements__pagination-block
+                    +title({
+                        mods: { level: 3 },
+                        content: "pagination"
+                    })
+                    +pagination({
+                        mix: {
+                            block: "form-elements",
+                            elem: "pagination"
+                        },
+                    })
+        .form-elements__dropdowns
+            .form-elements__row
+                .form-elements__col
+                    +dropdown({
+                        mods: {
+                            size: "m",
+                            items: []
+                        },
+                        inputValue: "2 спальни, 2 кровати...",
+                        title: "Dropdown"
+                    })
+                    +dropdown({
+                        mods: {
+                            size: "m",
+                            items: ["Спальни", "Кровати", "Ванные комнаты"],
+                            opened: true
+                        },
+                        inputValue: "2 спальни, 2 кровати...",
+                        title: "Dropdown"   
+                    })
+                .form-elements__col
+                    +dropdown({
+                        mix: {
+                            block: "form-elements",
+                            elem: "without guests"
+                        },
+                        mods: {
+                            size: "l",
+                            items: ["Взрослые", "Дети", "Младенцы"],
+                            opened: true,
+                            buttons: true
+                        },
+                        inputValue: "Сколько гостей",
+                        title: "Dropdown"
+                    })
+                .form-elements__col
+                    +dropdown({
+                        mix: {
+                            block: "form-elements",
+                            elem: "with guests"
+                        },
+                        mods: {
+                            size: "l",
+                            items: ["Взрослые", "Дети", "Младенцы"],
+                            opened: true,
+                            buttons: true
+                        },
+                        inputValue: "3 гостя",
+                        title: "Dropdown"
+                    })

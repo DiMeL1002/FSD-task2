@@ -3,15 +3,17 @@
         margin-top: 30px;
         margin-left: 30px;
     }
-
     &__content {
-        display: flex;
-        justify-content: space-between;
         padding: 65px 9.79% 150px 9.79%;
     }
-    
-    &__input-forms-block {
+    &__row {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__col {
         flex-basis: 320px;
+    }
+    &__input-forms-block {
         & > * {
             margin-top: 20px;
         }
@@ -19,21 +21,14 @@
             margin-top: 0;
         }
     }
-
     &__date-dropdowns {
         display: flex;
         justify-content: space-between;
         margin-top: 40px;
     }
-
     &__dropdown-filter, &__sub {
         margin-top: 40px;
     }
-
-    &__small-buttons-block {
-        flex-basis: 260px;
-    }
-
     &__toggles {
         margin-top: 37px;
         .toggle-form{
@@ -43,11 +38,9 @@
             margin-top: 10px;
         }
     }
-
     &__like-buttons {
         margin-top: 40px;
     }
-
     &__like-buttons-block {
             display: flex;
             margin-top: 16px;
@@ -55,11 +48,9 @@
             margin-left: 10px;
         }
     }
-
     &__rate-buttons {
         margin-top: 40px
     }
-
     &__rate-buttons-block {
         display: flex;
         margin-top: 16px;
@@ -67,11 +58,6 @@
             margin-left: 20px;
         }
     }
-
-    &__buttons-block {
-        flex-basis: 320px;
-    }
-
     &__buttons {
         max-width: 218px;
         &-body {
@@ -87,16 +73,19 @@
             }
         }
     }
-
     &__button-pay {
         margin-top: 30px;
     }
-
     &__pagination-block {
         margin-top: 40px;
     }
-
     &__pagination {
         margin-top: 16px;
+    }
+    &__dropdowns {
+        margin-top: 100px;
+        .dropdown:first-child {
+            margin-bottom: 20px;
+        }
     }
 }

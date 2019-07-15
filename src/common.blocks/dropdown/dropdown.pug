@@ -19,6 +19,12 @@ mixin dropdown (options = false)
         when "l"
             - dropdownFullClassName += " " + dropdownClassName + "_size_l"
 
+    if (options.mods.opened)
+        - dropdownFullClassName += " " + dropdownClassName + "_opened"
+
+    if (options.mods.buttons)
+        - dropdownFullClassName += " " + dropdownClassName + "_has-buttons"
+
     div(class = dropdownFullClassName)
         +title({
             mix: {
@@ -48,3 +54,43 @@ mixin dropdown (options = false)
                 mixBlock: "material-icons",
                 content: "expand_more"
             })
+        div(class = dropdownClassName + "__body")
+            each val in options.mods.items
+                div(class = dropdownClassName + "__item")
+                    +title({
+                        mix: {
+                            block: dropdownClassName,
+                            elem: 'item'
+                        },
+                        mods: { level: 3 },
+                        content: val
+                    })
+                    div(class = dropdownClassName + "__toggle")
+                        span(class = dropdownClassName + "__minus") -
+                        +title({
+                            mix: {
+                                block: dropdownClassName,
+                                elem: 'item'
+                            },
+                            mods: { level: 3 },
+                            content: "0"
+                        })
+                        span(class = dropdownClassName + "__plus") +
+            if (options.mods.buttons)
+                div(class = dropdownClassName + "__apply-form")
+                    +button({
+                        mix: {
+                            block: dropdownClassName,
+                            elem: 'reset-button',
+                        },
+                        mods: { theme: "plain", pressed: true },
+                        text: "Очистить"
+                    })
+                    +button({
+                        mix: {
+                            block: dropdownClassName,
+                            elem: 'apply-button',
+                        },
+                        mods: { theme: "plain" },
+                        text: "Применить"
+                    })

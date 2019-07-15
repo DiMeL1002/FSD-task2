@@ -1,6 +1,7 @@
 .dropdown {
     max-width: 320px;
     width: 100%;
+    background-color: $white-color;
     &__header {
         position: relative;
         margin-top: 5px;
@@ -24,6 +25,58 @@
         }
         &_l {
             max-width: 320px;
+        }
+    }
+    &_opened {
+        .dropdown {
+            &__header {
+                box-sizing: border-box;
+                border: 1px solid $dark-shade-50;
+                border-radius: 4px 4px 0 0;
+            }
+            &__input {
+                border: none;
+            }
+            &__body {
+                box-sizing: border-box;
+                padding: 7px 7px 8px 15px;
+                border: 1px solid $dark-shade-50;
+                border-top: none;
+                border-radius: 0 0 4px 4px;
+            }
+            &__item {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                &:not(:last-of-type) {
+                    margin-bottom: 7px;
+                }
+            }
+            &__toggle {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex-basis: 92px;
+                max-width: 92px;
+            }
+            &__minus, &__plus {
+                box-sizing: border-box;
+                width: 30px;
+                height: 30px;
+                border: 1px solid $dark-shade-25;
+                border-radius: 22px;
+                text-align: center;
+                color: $dark-shade-50;
+                font-size: 1.29rem;
+                line-height: 30px;
+                cursor: pointer;
+            }
+            &__apply-form {
+                display: flex;
+                justify-content: space-between;
+                margin-top: 19px;
+                margin-bottom: 5px;
+            }
         }
     }
 }
