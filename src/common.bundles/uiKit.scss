@@ -25,7 +25,15 @@
 @import "../common.blocks/bullet-list/bullet-list";
 @import "../common.blocks/info/info";
 @import "../common.blocks/review/review";
+@import "../common.blocks/form-number-selection/form-number-selection";
 
+html {
+    height: 100%;
+    color: $dark-shade-75;
+    font-family: $main-regular-font;
+    font-size: $main-font-size;
+    line-height: $main-line-height;
+}
 
 section {
     box-sizing: border-box;
@@ -38,12 +46,8 @@ section {
     }
 }
 
-html {
-    height: 100%;
-    color: $dark-shade-75;
-    font-family: $main-regular-font;
-    font-size: $main-font-size;
-    line-height: $main-line-height;
+.container {
+    padding: 10.4% 9.72% 9.72% 9.72%;
 }
 
 @include placeholder { color: $dark-shade-25; }

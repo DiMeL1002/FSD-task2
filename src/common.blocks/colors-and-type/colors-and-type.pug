@@ -4,13 +4,7 @@ include ../color-sample/color-sample.pug
 include ../text-sample/text-sample.pug
 
 section.colors-and-type
-    +logo({ 
-        mix: {
-            block: "colors-and-type",
-            elem: "logo"
-        }
-    })
-    .colors-and-type__content
+    .container
         .colors-and-type__colors
             +color-sample({
                 text: "Dark Shade 100%",

@@ -1,0 +1,60 @@
+include ../title/title.pug
+include ../dropdown/dropdown.pug
+include ../button/button.pug
+
+mixin form-number-selection(options = false)
+    - var blockClassName = "form-number-selection"
+    - var blockFullClassName = blockClassName
+
+    if (options.mix)
+        - blockFullClassName += " " + options.mix.block + "__" + options.mix.elem
+
+    if (options.mixBlock)
+        - blockFullClassName += " " + options.mixBlock
+
+    div(class = blockFullClassName)
+        +title({
+            mix: {
+                block: blockClassName,
+                elem: 'title'
+            },
+            mods: { level: 1 },
+            content: "Найдём номера под ваши пожелания"
+        })
+        div(class = blockClassName + "__dates")
+            +dropdown({
+                mods: {
+                    size: "s"
+                },
+                inputValue: "ДД.ММ.ГГГГ",
+                title: "Прибытие"
+            })
+            +dropdown({
+                mods: {
+                    size: "s"
+                },
+                inputValue: "ДД.ММ.ГГГГ",
+                title: "Выезд"
+            })
+        +dropdown({
+            mix: {
+                block: blockClassName,
+                elem: "dropdown-guests"
+            },
+            mods: {
+                size: "l",
+            },
+            inputValue: "Сколько гостей",
+            title: "Гости"
+        })
+        +button({
+            mix: {
+                block: blockClassName,
+                elem: "button"
+            },
+            mods: {
+                size: "l",
+                arrow: true
+            },
+            text: "Подобрать номер"
+        })

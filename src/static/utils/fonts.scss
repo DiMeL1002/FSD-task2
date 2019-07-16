@@ -24,3 +24,11 @@
     font-weight: bold;
     font-style: normal;
 }
+@font-face {
+    font-family: "OpenSans-Bold";
+    src: url('/fonts/OpenSans/OpenSans-Bold.woff') format('woff'), /* Pretty Modern Browsers */
+         url('/fonts/OpenSans/OpenSans-Bold.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('/fonts/OpenSans/OpenSans-Bold.svg') format('svg'); /* Legacy iOS */
+    font-weight: bold;
+    font-style: normal;
+}

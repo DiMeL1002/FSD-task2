@@ -55,27 +55,28 @@ mixin dropdown (options = false)
                 content: "expand_more"
             })
         div(class = dropdownClassName + "__body")
-            each val in options.mods.items
-                div(class = dropdownClassName + "__item")
-                    +title({
-                        mix: {
-                            block: dropdownClassName,
-                            elem: 'item'
-                        },
-                        mods: { level: 3 },
-                        content: val
-                    })
-                    div(class = dropdownClassName + "__toggle")
-                        span(class = dropdownClassName + "__minus") -
+            if (options.mods.items)
+                each val in options.mods.items
+                    div(class = dropdownClassName + "__item")
                         +title({
                             mix: {
                                 block: dropdownClassName,
                                 elem: 'item'
                             },
                             mods: { level: 3 },
-                            content: "0"
+                            content: val
                         })
-                        span(class = dropdownClassName + "__plus") +
+                        div(class = dropdownClassName + "__toggle")
+                            span(class = dropdownClassName + "__minus") -
+                            +title({
+                                mix: {
+                                    block: dropdownClassName,
+                                    elem: 'item'
+                                },
+                                mods: { level: 3 },
+                                content: "0"
+                            })
+                            span(class = dropdownClassName + "__plus") +
             if (options.mods.buttons)
                 div(class = dropdownClassName + "__apply-form")
                     +button({

@@ -1,12 +1,7 @@
 .colors-and-type{
-    &__logo {
-        margin-top: 30px;
-        margin-left: 30px;
-    }
-    &__content {
+    .container {
         display: flex;
         justify-content: space-between; 
-        padding: 67px 10.42% 145px 13.26%;
         @media screen and (max-width: $table-width) {
             padding-left: $table-offset;
             padding-right: $table-offset;
