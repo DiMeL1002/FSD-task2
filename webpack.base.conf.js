@@ -32,18 +32,18 @@ module.exports = {
         publicPath: "/"
     },
 
-    // optimization: {
-    //     splitChunks: {
-    //         cacheGroups: {
-    //             vendor: {
-    //                 name: 'vendors',
-    //                 test: /node_modules/,
-    //                 chunks: 'all',
-    //                 enforce: true
-    //             }
-    //         }
-    //     }
-    // },
+    optimization: {
+        // splitChunks: {
+        //     cacheGroups: {
+        //         vendor: {
+        //             name: 'vendors',
+        //             test: /node_modules/,
+        //             chunks: 'all',
+        //             enforce: true
+        //         }
+        //     }
+        // }
+    },
 
     devtool: 'source-map', // карты js
     module: {

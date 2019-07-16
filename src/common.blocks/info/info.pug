@@ -1,0 +1,24 @@
+include ../icon/icon.pug
+
+mixin info (options = false)
+    - var infoClassName = "info"
+    - var infoFullClassName = infoClassName
+
+    if (options.mix)
+        - infoFullClassName += " " + options.mix.block + "__" + options.mix.elem
+
+    if (options.mixBlock)
+        - infoFullClassName += " " + options.mixBlock
+
+    div(class = infoFullClassName)
+        +icon({
+                mix: {
+                    block: infoClassName,
+                    elem: "icon"
+                },
+                mixBlock: "material-icons",
+                content: options.icon
+            })
+        div(class = infoFullClassName + "__text")
+            span(class = infoFullClassName + "__title")= options.title
+            span(class = infoFullClassName + "__description")= options.text

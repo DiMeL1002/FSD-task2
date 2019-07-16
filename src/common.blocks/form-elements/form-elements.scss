@@ -94,4 +94,11 @@
     &__checkbox-list-opened {
         margin-top: 20px;
     }
+    &__info-and-review {
+        margin-top: 40px;
+        .info:not(:first-child) {
+            margin-top: 20px;
+        }
+    }
+
 }

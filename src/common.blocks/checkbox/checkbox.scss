@@ -35,14 +35,14 @@
     &_theme_rich {
         .checkbox {
             &__text {
-                display: inline-block;
+                display: block;
                 color: $dark-shade-75;
                 font-family: $main-bold-font;
                 font-size: 1rem;
                 line-height: 1.29;
             }
             &__description {
-                display: inline-block;
+                display: block;
                 margin-top: 4px;
                 font-size: 0.86rem;
                 line-height: 1.17;

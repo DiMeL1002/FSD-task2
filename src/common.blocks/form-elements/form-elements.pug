@@ -11,6 +11,7 @@ include ../rate/rate.pug
 include ../button/button.pug
 include ../pagination/pagination.pug
 include ../bullet-list/bullet-list.pug
+include ../info/info.pug
 
 section.form-elements
     +logo({
@@ -335,3 +336,17 @@ section.form-elements
                             "Время прибытия — после 13:00, а выезд до 12:00"
                         ]
                     })
+        .form-elements__info-and-review
+            .form-elements__row
+                .form-elements__col
+                    +info({
+                        icon: "insert_emoticon",
+                        title: "Комфорт",
+                        text: "Шумопоглощающие стены"
+                    })
+                    +info({
+                        icon: "location_city",
+                        title: "Удобство",
+                        text: "Окно в каждой из спален"
+                    })
+                .form-elements__col
