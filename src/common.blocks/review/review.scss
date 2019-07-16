@@ -1,0 +1,33 @@
+.review {
+    max-width: 711px;
+    &__human {
+        display: flex;
+        align-items: center;
+    }
+    &__photo {
+        width: 48px;   // удалить
+        height: 48px;  // удалить
+        box-sizing: border-box;
+        border: 2px solid $white-color;
+        border-radius: 32px;
+        box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.1);
+    }
+    &__human-info {
+        margin-left: 10px;
+    }
+    &__name {
+        display: block;
+        color: $dark-shade-75;
+        font-family: $main-bold-font;
+    }
+    &__description {
+        display: flex;  
+        margin-top: 12px;
+    }
+    &__button {
+        flex-shrink: 0;
+    }
+    &__text {
+        margin-left: 14px;
+    }
+}

@@ -12,11 +12,11 @@ mixin btn-like (options = false)
         - btnLikeFullClassName += " " + options.mixBlock
 
     if (options.mods)
-        if (options.mods.isActive)
-            - btnLikeFullClassName += " " + btnLikeClassName + "_is-active"
+        if (options.mods.pressed)
+            - btnLikeFullClassName += " " + btnLikeClassName + "_pressed"
             - icon = "favorite"
 
-    a(class = btnLikeFullClassName)
+    a(class = btnLikeFullClassName, href="#")
         +icon({
             mix: {
                 block: btnLikeClassName,
@@ -25,4 +25,4 @@ mixin btn-like (options = false)
             mixBlock: "material-icons",
             content: icon
         })
-        span(class = btnLikeClassName + "__count")= options.total
+        span(class = btnLikeClassName + "__count")= options.count

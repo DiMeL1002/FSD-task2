@@ -12,6 +12,7 @@ include ../button/button.pug
 include ../pagination/pagination.pug
 include ../bullet-list/bullet-list.pug
 include ../info/info.pug
+include ../review/review.pug
 
 section.form-elements
     +logo({
@@ -134,11 +135,11 @@ section.form-elements
                     })
                     .form-elements__like-buttons-block
                         +btn-like({
-                            total: 2
+                            count: 2
                         })
                         +btn-like({
-                            total: 12,
-                            mods: { isActive: true }  
+                            count: 12,
+                            mods: { pressed: true }  
                         })
                 .form-elements__rate-buttons
                     +title({
@@ -319,11 +320,11 @@ section.form-elements
                         items: [
                             {
                                 title: "Широкий коридор",
-                                text: "Ширина коридоров в номере не менее 91 см."
+                                text: "Ширина коридоров в номере<br/>не менее 91 см."
                             },
                             {
                                 title: "Помощник для инвалидов",
-                                text: "На 1 этаже вас встретит специалист и проводит до номера."
+                                text: "На 1 этаже вас встретит специалист<br/>и проводит до номера."
                             }
                         ]
                     })
@@ -349,4 +350,12 @@ section.form-elements
                         title: "Удобство",
                         text: "Окно в каждой из спален"
                     })
-                .form-elements__col
+                +review({
+                    img: "/img/humans/human2.png",
+                    name: "Мурад Сарафанов",
+                    online: "5 дней назад",
+                    countLikes: "12",
+                    text: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий.\
+                        <br/> И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару\
+                        — никто не жаловался из соседей."
+                })

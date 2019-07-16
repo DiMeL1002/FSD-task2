@@ -1,0 +1,36 @@
+include ../image/image.pug
+include ../btn-like/btn-like.pug
+
+mixin review(options = false) 
+    - var reviewClassName = "review"
+    - var reviewFullClassName = reviewClassName
+
+    if (options.mix)
+        - reviewFullClassName += " " + options.mix.block + "__" + options.mix.elem
+
+    if (options.mixBlock)
+        - reviewFullClassName += " " + options.mixBlock
+
+    div(class = reviewFullClassName)
+        div(class = reviewClassName + "__human")
+            +image({
+                mix: {
+                    block: reviewClassName,
+                    elem: "photo"
+                },
+                src: options.img,
+                alt: "Фото"
+            })
+            div(class = reviewClassName + "__human-info")
+                span(class = reviewClassName + "__name")= options.name
+                span(class = reviewClassName + "__online")= options.online
+        div(class = reviewClassName + "__description")
+            +btn-like({
+                mix: {
+                    block: reviewClassName,
+                    elem: "button"
+                },
+                mods: { pressed: true },
+                count: options.countLikes
+            })
+            span(class = reviewClassName + "__text")!= options.text

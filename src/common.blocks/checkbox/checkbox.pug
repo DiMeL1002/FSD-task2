@@ -22,6 +22,6 @@ mixin checkbox (options = false)
         if (options.mods)
             if (options.mods.theme)
                 span(class = checkboxClassName + "__text")= options.title
-                span(class = checkboxClassName + "__description")= options.value
+                span(class = checkboxClassName + "__description")!= options.description
             else
-                span(class = checkboxClassName + "__text")= options.value
+                span(class = checkboxClassName + "__text")!= options.description
