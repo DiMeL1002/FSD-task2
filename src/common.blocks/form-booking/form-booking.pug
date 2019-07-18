@@ -1,0 +1,83 @@
+include ../dropdown/dropdown.pug
+include ../input/input.pug
+include ../button/button.pug
+
+mixin form-booking(options = false)
+    - var blockClassName = "form-booking"
+    - var blockFullClassName = blockClassName
+
+    - blockFullClassName += options.mix ? (" " + options.mix.block + "__" + options.mix.elem) : ""
+    - blockFullClassName += options.mixBlock ? (" " + options.mixBlock) : ""
+
+    form(class = blockFullClassName, action="", method="post")
+        div(class = blockClassName + "__top")
+            div(class = blockClassName + "__number-info") 
+                |№
+                span(class = blockClassName + "__number") 888
+                span(class = blockClassName + "__number-type") люкс
+            div(class = blockClassName + "__number-price")
+                span 9 990Р 
+                | в сутки
+        div(class = blockClassName + "__dates")
+            +dropdown({
+                mods: { size: "s" },
+                inputValue: "19.08.2019",
+                title: "Прибытие"
+            })
+            +dropdown({
+                mods: { size: "s" },
+                inputValue: "23.08.2019",
+                title: "Выезд"
+            })
+        +dropdown({
+            mix: {
+                block: blockClassName,
+                elem: "dropdown-guests"
+            },
+            mods: { size: "l" },
+            inputValue: "3 гостя",
+            title: "Гости",
+            name: "guests-count"
+        })
+        div(class = blockClassName + "__services")
+            div(class = blockClassName + "__service")
+                span(class = blockClassName + "__service-name") 9 990Р х 4 суток
+                span(class = blockClassName + "__service-price") 39 960Р
+            div(class = blockClassName + "__service")
+                span(class = blockClassName + "__service-name") Сбор за услуги: скидка 2 179Р
+                div(class = blockClassName + "__service-icon") i
+                span(class = blockClassName + "__service-price") 0Р
+            div(class = blockClassName + "__service")
+                span(class = blockClassName + "__service-name") Сбор за дополнительные услуги
+                div(class = blockClassName + "__service-icon") i
+                span(class = blockClassName + "__service-price") 300Р
+        div(class = blockClassName + "__final")
+            +title({
+                mix: {
+                    block: blockClassName,
+                    elem: 'final-text'
+                },
+                mods: { level: 2 },
+                content: "Итого"
+            })
+            div(class = blockClassName + "__final-space")
+            +title({
+                mix: {
+                    block: blockClassName,
+                    elem: 'final-price'
+                },
+                mods: { level: 2 },
+                content: "38 081Р"
+            })
+        +button({
+            mix: {
+                block: blockClassName,
+                elem: "button"
+            },
+            mods: {
+                size: "l",
+                arrow: true
+            },
+            type: "submit",
+            text: "Забронировать"
+        })

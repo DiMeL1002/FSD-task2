@@ -6,13 +6,10 @@ mixin form-number-selection(options = false)
     - var blockClassName = "form-number-selection"
     - var blockFullClassName = blockClassName
 
-    if (options.mix)
-        - blockFullClassName += " " + options.mix.block + "__" + options.mix.elem
+    - blockFullClassName += options.mix ? (" " + options.mix.block + "__" + options.mix.elem) : ""
+    - blockFullClassName += options.mixBlock ? (" " + options.mixBlock) : ""
 
-    if (options.mixBlock)
-        - blockFullClassName += " " + options.mixBlock
-
-    div(class = blockFullClassName)
+    form(class = blockFullClassName, action="", method="post")
         +title({
             mix: {
                 block: blockClassName,
@@ -45,7 +42,8 @@ mixin form-number-selection(options = false)
                 size: "l",
             },
             inputValue: "Сколько гостей",
-            title: "Гости"
+            title: "Гости",
+            name: "guests-count"
         })
         +button({
             mix: {
@@ -56,5 +54,6 @@ mixin form-number-selection(options = false)
                 size: "l",
                 arrow: true
             },
+            type: "submit",
             text: "Подобрать номер"
         })

@@ -1,0 +1,23 @@
+.form-logIn {
+    box-sizing: border-box;
+    max-width: 380px;
+    width: 100%;
+    padding: 40px 30px 30px 30px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 4px;
+    background-color: $white-color;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+    &__input-email { margin-top: 20px; }
+    &__input-password { margin-top: 10px; }
+    &__button-logIn { margin-top: 20px; }
+    &__create {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 30px;
+    }
+    &__no-acc {
+        color: #000000;
+        line-height: 1.29;
+    }
+}

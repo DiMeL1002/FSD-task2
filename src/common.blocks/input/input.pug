@@ -1,20 +1,21 @@
 mixin input (options = false)
-    - var textFieldClassName = "input"
-    - var textFieldFullClassName = textFieldClassName
+    - var blockClassName = "input"
+    - var blockFullClassName = blockClassName
 
-    if (options.mix)
-        - textFieldFullClassName += " " + options.mix.block + "__" + options.mix.elem
+    - options.mods = options.mods || {}
 
-    if (options.mixBlock)
-        - textFieldFullClassName += " " + options.mixBlock
+    - blockFullClassName += options.mix ? (" " + options.mix.block + "__" + options.mix.elem) : ""
+    - blockFullClassName += options.mixBlock ? (" " + options.mixBlock) : ""
 
-    - textFieldFullClassName += options.mods.focused ? " " + textFieldClassName + "_focused" : ""
+    - blockFullClassName += options.mods.focused ? " " + blockClassName + "_focused" : ""
+
 
     input(
-        class = textFieldFullClassName,
-        type = options.mods.type,
-        placeholder = options.mods.placeholder,
-        value = options.mods.value,
-        readonly = options.mods.readonly
+        class = blockFullClassName,
+        name = options.name,
+        type = options.type,
+        placeholder = options.placeholder,
+        value = options.value,
+        readonly = options.readonly
         required
     )

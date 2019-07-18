@@ -1,0 +1,51 @@
+include ../title/title.pug
+include ../input/input.pug
+include ../button/button.pug
+
+mixin form-logIn(options = false)
+    - var blockClassName = "form-logIn"
+    - var blockFullClassName = blockClassName
+
+    - blockFullClassName += options.mix ? (" " + options.mix.block + "__" + options.mix.elem) : ""
+    - blockFullClassName += options.mixBlock ? (" " + options.mixBlock) : ""
+
+    form(class = blockFullClassName, action="", method="post")
+        +title({
+            mods: { level: 1 },
+            content: "Войти"
+        })
+        +input({
+            mix: {
+                block: blockClassName,
+                elem: "input-email"
+            },
+            name: "email",
+            type: "email",
+            placeholder: "Email"
+        })
+        +input({
+            mix: {
+                block: blockClassName,
+                elem: "input-password"
+            },
+            name: "password",
+            type: "password",
+            placeholder: "Пароль"
+        })
+        +button({
+            mix: {
+                block: blockClassName,
+                elem: "button-logIn"
+            },
+            mods: {
+                size: "l",
+                arrow: true
+            },
+            text: "Войти"
+        })
+        div(class = blockClassName + "__create")
+            span(class = blockClassName + "__no-acc") Нет аккаунта на Toxin?
+            +button({
+                mods: { theme: "border" },
+                text: "Создать"
+            })

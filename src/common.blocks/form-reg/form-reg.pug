@@ -1,0 +1,103 @@
+include ../title/title.pug
+include ../input/input.pug
+include ../button/button.pug
+include ../radio-form/radio-form.pug
+include ../toggle-form/toggle-form.pug
+
+mixin form-reg(options = false)
+    - var blockClassName = "form-reg"
+    - var blockFullClassName = blockClassName
+
+    - blockFullClassName += options.mix ? (" " + options.mix.block + "__" + options.mix.elem) : ""
+    - blockFullClassName += options.mixBlock ? (" " + options.mixBlock) : ""
+
+    form(class = blockFullClassName, action="", method="post")
+        +title({
+            mods: { level: 1 },
+            content: "Регистрация аккаунта"
+        })
+        +input({
+            mix: {
+                block: blockClassName,
+                elem: "input-firstName"
+            },
+            name: "firstName",
+            type: "text",
+            placeholder: "Имя"
+        })
+        +input({
+            mix: {
+                block: blockClassName,
+                elem: "input-secondName"
+            },
+            name: "secondName",
+            type: "text",
+            placeholder: "Фамилия"
+        })
+        +radio-form({
+            mix: {
+                block: blockClassName,
+                elem: "radio-form"
+            },
+            name: "gender",
+            items: [
+                {
+                    text: "Мужчина",
+                    checked: true
+                },
+                { text: "Женщина" }
+            ]
+        })
+        +input-form({
+            mix: {
+                block: blockClassName,
+                elem: "input-form-birthday"
+            },
+            title: "Дата рождения",
+            placeholder: "ДД.ММ.ГГГГ",
+            inputType: "text",
+        })
+        +input-form({
+            mix: {
+                block: blockClassName,
+                elem: "input-form-email"
+            },
+            title: "Данные для входа в сервис",
+            placeholder: "Email",
+            inputType: "email",
+            name: "email"
+        })
+        +input-form({
+            mix: {
+                block: blockClassName,
+                elem: "input-form-password"
+            },
+            placeholder: "Пароль",
+            inputType: "password",
+            name: "password"
+        })
+        +toggle-form({
+            mix: {
+                block: blockClassName,
+                elem: "toggle-form"
+            },
+            title: "Получать спецпредложения"
+        })
+        +button({
+            mix: {
+                block: blockClassName,
+                elem: "button-pay"
+            },
+            mods: {
+                size: "l",
+                arrow: true
+            },
+            text: "Перейти к оплате"
+        })
+        div(class = blockClassName + "__logIn")
+            span(class = blockClassName + "__has-acc") Уже есть аккаунт на Toxin
+            +button({
+                mods: { theme: "border" },
+                text: "Войти"
+            })
+

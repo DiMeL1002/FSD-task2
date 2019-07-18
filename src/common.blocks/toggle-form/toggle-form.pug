@@ -1,21 +1,22 @@
 include ../title/title.pug
 
 mixin toggle-form (options = false)
-    - var toggleClassName = "toggle-form"
-    - var toggleFullClassName = toggleClassName
+    - var blockClassName = "toggle-form"
+    - var blockFullClassName = blockClassName
 
-    if (options.mix)
-        - toggleFullClassName += " " + options.mix.block + "__" + options.mix.elem
+    - options.mods = options.mods || {}
 
-    if (options.mixBlock)
-        - toggleFullClassName += " " + options.mixBlock
+    - blockFullClassName += options.mix ? (" " + options.mix.block + "__" + options.mix.elem) : ""
+    - blockFullClassName += options.mixBlock ? (" " + options.mixBlock) : ""
 
-    div(class = toggleFullClassName)
-        label(class = toggleClassName + "__item")
+    - blockFullClassName += options.mods.checked ? (" " + blockClassName + "_checked") : ""
+
+    div(class = blockFullClassName)
+        label(class = blockClassName + "__item")
             input(
-                class = toggleClassName + "__input",
+                class = blockClassName + "__input",
                 type="checkbox",
-                checked = options.checked
+                checked = options.mods.checked
             )
-            div(class = toggleClassName + "__btn")
-            span(class = toggleClassName + "__value-text")= options.title
+            div(class = blockClassName + "__btn")
+            span(class = blockClassName + "__value-text")= options.title

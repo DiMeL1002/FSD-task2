@@ -1,4 +1,7 @@
 .button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
     box-sizing: border-box;
     max-width: 99px;
@@ -38,27 +41,15 @@
 }
 
 .button_theme_border {
-    position: relative;
     padding: 2px;
-    background: $white-color;
-    background-clip: content-box;
     color: $primary-color;
-    opacity: 1;
-    &::before {
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        z-index: -1;
+    background-image: $primary-gradient;
+    .button__span {
+        display: inline-block;
+        line-height: 40px;
+        width: 100%;
+        background: $white-color;
         border-radius: 22px;
-        content: '';
-        background-image: $primary-gradient;
-    }
-    &.button_hovered {
-        &::before {
-            opacity: 0.5;
-        }
     }
 }
 

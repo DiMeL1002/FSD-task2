@@ -2,86 +2,74 @@ include ../input-form/input-form.pug
 include ../icon/icon.pug
 
 mixin dropdown (options = false)
-    - var dropdownClassName = "dropdown"
-    - var dropdownFullClassName = dropdownClassName
+    - var blockClassName = "dropdown"
+    - var blockFullClassName = blockClassName
 
-    if (options.mix)
-        - dropdownFullClassName += " " + options.mix.block + "__" + options.mix.elem
+    - options.mods = options.mods || {}
 
-    if (options.mixBlock)
-        - dropdownFullClassName += " " + options.mixBlock
+    - blockFullClassName += options.mix ? (" " + options.mix.block + "__" + options.mix.elem) : ""
+    - blockFullClassName += options.mixBlock ? (" " + options.mixBlock) : ""
 
-    case options.mods.size
-        when "s"
-            - dropdownFullClassName += " " + dropdownClassName + "_size_s"
-        when "m"
-            - dropdownFullClassName += " " + dropdownClassName + "_size_m"
-        when "l"
-            - dropdownFullClassName += " " + dropdownClassName + "_size_l"
+    - blockFullClassName += options.mods.opened ? (" " + blockClassName + "_opened") : ""
+    - blockFullClassName += options.mods.buttons ? (" " + blockClassName + "_has-buttons") : ""
+    - blockFullClassName += " " + blockClassName + "_size_" + options.mods.size
 
-    if (options.mods.opened)
-        - dropdownFullClassName += " " + dropdownClassName + "_opened"
-
-    if (options.mods.buttons)
-        - dropdownFullClassName += " " + dropdownClassName + "_has-buttons"
-
-    div(class = dropdownFullClassName)
+    div(class = blockFullClassName)
         +title({
             mix: {
-                block: dropdownClassName,
+                block: blockClassName,
                 elem: 'title'
             },
             mods: { level: 3 },
             content: options.title
         })
-        div(class = dropdownClassName + "__header")
+        div(class = blockClassName + "__header")
             +input({
                 mix: {
-                    block: dropdownClassName,
+                    block: blockClassName,
                     elem: 'input'
                 },
-                mods: {
-                    type: "text",
-                    value: options.inputValue,
-                    readonly: true
-                }
+                mods: { readonly: true },
+                type: "text",
+                name: options.name,
+                value: options.inputValue,
             })
             +icon({
                 mix: {
-                    block: dropdownClassName,
+                    block: blockClassName,
                     elem: "icon"
                 },
                 mixBlock: "material-icons",
                 content: "expand_more"
             })
-        div(class = dropdownClassName + "__body")
+        div(class = blockClassName + "__body")
             if (options.mods.items)
                 each val in options.mods.items
-                    div(class = dropdownClassName + "__item")
+                    div(class = blockClassName + "__item")
                         +title({
                             mix: {
-                                block: dropdownClassName,
+                                block: blockClassName,
                                 elem: 'item'
                             },
                             mods: { level: 3 },
                             content: val
                         })
-                        div(class = dropdownClassName + "__toggle")
-                            span(class = dropdownClassName + "__minus") -
+                        div(class = blockClassName + "__toggle")
+                            span(class = blockClassName + "__minus") -
                             +title({
                                 mix: {
-                                    block: dropdownClassName,
+                                    block: blockClassName,
                                     elem: 'item'
                                 },
                                 mods: { level: 3 },
                                 content: "0"
                             })
-                            span(class = dropdownClassName + "__plus") +
+                            span(class = blockClassName + "__plus") +
             if (options.mods.buttons)
-                div(class = dropdownClassName + "__apply-form")
+                div(class = blockClassName + "__apply-form")
                     +button({
                         mix: {
-                            block: dropdownClassName,
+                            block: blockClassName,
                             elem: 'reset-button',
                         },
                         mods: { theme: "plain", pressed: true },
@@ -89,7 +77,7 @@ mixin dropdown (options = false)
                     })
                     +button({
                         mix: {
-                            block: dropdownClassName,
+                            block: blockClassName,
                             elem: 'apply-button',
                         },
                         mods: { theme: "plain" },

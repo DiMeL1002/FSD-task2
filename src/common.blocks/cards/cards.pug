@@ -1,5 +1,24 @@
 include ../form-number-selection/form-number-selection.pug
+include ../form-reg/form-reg.pug
+include ../form-logIn/form-LogIn.pug
+include ../form-booking/form-booking.pug
 
 section.cards
     .container
-        +form-number-selection()
+        .cards__row
+            .cards__col
+                +form-number-selection()
+                +form-reg({
+                    mix: {
+                        block: "cards",
+                        elem: "form-reg"
+                    }
+                })
+            .cards__col
+                +form-booking()
+                +form-logIn({
+                    mix: {
+                        block: "cards",
+                        elem: "form-logIn"
+                    }
+                })

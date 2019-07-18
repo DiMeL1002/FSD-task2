@@ -9,8 +9,8 @@
     font-size: 0.86rem;
     line-height: 1.25;
     text-transform: uppercase;
-    &__input {
-        margin-top: 5px;
+    &__title {
+        margin-bottom: 5px;
     }
     @include placeholder {color: $dark-shade-25; }
 }

@@ -20,33 +20,25 @@ section.form-elements
             .form-elements__col
                 .form-elements__input-forms-block
                     +input-form({
-                        mods: {
-                            placeholder: "Email",
-                            inputType: "email",
-                        },
-                        title: "Text field"
+                        title: "Text field",
+                        placeholder: "Email",
+                        inputType: "email"
                     })
                     +input-form({
-                        mods: {
-                            inputValue: "This is pretty awesome",
-                            inputType: "text",
-                            focused: true,
-                        },
-                        title: "Text field"
+                        mods: { focused: true },
+                        title: "Text field",
+                        inputValue: "This is pretty awesome",
+                        inputType: "text"
                     })
                     +dropdown({
-                        mods: {
-                            size: "l",
-                        },
-                        inputValue: "Сколько гостей",
-                        title: "Dropdown"
+                        mods: { size: "l" },
+                        title: "Dropdown",
+                        inputValue: "Сколько гостей"
                     })
                     +input-form({
-                        mods: {
-                            placeholder: "ДД.ММ.ГГГГ",
-                            inputType: "text",
-                        },
-                        title: "Masked text field"
+                        title: "Masked text field",
+                        placeholder: "ДД.ММ.ГГГГ",
+                        inputType: "text"
                     })
                     .form-elements__date-dropdowns
                         +dropdown({
@@ -64,22 +56,22 @@ section.form-elements
                             title: "Date dropdown"
                         })
                     +dropdown({
-                            mix: {
-                                block: "form-elements",
-                                elem: "dropdown-filter"
-                            },
-                            mods: {
-                                size: "m"
-                            },
-                            inputValue: "19 авг - 23 авг",
-                            title: "filter date dropdown"
+                        mix: {
+                            block: "form-elements",
+                            elem: "dropdown-filter"
+                        },
+                        mods: {
+                            size: "m"
+                        },
+                        inputValue: "19 авг - 23 авг",
+                        title: "filter date dropdown"
                     })
                     +subscribe-form({
-                            mix: {
-                                block: "form-elements",
-                                elem: "sub"
-                            },
-                            title: "subscription text field"
+                        mix: {
+                            block: "form-elements",
+                            elem: "sub"
+                        },
+                        title: "subscription text field"
                     })
             .form-elements__col
                 +checkbox-form({
@@ -97,7 +89,12 @@ section.form-elements
                     ]
                 })
                 +radio-form({
+                    mix: {
+                        block: "form-elements",
+                        elem: "radio-form"
+                    },
                     title: "Radio buttons",
+                    name: "gender",
                     items: [
                         {
                             text: "Мужчина",
@@ -113,7 +110,7 @@ section.form-elements
                     })
                     +toggle-form({
                         title: "Получать спецпредложения",
-                        checked: true
+                        mods: { checked: true }
                     })
                     +toggle-form({
                         title: "Получать спецпредложения",

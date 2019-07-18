@@ -1,0 +1,78 @@
+.form-booking {
+    box-sizing: border-box;
+    max-width: 380px;
+    width: 100%;
+    padding: 40px 30px 30px 30px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 4px;
+    background-color: $white-color;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+    &__top {
+        display: flex;
+        align-items: baseline;
+    }
+    &__number-info {
+        color: $dark-shade-100;
+        font-family: $secondary-bold-font;
+        font-size: 1rem;
+    }
+    &__number {
+        margin: 0 5px;
+        font-size: 1.5rem;
+    }
+    &__number-type {
+        color: $primary-color;
+        font-size: 0.86rem;
+        line-height: 1.25;
+        text-transform: uppercase;
+    }
+    &__number-price {
+        margin-left: auto;
+        color: $dark-shade-50;
+        font-size: 1rem;
+        line-height: 1.29;
+        span { font-family: $main-bold-font; }
+    }
+    &__dates {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20px;
+    }
+    &__dropdown-guests { margin-top: 20px; }
+    &__services { margin-top: 21px; }
+    &__service {
+        display: flex;
+        align-items: top;
+        &:not(:first-child) { margin-top: 10px; }
+        &:last-child { line-height: 1.29; }
+    }
+    &__service-name { max-width: 214px; }
+    &__service-icon {
+        box-sizing: border-box;
+        width: 20px;
+        height: 20px;
+        margin-left: 5px;
+        border: 1px solid $dark-shade-25;
+        border-radius: 10px;
+        text-align: center;
+        color: $dark-shade-25;
+        font-family: $main-bold-font;
+        font-size: 0.86rem;
+        line-height: 20px;
+    }
+    &__service-price { margin-left: auto; }
+    &__final {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-top: 30px;
+    }
+    &__final-text, &__final-price { flex-shrink: 0; }
+    &__final-space {
+        width: 100%;
+        margin: 0 5px;
+        border-bottom: 1px dotted $dark-shade-25;
+    }
+    &__button { margin-top: 20px; }
+}

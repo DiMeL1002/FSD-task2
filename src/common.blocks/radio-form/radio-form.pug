@@ -1,29 +1,31 @@
 include ../title/title.pug
 
 mixin radio-form (options = false)
-    - var radioFormClassName = "radio-form"
-    - var radioFormFullClassName = radioFormClassName
+    - var blockClassName = "radio-form"
+    - var blockFullClassName = blockClassName
 
-    if (options.mix)
-        - radioFormFullClassName += " " + options.mix.block + "__" + options.mix.elem
+    - blockFullClassName += options.mix ? (" " + options.mix.block + "__" + options.mix.elem) : ""
+    - blockFullClassName += options.mixBlock ? (" " + options.mixBlock) : ""
 
-    if (options.mixBlock)
-        - radioFormFullClassName += " " + options.mixBlock
-
-    div(class = radioFormFullClassName)
-        +title ({
-            mods: { level: 3 },
-            content: options.title
-        })
-        div(class = radioFormClassName + "__items")
+    div(class = blockFullClassName)
+        if (options.title)
+            +title ({
+                mix: {
+                    block: blockClassName,
+                    elem: "title"
+                },
+                mods: { level: 3 },
+                content: options.title
+            })
+        div(class = blockClassName + "__items")
             each val in options.items
-                label(class = radioFormClassName + "__item")
+                label(class = blockClassName + "__item")
                     input(
-                        class = radioFormClassName + "__input",
-                        type="radio",
-                        name="gender",
+                        class = blockClassName + "__input",
+                        type = "radio",
+                        name = options.name,
                         value = val.text,
                         checked = val.checked
                     )
-                    span(class = radioFormClassName + "__circle")
-                    span(class = radioFormClassName + "__value-text")= val.text
+                    span(class = blockClassName + "__circle")
+                    span(class = blockClassName + "__value-text")= val.text
