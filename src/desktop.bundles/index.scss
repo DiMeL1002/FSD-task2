@@ -1,0 +1,25 @@
+@import "../static/utils/vars";
+@import "../static/utils/mixins";
+
+.container {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: $container-max-width;
+    margin: 0 auto;
+    padding: 0 140px;
+}
+
+.banner {
+    &__container {
+        padding: 70px 140px 18px 140px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+    &__text {
+        max-width: 297px;
+        margin-top: 320px;
+        margin-left: auto;
+        text-align: right;
+    }
+}

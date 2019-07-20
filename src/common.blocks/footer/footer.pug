@@ -1,0 +1,105 @@
+include ../icon/icon.pug
+include ../logo/logo.pug
+include ../subscribe-form/subscribe-form.pug
+
+mixin footer(options = false)
+    - var blockClassName = "footer"
+    - var blockFullClassName = blockClassName
+
+    - blockFullClassName += options.mix ? (" " + options.mix.block + "__" + options.mix.elem) : ""
+    - blockFullClassName += options.mixBlock ? (" " + options.mixBlock) : ""
+
+    footer(class = blockFullClassName)
+        div(class = blockClassName + "__top")
+            .container
+                div(class = blockClassName + "__logo")
+                    +logo()
+                    p(class = blockClassName + "__logo-desc").
+                    | Бронирование номеров в лучшем отеле 2019 года по версии
+                    | ассоциации «Отельные взгляды»
+                div(class = blockClassName + "__nav")
+                    div(class = blockClassName + "__nav-col")
+                        +title({
+                            mods: { level: 3 },
+                            content: "Навигация"
+                        })
+                        ul(class = blockClassName + "__nav-list")
+                            li(class = blockClassName + "__nav-item")
+                                a(class = blockClassName + "__nav-link", href="#") О нас
+                            li(class = blockClassName + "__nav-item")
+                                a(class = blockClassName + "__nav-link", href="#") Новости
+                            li(class = blockClassName + "__nav-item")
+                                a(class = blockClassName + "__nav-link", href="#") Служба поддержки
+                            li(class = blockClassName + "__nav-item")
+                                a(class = blockClassName + "__nav-link", href="#") Услуги
+                    div(class = blockClassName + "__nav-col")
+                        +title({
+                            mods: { level: 3 },
+                            content: "О нас"
+                        })
+                        ul(class = blockClassName + "__nav-list")
+                            li(class = blockClassName + "__nav-item")
+                                a(class = blockClassName + "__nav-link", href="#") О сервисе
+                            li(class = blockClassName + "__nav-item")
+                                a(class = blockClassName + "__nav-link", href="#") Наша команда
+                            li(class = blockClassName + "__nav-item")
+                                a(class = blockClassName + "__nav-link", href="#") Вакансии
+                            li(class = blockClassName + "__nav-item")
+                                a(class = blockClassName + "__nav-link", href="#") Инвесторы
+                    div(class = blockClassName + "__nav-col")
+                        +title({
+                            mods: { level: 3 },
+                            content: "Служба поддержки"
+                        })
+                        ul(class = blockClassName + "__nav-list")
+                            li(class = blockClassName + "__nav-item")
+                                a(class = blockClassName + "__nav-link", href="#") Соглашения
+                            li(class = blockClassName + "__nav-item")
+                                a(class = blockClassName + "__nav-link", href="#") Сообщества
+                            li(class = blockClassName + "__nav-item")
+                                a(class = blockClassName + "__nav-link", href="#") Связь с нами
+                div(class = blockClassName + "__sub")
+                    +title({
+                        mods: { level: 3 },
+                        content: "Подписка"
+                    })
+                    p(class = blockClassName + "__sub-text").
+                        Получайте специальные предложения и новости сервиса
+                    +subscribe-form({
+                        mix: {
+                            block: blockClassName,
+                            elem: "sub-form"
+                        }
+                    })
+        div(class = blockClassName + "__bottom")
+            .container
+                p(class = blockClassName + "__copyright").
+                    Copyright © 2018 Toxin отель. Все права зачищены.
+                ul(class = blockClassName + "__socials-list")
+                    li(class = blockClassName + "__socials-item")
+                        a(href = "#")
+                            +icon({
+                                mix: {
+                                    block: blockClassName,
+                                    elem: "socials-icon"
+                                },
+                                mixBlock: "fab fa-twitter",
+                            })
+                    li(class = blockClassName + "__socials-item")
+                        a(href = "#")
+                            +icon({
+                                mix: {
+                                    block: blockClassName,
+                                    elem: "socials-icon"
+                                },
+                                mixBlock: "fab fa-facebook-square",
+                            })
+                    li(class = blockClassName + "__socials-item")
+                        a(href = "#")
+                            +icon({
+                                mix: {
+                                    block: blockClassName,
+                                    elem: "socials-icon"
+                                },
+                                mixBlock: "fab fa-instagram",
+                            })

@@ -1,19 +1,16 @@
 include ../input-form/input-form.pug
 
 mixin subscribe-form (options = false)
-    - var subscribeFormClassName = "subscribe-form"
-    - var subscribeFormFullClassName = subscribeFormClassName
+    - var blockClassName = "subscribe-form"
+    - var blockFullClassName = blockClassName
 
-    if (options.mix)
-        - subscribeFormFullClassName += " " + options.mix.block + "__" + options.mix.elem
+    - blockFullClassName += options.mix ? (" " + options.mix.block + "__" + options.mix.elem) : ""
+    - blockFullClassName += options.mixBlock ? (" " + options.mixBlock) : ""
 
-    if (options.mixBlock)
-        - subscribeFormFullClassName += " " + options.mixBlock
-
-    div(class = subscribeFormFullClassName)
+    div(class = blockFullClassName)
         +title({
             mix: {
-                block: subscribeFormClassName,
+                block: blockClassName,
                 elem: 'title'
             },
             mods: { level: 3 },
@@ -21,17 +18,15 @@ mixin subscribe-form (options = false)
         })
         +input({
             mix: {
-                block: subscribeFormClassName,
+                block: blockClassName,
                 elem: 'input'
             },
-            mods: {
-                type: 'email',
-                placeholder: 'Email',
-            }
+            type: 'email',
+            placeholder: 'Email',
         })
         +icon({
             mix: {
-                block: subscribeFormClassName,
+                block: blockClassName,
                 elem: "icon"
             },
             mixBlock: "material-icons",

@@ -1,6 +1,7 @@
 include ../dropdown/dropdown.pug
 include ../input/input.pug
 include ../button/button.pug
+include ../room-price/room-price.pug
 
 mixin form-booking(options = false)
     - var blockClassName = "form-booking"
@@ -10,14 +11,15 @@ mixin form-booking(options = false)
     - blockFullClassName += options.mixBlock ? (" " + options.mixBlock) : ""
 
     form(class = blockFullClassName, action="", method="post")
-        div(class = blockClassName + "__top")
-            div(class = blockClassName + "__number-info") 
-                |№
-                span(class = blockClassName + "__number") 888
-                span(class = blockClassName + "__number-type") люкс
-            div(class = blockClassName + "__number-price")
-                span 9 990Р 
-                | в сутки
+        +room-price({
+            mix: {
+                block: blockClassName,
+                elem: "room-price"
+            },
+            mods: { lux: true },
+            number: '888',
+            price: '9 990'
+        })
         div(class = blockClassName + "__dates")
             +dropdown({
                 mods: { size: "s" },

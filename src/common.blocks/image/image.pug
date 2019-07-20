@@ -1,12 +1,8 @@
 mixin image(options = false)
-    - var imageClassName = "image"
-    - var imageFullClassName = imageClassName
+    - var blockClassName = "image"
+    - var blockFullClassName = blockClassName
 
-    if (options.mix)
-        - imageFullClassName += " " + options.mix.block + "__" + options.mix.elem
+    - blockFullClassName += options.mix ? (" " + options.mix.block + "__" + options.mix.elem) : ""
+    - blockFullClassName += options.mixBlock ? (" " + options.mixBlock) : ""
 
-    if (options.mixBlock)
-        - imageFullClassName += " " + options.mixBlock
-
-    //- html
-    img(class = imageFullClassName, src = options.src, alt = options.alt)
+    img(class = blockFullClassName, src = options.src, alt = options.alt)

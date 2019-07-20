@@ -1,17 +1,19 @@
 include ../image/image.pug
 
 mixin logo(options = false)
-    - var logoClassName = "logo"
-    - var logoFullClassName = logoClassName
+    - var blockClassName = "logo"
+    - var blockFullClassName = blockClassName
 
-    if (options.mix)
-        - logoFullClassName += " " + options.mix.block + "__" + options.mix.elem
+    - blockFullClassName += options.mix ? (" " + options.mix.block + "__" + options.mix.elem) : ""
+    - blockFullClassName += options.mixBlock ? (" " + options.mixBlock) : ""
 
-    if (options.mixBlock)
-        - logoFullClassName += " " + options.mixBlock
-
-    div(class = logoFullClassName)
-        +image({
-            src: "/img/logo.svg",
-            alt: "Logo",
-        })
+    div(class = blockFullClassName)
+        a(class = blockClassName + "__link", href="#")
+            +image({
+                mix: {
+                    block: blockClassName,
+                    elem: "image"
+                },
+                src: "/img/logo.svg",
+                alt: "Toxin",
+            })

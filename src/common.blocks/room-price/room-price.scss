@@ -1,0 +1,27 @@
+.room-price {
+    display: flex;
+    align-items: baseline;
+    &__left {
+        color: $dark-shade-100;
+        font-family: $secondary-bold-font;
+        font-size: 1rem;
+    }
+    &__number {
+        margin: 0 5px;
+        font-size: 1.5rem;
+    }
+    &__lux {
+        color: $primary-color;
+        font-size: 0.86rem;
+        line-height: 1.25;
+        text-transform: uppercase;
+    }
+    &__right {
+        margin-left: auto;
+        color: $dark-shade-50;
+        font-size: 1rem;
+        line-height: 1.29;
+    }
+    &__price { font-family: $main-bold-font; }
+}
+

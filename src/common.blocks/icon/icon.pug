@@ -1,11 +1,8 @@
 mixin icon(options = false)
-    - var iconClassName = "icon"
-    - var iconFullClassName = iconClassName
+    - var blockClassName = "icon"
+    - var blockFullClassName = blockClassName
 
-    if (options.mix)
-        - iconFullClassName += " " + options.mix.block + "__" + options.mix.elem
+    - blockFullClassName += options.mix ? (" " + options.mix.block + "__" + options.mix.elem) : ""
+    - blockFullClassName += options.mixBlock ? (" " + options.mixBlock) : ""
 
-    if (options.mixBlock)
-        - iconFullClassName += " " + options.mixBlock
-
-    span(class = iconFullClassName)= options.content 
+    span(class = blockFullClassName)= options.content 

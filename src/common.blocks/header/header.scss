@@ -1,0 +1,25 @@
+.header {
+    padding: 15px 0;
+    background-color: $white-color;
+    box-shadow: 0px 10px 20px $dark-shade-5;
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__logo { margin-right: auto; }
+    &__button-logIn {
+        max-width: 87px;
+        margin-left: 20px;
+        height: 34px;
+        .button__span {
+            height: 30px;
+            line-height: 30px;
+        }
+    }
+    &__button-reg {
+        margin-left: 20px;
+        max-width: 196px;
+        height: 34px;
+    }
+}

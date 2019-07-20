@@ -1,0 +1,20 @@
+mixin room-price(options = false)
+    - var blockClassName = "room-price"
+    - var blockFullClassName = blockClassName
+
+    - options.mods = options.mods || {}
+
+    - blockFullClassName += options.mix ? (" " + options.mix.block + "__" + options.mix.elem) : ""
+    - blockFullClassName += options.mixBlock ? (" " + options.mixBlock) : ""
+
+    - blockFullClassName += options.mods.lux ? (" " + blockClassName + "_is-lux") : ""
+
+    div(class = blockFullClassName)
+        div(class = blockClassName + "__left") 
+            |№
+            span(class = blockClassName + "__number")= options.number
+            if (options.mods.lux)
+                span(class = blockClassName + "__lux") люкс
+        div(class = blockClassName + "__right")
+            span(class = blockClassName + "__price")= options.price + "Р "
+            | в сутки

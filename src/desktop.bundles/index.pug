@@ -1,8 +1,21 @@
 extends ../common.blocks/page/_template/page_template_main
 
+include ../common.blocks/header/header.pug
+include ../common.blocks/image/image.pug
+include ../common.blocks/form-number-selection/form-number-selection.pug
+include ../common.blocks/footer/footer.pug
+
 block variables
     - var title = 'Главная страница'
     - var description = 'Описание'
     - var pageClass = 'index-page'
 
 block content
+    .wrapper
+        .content
+            +header()
+            section.banner
+                .container.banner__container(style="background-image: url('img/index.jpg')")
+                    +form-number-selection()
+                    p.banner__text Лучшие номера для вашей работы, отдыха и просто вдохновения
+        +footer()

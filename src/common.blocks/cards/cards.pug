@@ -2,6 +2,7 @@ include ../form-number-selection/form-number-selection.pug
 include ../form-reg/form-reg.pug
 include ../form-logIn/form-LogIn.pug
 include ../form-booking/form-booking.pug
+include ../room-card/room-card.pug
 
 section.cards
     .container
@@ -22,3 +23,5 @@ section.cards
                         elem: "form-logIn"
                     }
                 })
+            .cards__col
+                +room-card({})

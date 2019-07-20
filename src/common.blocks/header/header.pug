@@ -1,0 +1,41 @@
+include ../logo/logo.pug
+include ../button/button.pug
+include ../main-nav/main-nav.pug
+
+mixin header(options = false)
+    - var blockClassName = "header"
+    - var blockFullClassName = blockClassName
+
+    - blockFullClassName += options.mix ? (" " + options.mix.block + "__" + options.mix.elem) : ""
+    - blockFullClassName += options.mixBlock ? (" " + options.mixBlock) : ""
+
+    header(class = blockFullClassName)
+        div.container
+            div(class = blockClassName + "__container")
+                +logo({
+                    mix: {
+                        block: blockClassName,
+                        elem: "logo"
+                    }
+                })
+                +main-nav({
+                    mix: {
+                        block: blockClassName,
+                        elem: "nav"
+                    }
+                })
+                +button({
+                    mix: {
+                        block: blockClassName,
+                        elem: "button-logIn"
+                    },
+                    mods: { theme: "border" },
+                    text: "Войти"
+                })
+                +button({
+                    mix: {
+                        block: blockClassName,
+                        elem: "button-reg"
+                    },
+                    text: "Зарегистрироваться"
+                })

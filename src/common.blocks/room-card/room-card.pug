@@ -1,0 +1,21 @@
+include ../room-price/room-price.pug
+include ../rate/rate.pug
+
+mixin room-card(options = false)
+    - var blockClassName = "room-card"
+    - var blockFullClassName = blockClassName
+
+    - blockFullClassName += options.mix ? (" " + options.mix.block + "__" + options.mix.elem) : ""
+    - blockFullClassName += options.mixBlock ? (" " + options.mixBlock) : ""
+
+    div(class = blockFullClassName) 
+        div.slider
+        +room-price({
+            mix: {
+                block: blockClassName,
+                elem: "room-price"
+            },
+            mods: { lux: true },
+            number: "888",
+            price: "9990"
+        })

@@ -1,0 +1,29 @@
+.main-nav {
+    color: $dark-shade-50;
+    font-size: 1rem;
+    line-height: 1.29;
+    &__list {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__item {
+        &:not(:last-child) { margin-right: 20px; }
+    }
+    &__link {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        transition: 0.2s;
+        &:hover {
+            color: $dark-shade-75;
+            text-shadow: 0 0 1px $dark-shade-75;
+        }
+    }
+    &__icon {
+        width: 24px;
+        height: 21px;
+        font-size: 1.71rem;
+        line-height: 0.83;
+    }
+}

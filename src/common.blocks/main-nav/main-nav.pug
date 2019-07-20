@@ -1,0 +1,37 @@
+include ../icon/icon.pug
+
+mixin main-nav(options = false)
+    - var blockClassName = "main-nav"
+    - var blockFullClassName = blockClassName
+
+    - blockFullClassName += options.mix ? (" " + options.mix.block + "__" + options.mix.elem) : ""
+    - blockFullClassName += options.mixBlock ? (" " + options.mixBlock) : ""
+
+    nav(class = blockFullClassName)
+        ul(class = blockClassName + "__list")
+            li(class = blockClassName + "__item")
+                a(class = blockClassName + "__link") О нас
+            li(class = blockClassName + "__item")
+                a(class = blockClassName + "__link") Услуги
+                    +icon({
+                        mix: {
+                            block: blockClassName,
+                            elem: "icon"
+                        },
+                        mixBlock: "material-icons",
+                        content: "expand_more"
+                    })
+            li(class = blockClassName + "__item")
+                a(class = blockClassName + "__link") Вакансии
+            li(class = blockClassName + "__item")
+                a(class = blockClassName + "__link") Новости
+            li(class = blockClassName + "__item")
+                a(class = blockClassName + "__link") Соглашения
+                    +icon({
+                        mix: {
+                            block: blockClassName,
+                            elem: "icon"
+                        },
+                        mixBlock: "material-icons",
+                        content: "expand_more"
+                    })

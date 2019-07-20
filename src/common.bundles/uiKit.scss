@@ -1,43 +1,12 @@
 @import "../static/utils/vars";
 @import "../static/utils/mixins";
 
-@import "../common.blocks/title/title";
-
-@import "../common.blocks/logo/logo";
 @import "../common.blocks/colors-and-type/colors-and-type";
 @import "../common.blocks//form-elements/form-elements";
 @import "../common.blocks/color-sample/color-sample";
 @import "../common.blocks/text-sample/text-sample";
-@import "../common.blocks/input-form/input-form";
-@import "../common.blocks/input/input";
-@import "../common.blocks/dropdown/dropdown";
-@import "../common.blocks/subscribe-form/subscribe-form";
-@import "../common.blocks/checkbox/checkbox";
-@import "../common.blocks/checkbox-form/checkbox-form";
-@import "../common.blocks/checkbox-list/checkbox-list";
-@import "../common.blocks/radio-form/radio-form";
-@import "../common.blocks/toggle-form/toggle-form";
-@import "../common.blocks/btn-like/btn-like";
-@import "../common.blocks/icon/icon";
-@import "../common.blocks/rate/rate";
-@import "../common.blocks/button/button";
-@import "../common.blocks/pagination/pagination";
-@import "../common.blocks/bullet-list/bullet-list";
-@import "../common.blocks/info/info";
-@import "../common.blocks/review/review";
-@import "../common.blocks/form-number-selection/form-number-selection";
-@import "../common.blocks/form-reg/form-reg";
-@import "../common.blocks/form-logIn/form-logIn";
-@import "../common.blocks/form-booking/form-booking";
 @import "../common.blocks/cards/cards";
-
-html {
-    height: 100%;
-    color: $dark-shade-75;
-    font-family: $main-regular-font;
-    font-size: $main-font-size;
-    line-height: $main-line-height;
-}
+@import "../common.blocks/headers-and-footers/headers-and-footers";
 
 section {
     box-sizing: border-box;

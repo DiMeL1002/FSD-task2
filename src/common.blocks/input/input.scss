@@ -17,4 +17,5 @@
         color: $dark-shade-75;
         line-height: 1.71;
     }
-};
+}
+@include placeholder {color: $dark-shade-25; }

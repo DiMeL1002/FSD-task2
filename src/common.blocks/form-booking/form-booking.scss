@@ -7,32 +7,6 @@
     border-radius: 4px;
     background-color: $white-color;
     box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
-    &__top {
-        display: flex;
-        align-items: baseline;
-    }
-    &__number-info {
-        color: $dark-shade-100;
-        font-family: $secondary-bold-font;
-        font-size: 1rem;
-    }
-    &__number {
-        margin: 0 5px;
-        font-size: 1.5rem;
-    }
-    &__number-type {
-        color: $primary-color;
-        font-size: 0.86rem;
-        line-height: 1.25;
-        text-transform: uppercase;
-    }
-    &__number-price {
-        margin-left: auto;
-        color: $dark-shade-50;
-        font-size: 1rem;
-        line-height: 1.29;
-        span { font-family: $main-bold-font; }
-    }
     &__dates {
         display: flex;
         justify-content: space-between;

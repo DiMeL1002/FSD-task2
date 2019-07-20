@@ -1,6 +1,6 @@
 .subscribe-form {
     position: relative;
-    max-width: 266px;
+    max-width: 260px;
     width: 100%;
     &__input {
         margin-top: 5px;
@@ -15,6 +15,6 @@
         color: $primary-color;
         line-height: 44px;
         cursor: pointer;
+        @include text-gradient($primary-gradient, $primary-color);
     }
-    
 }
