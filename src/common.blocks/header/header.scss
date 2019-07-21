@@ -9,6 +9,7 @@
     }
     &__logo { margin-right: auto; }
     &__button-logIn {
+        flex-shrink: 0;
         max-width: 87px;
         margin-left: 20px;
         height: 34px;
@@ -18,8 +19,12 @@
         }
     }
     &__button-reg {
+        flex-shrink: 0;
         margin-left: 20px;
         max-width: 196px;
         height: 34px;
+        @media screen and (max-width: $phone-width) {
+            display: none;
+        }
     }
 }

@@ -20,6 +20,10 @@ mixin form-number-selection(options = false)
         })
         div(class = blockClassName + "__dates")
             +dropdown({
+                mix: {
+                    block: blockClassName,
+                    elem: "dropdown"
+                },
                 mods: {
                     size: "s"
                 },
@@ -27,6 +31,10 @@ mixin form-number-selection(options = false)
                 title: "Прибытие"
             })
             +dropdown({
+                mix: {
+                    block: blockClassName,
+                    elem: "dropdown"
+                },
                 mods: {
                     size: "s"
                 },
@@ -36,7 +44,7 @@ mixin form-number-selection(options = false)
         +dropdown({
             mix: {
                 block: blockClassName,
-                elem: "dropdown-guests"
+                elem: "dropdown"
             },
             mods: {
                 size: "l",

@@ -4,14 +4,22 @@
 .container {
     box-sizing: border-box;
     width: 100%;
-    max-width: $container-max-width;
-    margin: 0 auto;
-    padding: 0 140px;
+    padding-right: 9.72%;
+    padding-left: 9.72%;
+    @media screen and (max-width: $table-width) and (min-width: $phone-width) {
+        padding-right: $desktop-offset;
+        padding-left: $desktop-offset;
+    }
+    @media screen and (max-width: $phone-width) {
+        padding-right: $table-offset;
+        padding-left: $table-offset;
+    }
 }
 
 .banner {
     &__container {
-        padding: 70px 140px 18px 140px;
+        padding-top: 70px;
+        padding-bottom: 18px;
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;

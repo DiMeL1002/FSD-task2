@@ -31,13 +31,18 @@
 @import "/common.blocks/main-nav/main-nav";
 @import "/common.blocks/footer/footer";
 
-
 html {
     height: 100%;
     color: $dark-shade-75;
     font-family: $main-regular-font;
     font-size: $main-font-size;
     line-height: $main-line-height;
+    @media screen and (max-width: $table-width) and (min-width: $phone-width) {
+        font-size: 13px;
+    }
+    @media screen and (max-width: $phone-width) {
+        font-size: 12px;
+    }
 }
   
 body {
@@ -62,7 +67,9 @@ p { margin: 0; }
 .wrapper {
     display: flex;
     flex-direction: column;
+    max-width: $container-max-width;
     min-height: 100%;
+    margin: 0 auto;
 }
 .content { flex: 1 0 auto; }
 .footer { flex: 0 0 auto; }

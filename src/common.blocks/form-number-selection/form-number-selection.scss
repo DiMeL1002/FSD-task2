@@ -12,10 +12,10 @@
     }
     &__dates {
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-between;
-        margin-top: 20px;
     }
-    &__dropdown-guests {
+    &__dropdown {
         margin-top: 20px;
     }
     &__button {
