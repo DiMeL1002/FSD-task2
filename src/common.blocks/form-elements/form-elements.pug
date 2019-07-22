@@ -7,7 +7,7 @@ include ../checkbox-list/checkbox-list.pug
 include ../radio-form/radio-form.pug
 include ../toggle-form/toggle-form.pug
 include ../btn-like/btn-like.pug
-include ../rate/rate.pug
+include ../rating/rating.pug
 include ../button/button.pug
 include ../pagination/pagination.pug
 include ../bullet-list/bullet-list.pug
@@ -134,10 +134,10 @@ section.form-elements
                         content: "rate button"
                     })
                     .form-elements__rate-buttons-block
-                        +rate({
+                        +rating({
                             count: [ "star_rate", "star_rate", "star_rate", "star_rate", "star_border" ]
                         })
-                        +rate({
+                        +rating({
                             count: [ "star_rate", "star_rate", "star_rate", "star_rate", "star_rate" ]
                         })
             .form-elements__col

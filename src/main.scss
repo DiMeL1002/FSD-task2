@@ -16,7 +16,7 @@
 @import "/common.blocks/toggle-form/toggle-form";
 @import "/common.blocks/btn-like/btn-like";
 @import "/common.blocks/icon/icon";
-@import "/common.blocks/rate/rate";
+@import "/common.blocks/rating/rating";
 @import "/common.blocks/button/button";
 @import "/common.blocks/pagination/pagination";
 @import "/common.blocks/bullet-list/bullet-list";
@@ -27,9 +27,13 @@
 @import "/common.blocks/form-logIn/form-logIn";
 @import "/common.blocks/form-booking/form-booking";
 @import "/common.blocks/room-price/room-price";
+@import "/common.blocks/room-card/room-card";
 @import "/common.blocks/header/header";
 @import "/common.blocks/main-nav/main-nav";
 @import "/common.blocks/footer/footer";
+@import "/common.blocks/aside/aside";
+@import "/common.blocks/rooms/rooms";
+@import "/common.blocks/image/image";
 
 html {
     height: 100%;
@@ -73,3 +77,18 @@ p { margin: 0; }
 }
 .content { flex: 1 0 auto; }
 .footer { flex: 0 0 auto; }
+
+.container {
+    box-sizing: border-box;
+    width: 100%;
+    padding-right: 9.72%;
+    padding-left: 9.72%;
+    @media screen and (max-width: $table-width) and (min-width: $phone-width) {
+        padding-right: $desktop-offset;
+        padding-left: $desktop-offset;
+    }
+    @media screen and (max-width: $phone-width) {
+        padding-right: $table-offset;
+        padding-left: $table-offset;
+    }
+}

@@ -1,0 +1,25 @@
+extends ../common.blocks/page/_template/page_template_main
+
+include ../common.blocks/aside/aside.pug
+include ../common.blocks/rooms/rooms.pug
+
+block variables
+    - var title = 'Поиск номеров'
+    - var description = 'Описание'
+    - var pageClass = 'search-room-page'
+
+block content
+    div(class = pageClass + "__body")
+        .container(class = pageClass + "__container")
+            +aside({
+                mix: {
+                    block: pageClass,
+                    elem: "aside"
+                }
+            })
+            +rooms({
+                mix: {
+                    block: pageClass,
+                    elem: "rooms"
+                }
+            })

@@ -1,21 +1,6 @@
 @import "../static/utils/vars";
 @import "../static/utils/mixins";
 
-.container {
-    box-sizing: border-box;
-    width: 100%;
-    padding-right: 9.72%;
-    padding-left: 9.72%;
-    @media screen and (max-width: $table-width) and (min-width: $phone-width) {
-        padding-right: $desktop-offset;
-        padding-left: $desktop-offset;
-    }
-    @media screen and (max-width: $phone-width) {
-        padding-right: $table-offset;
-        padding-left: $table-offset;
-    }
-}
-
 .banner {
     &__container {
         padding-top: 70px;

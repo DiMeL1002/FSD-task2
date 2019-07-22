@@ -16,7 +16,8 @@ mixin checkbox (options = false)
         input(
             class = checkboxClassName + "__input",
             type="checkbox",
-            value = options.value
+            value = options.value,
+            name = options.name,
             checked = options.mods.checked
         )
         if (options.mods)

@@ -17,15 +17,9 @@
         margin-top: 2px;
         overflow: hidden;
     }
-    &__checkbox:not(:last-child) {
-        margin-bottom: 10px;
-    }
+    &__checkbox:not(:last-child) { margin-bottom: 10px; }
     &_opened {
-        .checkbox-list__icon {
-            transform: rotate(-180deg)
-        }
-        .checkbox-list__body {
-            height: auto;
-        }
+        .checkbox-list__icon { transform: rotate(-180deg) }
+        .checkbox-list__body { height: auto; }
     }
 }

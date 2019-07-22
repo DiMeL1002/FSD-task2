@@ -1,22 +1,23 @@
+include ../title/title.pug
+include ../icon/icon.pug
+include ../checkbox/checkbox.pug
+
 mixin checkbox-list (options = false)
-    - var checkboxListClassName = "checkbox-list"
-    - var checkboxListFullClassName = checkboxListClassName
+    - var blockClassName = "checkbox-list"
+    - var blockFullClassName = blockClassName
 
-    if (options.mix)
-        - checkboxListFullClassName += " " + options.mix.block + "__" + options.mix.elem
+    - options.mods = options.mods || {}
 
-    if (options.mixBlock)
-        - checkboxListFullClassName += " " + options.mixBlock
+    - blockFullClassName += options.mix ? (" " + options.mix.block + "__" + options.mix.elem) : ""
+    - blockFullClassName += options.mixBlock ? (" " + options.mixBlock) : ""
 
-    if (options.mods)
-        if (options.mods.opened)
-            - checkboxListFullClassName += " " + checkboxListClassName + "_opened"
+    - blockFullClassName += options.mods.opened ? (" " + blockClassName + "_opened") : ""
 
-    div(class = checkboxListFullClassName)
-        div(class = checkboxListClassName + "__head")
+    div(class = blockFullClassName)
+        div(class = blockClassName + "__head")
             +title({
                 mix: {
-                    block: checkboxListClassName,
+                    block: blockClassName,
                     elem: "title"
                 },
                 content: options.title,
@@ -24,17 +25,17 @@ mixin checkbox-list (options = false)
             })
             +icon({
                 mix: {
-                    block: checkboxListClassName,
+                    block: blockClassName,
                     elem: "icon"
                 },
                 mixBlock: "material-icons",
                 content: "expand_more"
             })
-        div(class = checkboxListClassName + "__body")
+        div(class = blockClassName + "__body")
             each val in options.items
                 +checkbox({
                     mix: {
-                        block: checkboxListClassName,
+                        block: blockClassName,
                         elem: "checkbox"
                     },
                     mods: { checked: val.checked },

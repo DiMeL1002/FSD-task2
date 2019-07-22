@@ -1,5 +1,6 @@
+include ../image/image.pug
 include ../room-price/room-price.pug
-include ../rate/rate.pug
+include ../rating/rating.pug
 
 mixin room-card(options = false)
     - var blockClassName = "room-card"
@@ -9,13 +10,32 @@ mixin room-card(options = false)
     - blockFullClassName += options.mixBlock ? (" " + options.mixBlock) : ""
 
     div(class = blockFullClassName) 
-        div.slider
-        +room-price({
+        +image({
             mix: {
                 block: blockClassName,
-                elem: "room-price"
+                elem: "img"
             },
-            mods: { lux: true },
-            number: "888",
-            price: "9990"
+            src: "img/rooms/room1.jpg",
+            alt: "Фотография номера"
         })
+        div(class = blockClassName + "__desc")
+            +room-price({
+                mix: {
+                    block: blockClassName,
+                    elem: "price"
+                },
+                mods: { lux: true },
+                number: "888",
+                price: "9 990"
+            })
+            div(class = blockClassName + "__rating")
+                +rating({
+                    mix: {
+                        block: blockClassName,
+                        elem: "stars"
+                    },
+                    raiting: 5
+                })
+                div(class = blockClassName + "__reviews")
+                    span(class = blockClassName + "__reviews-count") 145
+                    span(class = blockClassName + "__reviews-text") Отзывов

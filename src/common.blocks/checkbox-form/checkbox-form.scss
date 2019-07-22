@@ -1,15 +1,9 @@
 .checkbox-form {
     max-width: 222px;
     width: 100%;
-    &__checkboxes {
-        margin-top: 16px;
-    }
+    &__checkboxes { margin-top: 16px; }
     &__checkbox {
-        &:not(:last-child) {
-            margin-bottom: 10px;
-        }
+        &:not(:last-child) { margin-bottom: 10px; }
     }
-    &_theme_rich {
-        max-width: 266px;
-    }
+    &_theme_rich { max-width: 266px; }
 }

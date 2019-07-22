@@ -1,0 +1,23 @@
+include ../icon/icon.pug
+
+mixin rating (options = false)
+    - var blockClassName = "rating"
+    - var blockFullClassName = blockClassName
+    - var stars = ["star", "star", "star", "star", "star"]
+
+    - blockFullClassName += options.mix ? (" " + options.mix.block + "__" + options.mix.elem) : ""
+    - blockFullClassName += options.mixBlock ? (" " + options.mixBlock) : ""
+
+    - for (var i = 0; i < rating; i ++)
+        - stars[i] = "star_border"
+
+    div(class = blockFullClassName)
+        each val in stars
+            +icon({
+                mix: {
+                    block: blockClassName,
+                    elem: "icon"
+                },
+                mixBlock: "material-icons",
+                content: val
+            })

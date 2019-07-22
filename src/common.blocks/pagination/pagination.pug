@@ -1,29 +1,26 @@
 include ../icon/icon.pug
 
 mixin pagination (options = false)
-    - var paginationClassName = "pagination"
-    - var paginationFullClassName = paginationClassName
+    - var blockClassName = "pagination"
+    - var blockFullClassName = blockClassName
 
-    if (options.mix)
-        - paginationFullClassName += " " + options.mix.block + "__" + options.mix.elem
+    - blockFullClassName += options.mix ? (" " + options.mix.block + "__" + options.mix.elem) : ""
+    - blockFullClassName += options.mixBlock ? (" " + options.mixBlock) : ""
 
-    if (options.mixBlock)
-        - paginationFullClassName += " " + options.mixBlock
-
-    div(class = paginationFullClassName)
-        div(class = paginationClassName + "__band")
-            span(class = paginationClassName + "__page-number"
-                + " " + paginationClassName + "__page-number_active") 1
-            span(class = paginationClassName + "__page-number") 2
-            span(class = paginationClassName + "__page-number") 3
-            span(class = paginationClassName + "__page-number") ...
-            span(class = paginationClassName + "__page-number") 15
+    div(class = blockFullClassName)
+        div(class = blockClassName + "__band")
+            span(class = blockClassName + "__page-number"
+                + " " + blockClassName + "__page-number_active") 1
+            span(class = blockClassName + "__page-number") 2
+            span(class = blockClassName + "__page-number") 3
+            span(class = blockClassName + "__page-number") ...
+            span(class = blockClassName + "__page-number") 15
             +icon({
                 mix: {
-                    block: paginationClassName,
+                    block: blockClassName,
                     elem: "btn-next"
                 },
                 mixBlock: "material-icons",
                 content: "arrow_forward"
             })
-        span(class = paginationClassName + "__text") 1 – 12 из 100+ вариантов аренды
+        span(class = blockClassName + "__text") 1 – 12 из 100+ вариантов аренды

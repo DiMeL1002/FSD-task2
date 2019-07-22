@@ -1,31 +1,33 @@
 .dropdown {
-    max-width: 320px;
+    $icon-width: 44px;
+    max-width: 320px - $icon-width;
     width: 100%;
     background-color: $white-color;
     &__header {
         position: relative;
         margin-top: 5px;
     }
+    &__input {
+        padding-right: $icon-width;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        cursor: pointer;
+    }
     &__icon {
         position: absolute;
         right: 0;
         bottom: 0;
-        width: 44px;
-        height: 44px;
+        width: $icon-width;
+        height: $icon-width;
         text-align: center;
-        line-height: 44px;
+        line-height: $icon-width;
         cursor: pointer;
     }
     &_size{
-        &_s {
-            max-width: 150px;
-        }
-        &_m {
-            max-width: 266px;
-        }
-        &_l {
-            max-width: 320px;
-        }
+        &_s { max-width: 150px; }
+        &_m { max-width: 266px; }
+        &_l { max-width: 320px; }
     }
     &_opened {
         .dropdown {
@@ -34,9 +36,7 @@
                 border: 1px solid $dark-shade-50;
                 border-radius: 4px 4px 0 0;
             }
-            &__input {
-                border: none;
-            }
+            &__input { border: none; }
             &__body {
                 box-sizing: border-box;
                 padding: 7px 7px 8px 15px;
@@ -48,9 +48,7 @@
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
-                &:not(:last-of-type) {
-                    margin-bottom: 7px;
-                }
+                &:not(:last-of-type) { margin-bottom: 7px; }
             }
             &__toggle {
                 display: flex;

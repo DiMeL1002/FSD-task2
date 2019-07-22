@@ -1,0 +1,13 @@
+.rooms {
+    width: 100%;
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        align-content: space-between;
+        height: 1100px;
+        margin-top: 20px;
+    }
+    &__pagination { margin: 40px auto 0 auto; }
+}

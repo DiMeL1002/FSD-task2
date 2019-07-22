@@ -1,0 +1,15 @@
+@import "../static/utils/vars";
+
+.search-room-page {
+    &__body {
+        padding-top: 30px;
+        padding-bottom: 70px;
+        border-bottom: 1px solid $dark-shade-25;
+    }
+    &__container { display: flex; }
+    &__aside {
+        max-width: 266px;
+        width: 100%;
+    }
+    &__rooms { margin-left: 60px; }
+}

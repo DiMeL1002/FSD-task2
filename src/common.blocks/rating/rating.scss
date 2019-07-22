@@ -1,10 +1,11 @@
-.rate {
+.rating {
     display: flex;
-    flex-basis: 120px;
-    width: 120px;
+    align-items: center;
     &__icon {
-        position: relative;
+        flex-shrink: 0;
         width: 24px;
+        height: 24px;
+        font-size: 24px;
         @include text-gradient($primary-gradient, $primary-color)
     }
 }

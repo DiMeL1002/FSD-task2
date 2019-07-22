@@ -2,41 +2,37 @@ include ../title/title.pug
 include ../checkbox/checkbox.pug
 
 mixin checkbox-form (options = false)
-    - var checkboxFormClassName = "checkbox-form"
-    - var checkboxFormFullClassName = checkboxFormClassName
+    - var blockClassName = "checkbox-form"
+    - var blockFullClassName = blockClassName
 
-    if (options.mix)
-        - checkboxFormFullClassName += " " + options.mix.block + "__" + options.mix.elem
+    - options.mods = options.mods || {}
 
-    if (options.mixBlock)
-        - checkboxFormFullClassName += " " + options.mixBlock
+    - blockFullClassName += options.mix ? (" " + options.mix.block + "__" + options.mix.elem) : ""
+    - blockFullClassName += options.mixBlock ? (" " + options.mixBlock) : ""
 
-    if (options.mods)
-        if (options.mods.theme)
-            - checkboxFormFullClassName += " " + checkboxFormClassName + "_theme_" + options.mods.theme
-    else
-        - options.mods = ""
+    - blockFullClassName += options.mods.theme ? (" " + blockClassName + "_theme_" + options.mods.theme) : ""
 
-    div(class = checkboxFormFullClassName)
+    div(class = blockFullClassName)
         +title({
             mix: {
-                block: checkboxFormClassName,
+                block: blockClassName,
                 elem: "title"
             },
             content: options.title,
             mods: { level: 3 }
         })
-        div(class = checkboxFormClassName + "__checkboxes")
+        div(class = blockClassName + "__checkboxes")
             each val in options.items           
                 +checkbox({
                     mix: {
-                        block: checkboxFormClassName,
+                        block: blockClassName,
                         elem: "checkbox"
                     },
                     mods: {
                         checked: val.checked,
                         theme: options.mods.theme
                     },
+                    name: val.name,
                     title: val.title,
                     description: val.text,
                 })
