@@ -7,30 +7,14 @@
     border-radius: 4px;
     background-color: $white-color;
     box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
-    &__input-firstName {
-        margin-top: 20px;
-    }
-    &__input-secondName {
-        margin-top: 10px;
-    }
-    &__radio-form {
-        margin-top: 10px;
-    }
-    &__input-form-birthday {
-        margin-top: 24px;
-    }
-    &__input-form-email {
-        margin-top: 20px;
-    }
-    &__input-form-password {
-        margin-top: 10px;
-    }
-    &__toggle-form {
-        margin-top: 10px;
-    }
-    &__button-pay {
-        margin-top: 24px;
-    }
+    &__input-firstName { margin-top: 20px; }
+    &__input-secondName { margin-top: 10px; }
+    &__radio-form { margin-top: 10px; }
+    &__input-form-birthday { margin-top: 20px; }
+    &__input-form-email { margin-top: 20px; }
+    &__input-form-password { margin-top: 10px; }
+    &__toggle-form { margin-top: 10px; }
+    &__button-pay { margin-top: 20px; }
     &__logIn {
         display: flex;
         justify-content: space-between;
@@ -38,6 +22,7 @@
         margin-top: 30px;
     }
     &__has-acc {
+        margin-right: 20px;
         color: #000000;
         line-height: 1.29;
     }

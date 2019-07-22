@@ -1,0 +1,10 @@
+.registration-page {
+    &__container {
+        padding-top: 30px;
+        padding-bottom: 30px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    &__form-reg { margin: 0 auto; }
+}

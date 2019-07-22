@@ -1,0 +1,20 @@
+extends ../common.blocks/page/_template/page_template_main
+
+include ../common.blocks/form-reg/form-reg.pug
+
+block variables
+    - var title = 'Регистрация'
+    - var description = 'Описание'
+    - var pageClass = 'registration-page'
+
+block content
+    div(
+        class = "container" + " " + pageClass + "__container",
+        style="background-image: url('img/reg.jpg')"
+    )
+        +form-reg({
+            mix: {
+                block: pageClass,
+                elem: "form-reg"
+            }
+        })

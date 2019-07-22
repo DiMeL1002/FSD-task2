@@ -7,8 +7,11 @@
     &__items {
         display: flex;
         justify-content: space-between;
+        align-items: flex-start;
     }
     &__item {
+        display: flex;
+        align-items: flex-start;
         position: relative;
         padding-left: 30px;
         cursor: pointer;
@@ -30,6 +33,7 @@
         position: absolute;
         top: 0;
         left: 0;
+        box-sizing: border-box;
         width: 20px;
         height: 20px;
         border: 1px solid $dark-shade-25;
