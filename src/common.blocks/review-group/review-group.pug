@@ -1,0 +1,37 @@
+include ../title/title.pug
+include ../review/review.pug
+
+mixin review-group (options = false)
+    - var blockClassName = "review-group"
+    - var blockFullClassName = blockClassName
+
+    - blockFullClassName += options.mix ? (" " + options.mix.block + "__" + options.mix.elem) : ""
+    - blockFullClassName += options.mixBlock ? (" " + options.mixBlock) : ""
+
+    - var reviewCounts = 0
+        - for (var i = 0; i < options.items.length; i ++)
+            - reviewCounts++
+
+    div(class = blockFullClassName)
+        div(class = blockClassName + "__top-line")
+            +title({
+                mix: {
+                    block: blockClassName,
+                    elem: "title"
+                },
+                mods: { level: 2 },
+                content: "Отзывы посетителей номера"
+            })
+            span(class = blockClassName + "__count")= reviewCounts + " отзыва"
+        each val in options.items
+            +review({
+                mix: {
+                    block: blockClassName,
+                    elem: "review"
+                },
+                img: val.img,
+                name: val.name,
+                online: val.online,
+                countLikes: val.countLikes,
+                text: val.text
+            })

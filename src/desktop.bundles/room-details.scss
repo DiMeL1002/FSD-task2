@@ -1,0 +1,19 @@
+.room-details-page {
+    &__photos { display: flex; }
+    &__secondary-photo:first-child { margin-bottom: -1px; }
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+    &__desc { max-width: 710px; }
+    &__reviews { margin-top: 30px; }
+    &__desc-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-top: 30px;
+    }
+}

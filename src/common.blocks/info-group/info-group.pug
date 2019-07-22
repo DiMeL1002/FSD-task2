@@ -1,0 +1,29 @@
+include ../title/title.pug
+include ../info/info.pug
+
+mixin info-group (options = false)
+    - var blockClassName = "info-group"
+    - var blockFullClassName = blockClassName
+
+    - blockFullClassName += options.mix ? (" " + options.mix.block + "__" + options.mix.elem) : ""
+    - blockFullClassName += options.mixBlock ? (" " + options.mixBlock) : ""
+
+    div(class = blockFullClassName)
+        +title({
+            mix: {
+                block: blockClassName,
+                elem: "title"
+            },
+            mods: { level: 2 },
+            content: "Сведения о номере"
+        })
+        each val in options.items
+            +info({
+                mix: {
+                    block: blockClassName,
+                    elem: "info"
+                },
+                icon: val.icon,
+                title: val.title,
+                text: val.text
+            })

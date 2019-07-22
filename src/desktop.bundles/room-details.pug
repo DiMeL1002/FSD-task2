@@ -1,0 +1,97 @@
+extends ../common.blocks/page/_template/page_template_main
+
+include ../common.blocks/image/image.pug
+include ../common.blocks/info-group/info-group.pug
+include ../common.blocks/review-group/review-group.pug
+include ../common.blocks/bullet-list/bullet-list.pug
+include ../common.blocks/cancel/cancel.pug
+include ../common.blocks/form-booking/form-booking.pug
+
+block variables
+    - var title = 'Информация о номере'
+    - var description = 'Описание'
+    - var pageClass = 'room-details-page'
+
+block content
+    div(class = pageClass + "__body")
+        div(class = pageClass + "__photos")
+            div(class = pageClass + "__main-photo")
+                +image({
+                    src: "/img/rooms/big/room1/room1.1.jpg",
+                    alt: "Фотография номера"
+                })
+            div(class = pageClass + "__secondary-photos")
+                +image({
+                    mix: {
+                        block: pageClass,
+                        elem: "secondary-photo"
+                    },
+                    src: "/img/rooms/big/room1/room1.2.jpg",
+                    alt: "Фотография номера"
+                })
+                +image({
+                     mix: {
+                        block: pageClass,
+                        elem: "secondary-photo"
+                    },
+                    src: "/img/rooms/big/room1/room1.3.jpg",
+                    alt: "Фотография номера"
+                })
+        .container(class = pageClass + "__container")
+            div(class = pageClass + "__desc")
+                div(class = pageClass + "__main-info")
+                    +info-group({
+                        items: [
+                            {
+                                icon: "insert_emoticon",
+                                title: "Комфорт",
+                                text: "Шумопоглощающие стены"
+                            },
+                            {
+                                icon: "location_city",
+                                title: "Удобство",
+                                text: "Окно в каждой из спален"
+                            },
+                            {
+                                icon: "whatshot",
+                                title: "Уют",
+                                text: "Номер оснащён камином"
+                            }
+                        ]
+                    })
+                +review-group({
+                    mix: {
+                        block: pageClass,
+                        elem: "reviews"
+                    },
+                    items: [
+                        {
+                            img: "/img/humans/human1.jpg",
+                            name: "Мурад Сарафанов",
+                            online: "5 дней назад",
+                            countLikes: "12",
+                            text: "Великолепный матрас на кровати в основной спальне! А пуфик\
+                                вообще потрясающий.<br/>И стены, действительно, шумоподавляющие.\
+                                Выкрикивал комплименты повару — никто не жаловался из соседей."
+                        },
+                        {
+                            img: "/img/humans/image4.svg",
+                            name: "Патрисия Стёклышкова",
+                            online: "Неделю назад",
+                            countLikes: "2",
+                            text: "Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер\
+                                советую заказать, каждый день новое блюдо и десерт как комплимент."
+                        }
+                    ]
+                })
+                div(class = pageClass + "__desc-footer")
+                    +bullet-list({
+                        title: "Правила",
+                        items: [
+                            "Нельзя с питомцами",
+                            "Без вечеринок и мероприятий",
+                            "Время прибытия — после 13:00, а выезд до 12:00"
+                        ]
+                    })
+                    +cancel()
+            +form-booking()

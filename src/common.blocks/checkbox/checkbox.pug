@@ -1,20 +1,17 @@
 mixin checkbox (options = false)
-    - var checkboxClassName = "checkbox"
-    - var checkboxFullClassName = checkboxClassName
+    - var blockClassName = "checkbox"
+    - var blockFullClassName = blockClassName
 
-    if (options.mix)
-        - checkboxFullClassName += " " + options.mix.block + "__" + options.mix.elem
+    - options.mods = options.mods || {}
 
-    if (options.mixBlock)
-        - checkboxFullClassName += " " + options.mixBlock
+    - blockFullClassName += options.mix ? (" " + options.mix.block + "__" + options.mix.elem) : ""
+    - blockFullClassName += options.mixBlock ? (" " + options.mixBlock) : ""
 
-    if (options.mods)
-        if (options.mods.theme)
-            - checkboxFullClassName += " " + checkboxClassName + "_theme_" + options.mods.theme
+    - blockFullClassName += options.mods.theme ? (" " + blockClassName + "_theme_" + options.mods.theme) : ""
 
-    label(class = checkboxFullClassName)
+    label(class = blockFullClassName)
         input(
-            class = checkboxClassName + "__input",
+            class = blockClassName + "__input",
             type="checkbox",
             value = options.value,
             name = options.name,
@@ -22,7 +19,7 @@ mixin checkbox (options = false)
         )
         if (options.mods)
             if (options.mods.theme)
-                span(class = checkboxClassName + "__text")= options.title
-                span(class = checkboxClassName + "__description")!= options.description
+                span(class = blockClassName + "__text")= options.title
+                span(class = blockClassName + "__description")!= options.description
             else
-                span(class = checkboxClassName + "__text")!= options.description
+                span(class = blockClassName + "__text")!= options.description

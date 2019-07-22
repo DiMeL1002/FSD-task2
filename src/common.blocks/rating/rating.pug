@@ -3,11 +3,11 @@ include ../icon/icon.pug
 mixin rating (options = false)
     - var blockClassName = "rating"
     - var blockFullClassName = blockClassName
-    - var stars = ["star", "star", "star", "star", "star"]
 
     - blockFullClassName += options.mix ? (" " + options.mix.block + "__" + options.mix.elem) : ""
     - blockFullClassName += options.mixBlock ? (" " + options.mixBlock) : ""
 
+    - var stars = ["star", "star", "star", "star", "star"]
     - for (var i = 0; i < rating; i ++)
         - stars[i] = "star_border"
 

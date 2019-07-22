@@ -1,24 +1,21 @@
 include ../icon/icon.pug
 
 mixin info (options = false)
-    - var infoClassName = "info"
-    - var infoFullClassName = infoClassName
+    - var blockClassName = "info"
+    - var blockFullClassName = blockClassName
 
-    if (options.mix)
-        - infoFullClassName += " " + options.mix.block + "__" + options.mix.elem
+    - blockFullClassName += options.mix ? (" " + options.mix.block + "__" + options.mix.elem) : ""
+    - blockFullClassName += options.mixBlock ? (" " + options.mixBlock) : ""
 
-    if (options.mixBlock)
-        - infoFullClassName += " " + options.mixBlock
-
-    div(class = infoFullClassName)
+    div(class = blockFullClassName)
         +icon({
                 mix: {
-                    block: infoClassName,
+                    block: blockClassName,
                     elem: "icon"
                 },
                 mixBlock: "material-icons",
                 content: options.icon
             })
-        div(class = infoFullClassName + "__text")
-            span(class = infoFullClassName + "__title")= options.title
-            span(class = infoFullClassName + "__description")= options.text
+        div(class = blockClassName + "__text")
+            span(class = blockClassName + "__title")= options.title
+            span(class = blockClassName + "__description")= options.text

@@ -25,6 +25,7 @@ module.exports = {
         main: `${PATH.src}/main.js`,
         index: `${PATH.src}/desktop.bundles/index.js`,
         'search-room': `${PATH.src}/desktop.bundles/search-room.js`,
+        'room-details': `${PATH.src}/desktop.bundles/room-details.js`,
         uiKit: `${PATH.src}/common.bundles/uiKit.js`
     },
     output: { // точка выхода

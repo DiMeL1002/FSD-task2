@@ -2,35 +2,32 @@ include ../image/image.pug
 include ../btn-like/btn-like.pug
 
 mixin review(options = false) 
-    - var reviewClassName = "review"
-    - var reviewFullClassName = reviewClassName
+    - var blockClassName = "review"
+    - var blockFullClassName = blockClassName
 
-    if (options.mix)
-        - reviewFullClassName += " " + options.mix.block + "__" + options.mix.elem
+    - blockFullClassName += options.mix ? (" " + options.mix.block + "__" + options.mix.elem) : ""
+    - blockFullClassName += options.mixBlock ? (" " + options.mixBlock) : ""
 
-    if (options.mixBlock)
-        - reviewFullClassName += " " + options.mixBlock
-
-    div(class = reviewFullClassName)
-        div(class = reviewClassName + "__human")
+    div(class = blockFullClassName)
+        div(class = blockClassName + "__human")
             +image({
                 mix: {
-                    block: reviewClassName,
+                    block: blockClassName,
                     elem: "photo"
                 },
                 src: options.img,
                 alt: "Фото"
             })
-            div(class = reviewClassName + "__human-info")
-                span(class = reviewClassName + "__name")= options.name
-                span(class = reviewClassName + "__online")= options.online
-        div(class = reviewClassName + "__description")
+            div(class = blockClassName + "__human-info")
+                span(class = blockClassName + "__name")= options.name
+                span(class = blockClassName + "__online")= options.online
+        div(class = blockClassName + "__description")
             +btn-like({
                 mix: {
-                    block: reviewClassName,
+                    block: blockClassName,
                     elem: "button"
                 },
                 mods: { pressed: true },
                 count: options.countLikes
             })
-            span(class = reviewClassName + "__text")!= options.text
+            p(class = blockClassName + "__text")!= options.text

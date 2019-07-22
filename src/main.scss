@@ -21,7 +21,9 @@
 @import "/common.blocks/pagination/pagination";
 @import "/common.blocks/bullet-list/bullet-list";
 @import "/common.blocks/info/info";
+@import "/common.blocks/info-group/info-group";
 @import "/common.blocks/review/review";
+@import "/common.blocks/review-group/review-group";
 @import "/common.blocks/form-number-selection/form-number-selection";
 @import "/common.blocks/form-reg/form-reg";
 @import "/common.blocks/form-logIn/form-logIn";
@@ -34,6 +36,7 @@
 @import "/common.blocks/aside/aside";
 @import "/common.blocks/rooms/rooms";
 @import "/common.blocks/image/image";
+@import "/common.blocks/cancel/cancel";
 
 html {
     height: 100%;
