@@ -1,0 +1,20 @@
+extends ../common.blocks/page/_template/page_template_main
+
+include ../common.blocks/form-logIn/form-logIn.pug
+
+block variables
+    - var title = 'Вход'
+    - var description = 'Описание'
+    - var pageClass = 'signIn-page'
+
+block content
+    div(
+        class = "container" + " " + pageClass + "__container",
+        style="background-image: url('img/reg.jpg')"
+    )
+        +form-logIn({
+            mix: {
+                block: pageClass,
+                elem: "form-logIn"
+            }
+        })

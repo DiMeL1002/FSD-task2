@@ -8,7 +8,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     devtool: 'cheap-module-eval-source-map',
     devServer: {
         contentBase: baseWebpackConfig.externals.path.src,
-        index: 'registration.html',
+        index: 'signIn.html',
         port: 8081,
         overlay: {
             warnings: true,
