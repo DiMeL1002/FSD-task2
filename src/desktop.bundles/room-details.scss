@@ -1,3 +1,5 @@
+@import "../static/utils/vars";
+
 .room-details-page {
     &__photos { display: flex; }
     &__secondary-photo:first-child { margin-bottom: -1px; }
@@ -7,13 +9,30 @@
         align-items: flex-start;
         padding-top: 70px;
         padding-bottom: 70px;
+        @media screen and (max-width: $sm-desktop-width) { flex-wrap: wrap; }
     }
-    &__desc { max-width: 710px; }
+    &__desc { 
+        max-width: 710px;
+        margin-right: 70px;
+        @media screen and (max-width: $sm-desktop-width) { margin-right: 0; }
+    }
     &__reviews { margin-top: 30px; }
     &__desc-footer {
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
         margin-top: 30px;
+        @media screen and (max-width: $phone-width) { flex-wrap: wrap; }
+    }
+    &__rules {
+        margin-right: 50px;
+        @media screen and (max-width: $phone-width) { margin-right: 0; }
+    }
+    &__cancel {
+        @media screen and (max-width: $phone-width) { margin-top: 30px; }
+    }
+    &__room-card {
+        flex-shrink: 0;
+        @media screen and (max-width: $sm-desktop-width) { margin-top: 30px; }
     }
 }

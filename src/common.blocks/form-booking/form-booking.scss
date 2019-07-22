@@ -12,21 +12,31 @@
         justify-content: space-between;
         align-items: center;
         margin-top: 20px;
+        @media screen and (max-width: 400px) { flex-wrap: wrap; }
+    }
+    &__dropdown-date {
+        &:first-child { margin-right: 15px; }
+        &:not(:first-child) {
+            @media screen and (max-width: 400px) { margin-top: 20px; }
+        }
     }
     &__dropdown-guests { margin-top: 20px; }
     &__services { margin-top: 21px; }
     &__service {
         display: flex;
+        justify-content: space-between;
         align-items: top;
         &:not(:first-child) { margin-top: 10px; }
         &:last-child { line-height: 1.29; }
     }
     &__service-name { max-width: 214px; }
     &__service-icon {
+        flex-shrink: 0;
         box-sizing: border-box;
         width: 20px;
         height: 20px;
         margin-left: 5px;
+        margin-right: auto;
         border: 1px solid $dark-shade-25;
         border-radius: 10px;
         text-align: center;
@@ -35,7 +45,7 @@
         font-size: 0.86rem;
         line-height: 20px;
     }
-    &__service-price { margin-left: auto; }
+    &__service-price { margin-left: 20px; }
     &__final {
         display: flex;
         justify-content: space-between;
