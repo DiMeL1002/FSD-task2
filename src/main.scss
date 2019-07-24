@@ -3,6 +3,10 @@
 @import "./static/utils/vars";
 @import "./static/utils/mixins";
 
+@import "/common.blocks/hamburger/hamburger";
+
+@import "/library.blocks/hamburgers/hamburgers";
+
 @import "/common.blocks/logo/logo";
 @import "/common.blocks/title/title";
 @import "/common.blocks/input-form/input-form";
@@ -30,8 +34,9 @@
 @import "/common.blocks/form-booking/form-booking";
 @import "/common.blocks/room-price/room-price";
 @import "/common.blocks/room-card/room-card";
-@import "/common.blocks/header/header";
 @import "/common.blocks/main-nav/main-nav";
+@import "/common.blocks/mobile-nav/mobile-nav";
+@import "/common.blocks/header/header";
 @import "/common.blocks/footer/footer";
 @import "/common.blocks/aside/aside";
 @import "/common.blocks/rooms/rooms";
@@ -39,11 +44,13 @@
 @import "/common.blocks/cancel/cancel";
 
 html {
+    width: 100%;
     height: 100%;
     color: $dark-shade-75;
     font-family: $main-regular-font;
     font-size: $main-font-size;
     line-height: $main-line-height;
+    overflow-x: hidden;
     @media screen and (max-width: $table-width) and (min-width: $phone-width) {
         font-size: 13px;
     }
@@ -51,12 +58,14 @@ html {
         font-size: 12px;
     }
 }
-  
+
 body {
+    width: 100%;
     height: 100%;
     padding: 0;
     margin: 0;
     background-color: $white-color;
+    overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 { margin: 0; }
@@ -71,10 +80,11 @@ ul, li {
 
 p { margin: 0; }
 
+button { outline: none; }
+
 .wrapper {
     display: flex;
     flex-direction: column;
-    max-width: $container-max-width;
     min-height: 100%;
     margin: 0 auto;
 }
@@ -83,10 +93,12 @@ p { margin: 0; }
 
 .container {
     box-sizing: border-box;
+    max-width: $container-max-width;
     width: 100%;
-    padding-right: 9.72%;
-    padding-left: 9.72%;
-    @media screen and (max-width: $table-width) and (min-width: $phone-width) {
+    margin: 0 auto;
+    padding-right: 140px;
+    padding-left: 140px;
+    @media screen and (max-width: $desktop-width) and (min-width: $phone-width) {
         padding-right: $desktop-offset;
         padding-left: $desktop-offset;
     }
