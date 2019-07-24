@@ -1,4 +1,5 @@
 include ../icon/icon.pug
+include ../main-nav/main-nav.pug
 
 mixin mobile-nav(options = false)
     - var blockClassName = "mobile-nav"
@@ -7,38 +8,11 @@ mixin mobile-nav(options = false)
     - blockFullClassName += options.mix ? (" " + options.mix.block + "__" + options.mix.elem) : ""
     - blockFullClassName += options.mixBlock ? (" " + options.mixBlock) : ""
 
-    nav(class = blockFullClassName)
-        div(class = blockClassName + "__menu")
-            ul(class = blockClassName + "__list")
-                li(class = blockClassName + "__item")
-                    a(class = blockClassName + "__link") О нас
-                li(class = blockClassName + "__item")
-                    a(class = blockClassName + "__link") Услуги
-                        +icon({
-                            mix: {
-                                block: blockClassName,
-                                elem: "icon"
-                            },
-                            mixBlock: "material-icons",
-                            content: "expand_more"
-                        })
-                li(class = blockClassName + "__item")
-                    a(class = blockClassName + "__link") Вакансии
-                li(class = blockClassName + "__item")
-                    a(class = blockClassName + "__link") Новости
-                li(class = blockClassName + "__item")
-                    a(class = blockClassName + "__link") Соглашения
-                        +icon({
-                            mix: {
-                                block: blockClassName,
-                                elem: "icon"
-                            },
-                            mixBlock: "material-icons",
-                            content: "expand_more"
-                        })
+    div(class = blockFullClassName)
+        +main-nav()
         div(class = blockClassName + "__button-wrapper")
             <button class="hamburger hamburger--squeeze " type="button">
                 <span class="hamburger-box">
                     <span class="hamburger-inner"></span>
                 </span>
-            </button>  
+            </button>

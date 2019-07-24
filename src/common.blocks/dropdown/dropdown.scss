@@ -4,7 +4,9 @@
     width: 100%;
     background-color: $white-color;
     &__header {
-        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         margin-top: 5px;
     }
     &__input {
@@ -15,12 +17,11 @@
         cursor: pointer;
     }
     &__icon {
-        position: absolute;
-        right: 0;
-        bottom: 0;
         width: $icon-width;
         height: $icon-width;
+        margin-left: -$icon-width;
         text-align: center;
+        color: $dark-shade-50;
         line-height: $icon-width;
         cursor: pointer;
     }

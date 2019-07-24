@@ -12,7 +12,8 @@ mixin main-nav(options = false)
             li(class = blockClassName + "__item")
                 a(class = blockClassName + "__link") О нас
             li(class = blockClassName + "__item")
-                a(class = blockClassName + "__link") Услуги
+                div(class = blockClassName + "__dropdown")
+                    span(class = blockClassName + "__link") Услуги
                     +icon({
                         mix: {
                             block: blockClassName,
@@ -21,12 +22,20 @@ mixin main-nav(options = false)
                         mixBlock: "material-icons",
                         content: "expand_more"
                     })
+                ul(class = blockClassName + "__inner-list")
+                    li(class = blockClassName + "__inner-item")
+                        a(class = blockClassName + "__link") Услуга 1
+                    li(class = blockClassName + "__inner-item")
+                        a(class = blockClassName + "__link") Услуга 2
+                    li(class = blockClassName + "__inner-item")
+                        a(class = blockClassName + "__link") Услуга 3
             li(class = blockClassName + "__item")
                 a(class = blockClassName + "__link") Вакансии
             li(class = blockClassName + "__item")
                 a(class = blockClassName + "__link") Новости
             li(class = blockClassName + "__item")
-                a(class = blockClassName + "__link") Соглашения
+                div(class = blockClassName + "__dropdown")
+                    span(class = blockClassName + "__link") Соглашения
                     +icon({
                         mix: {
                             block: blockClassName,
@@ -35,3 +44,10 @@ mixin main-nav(options = false)
                         mixBlock: "material-icons",
                         content: "expand_more"
                     })
+                ul(class = blockClassName + "__inner-list")
+                    li(class = blockClassName + "__inner-item")
+                        a(class = blockClassName + "__link") Соглашение 1
+                    li(class = blockClassName + "__inner-item")
+                        a(class = blockClassName + "__link") Соглашение 2
+                    li(class = blockClassName + "__inner-item")
+                        a(class = blockClassName + "__link") Соглашение 3
