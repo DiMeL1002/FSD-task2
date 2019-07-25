@@ -44,13 +44,16 @@ mixin dropdown (options = false)
                 content: "expand_more"
             })
         div(class = blockClassName + "__body")
-            if (options.mods.items)
-                each val in options.mods.items
-                    div(class = blockClassName + "__item")
+            if (options.items)
+                each val in options.items
+                    div(
+                        class = blockClassName + "__item",
+                        data-item = val
+                    )
                         +title({
                             mix: {
                                 block: blockClassName,
-                                elem: 'item'
+                                elem: 'text'
                             },
                             mods: { level: 3 },
                             content: val
@@ -60,7 +63,7 @@ mixin dropdown (options = false)
                             +title({
                                 mix: {
                                     block: blockClassName,
-                                    elem: 'item'
+                                    elem: 'count'
                                 },
                                 mods: { level: 3 },
                                 content: "0"
@@ -73,7 +76,7 @@ mixin dropdown (options = false)
                             block: blockClassName,
                             elem: 'reset-button',
                         },
-                        mods: { theme: "plain", pressed: true },
+                        mods: { theme: "plain-g" },
                         text: "Очистить"
                     })
                     +button({

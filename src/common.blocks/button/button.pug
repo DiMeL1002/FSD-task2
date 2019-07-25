@@ -9,21 +9,34 @@ mixin button(options = false)
     - blockFullClassName += options.mix ? (" " + options.mix.block + "__" + options.mix.elem) : ""
     - blockFullClassName += options.mixBlock ? (" " + options.mixBlock) : ""
 
-    - blockFullClassName += options.mods.view ? (" " + blockClassName + "_view_" + options.mods.view) : ""
-    - blockFullClassName += options.mods.pressed ? (" " + blockClassName + "_pressed") : ""
     - blockFullClassName += options.mods.theme ? (" " + blockClassName + "_theme_" + options.mods.theme) : ""
     - blockFullClassName += options.mods.size ? (" " + blockClassName + "_size_" + options.mods.size) : ""
 
-        if (options.mods.arrow)
-            button(class = blockFullClassName, type = options.type)= options.text
-                +icon({
-                    mix: {
-                        block: blockClassName,
-                        elem: "icon"
-                    },
-                    mixBlock: "material-icons",
-                    content: "arrow_forward"
-                })
-        else
-            button(class = blockFullClassName, type = options.type)
-                span(class = blockClassName + "__span")= options.text
+        case options.mods.type
+            when "link"
+                a(class = blockFullClassName, href = options.url)
+                    span(class = blockClassName + "__text")= options.text
+                    if (options.mods.arrow)
+                        +icon({
+                            mix: {
+                                block: blockClassName,
+                                elem: "icon"
+                            },
+                            mixBlock: "material-icons",
+                            content: "arrow_forward"
+                        })
+            when "submit"
+                button(class = blockFullClassName)
+                    span(class = blockClassName + "__text")= options.text
+                    if (options.mods.arrow)
+                        +icon({
+                            mix: {
+                                block: blockClassName,
+                                elem: "icon"
+                            },
+                            mixBlock: "material-icons",
+                            content: "arrow_forward"
+                        })
+            default
+                button(class = blockFullClassName, type = "button")
+                    span(class = blockClassName + "__text")= options.text

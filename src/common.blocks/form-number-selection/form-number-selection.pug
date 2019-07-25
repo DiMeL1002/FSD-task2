@@ -48,10 +48,12 @@ mixin form-number-selection(options = false)
             },
             mods: {
                 size: "l",
+                buttons: true
             },
             inputValue: "Сколько гостей",
             title: "Гости",
-            name: "guests-count"
+            name: "guests-count",
+            items: ["Взрослые", "Дети", "Младенцы"]
         })
         +button({
             mix: {
@@ -59,6 +61,7 @@ mixin form-number-selection(options = false)
                 elem: "button"
             },
             mods: {
+                type: "submit",
                 size: "l",
                 arrow: true
             },

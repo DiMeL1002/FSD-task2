@@ -29,15 +29,25 @@ mixin header(options = false)
                     block: blockClassName,
                     elem: "button-logIn"
                 },
-                mods: { theme: "border" },
-                text: "Войти"
+                mods: { 
+                    theme: "border",
+                    type: "link",
+                    size: "xs"
+                },
+                text: "Войти",
+                url: "/signIn.html"
             })
             +button({
                 mix: {
                     block: blockClassName,
                     elem: "button-reg"
                 },
-                text: "Зарегистрироваться"
+                mods: {
+                    type: "link",
+                    size: "m"
+                },
+                text: "Зарегистрироваться",
+                url: "/registration.html"
             })
         +mobile-nav({
             mix: {

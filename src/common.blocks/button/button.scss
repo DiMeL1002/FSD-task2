@@ -4,9 +4,7 @@
     align-items: center;
     position: relative;
     box-sizing: border-box;
-    max-width: 99px;
     width: 100%;
-    height: 44px;
     padding: 0;
     border: none;
     border-radius: 22px;
@@ -19,11 +17,26 @@
     white-space: nowrap;
     text-transform: uppercase;
     cursor: pointer;
-    &_hovered {
-        opacity: 0.5;
+    &:active { opacity: 0.5; }
+    &_size_xs { 
+        max-width: 87px;
+        height: 34px;
+        .button__text { line-height: 30px; }
+    }
+    &_size_s { 
+        max-width: 99px;
+        height: 44px;
+        .button__text { line-height: 40px; }
+    }
+    &_size_m { 
+        max-width: 196px;
+        height: 34px;
+        .button__text { line-height: 30px; }
     }
     &_size_l {
         max-width: 320px;
+        height: 44px;
+        .button__text { line-height: 40px; }
     }
     &__icon {
         position: absolute;
@@ -38,27 +51,30 @@
         height: 44px;
         color: $white-color;
     }
-}
-
-.button_theme_border {
-    padding: 2px;
-    color: $primary-color;
-    background-image: $primary-gradient;
-    .button__span {
-        display: inline-block;
-        line-height: 40px;
-        width: 100%;
-        background: $white-color;
-        border-radius: 22px;
-    }
-}
-
-.button_theme_plain {
-    width: auto;
-    height: auto;
-    background: $white-color;
-    color: $primary-color;
-    &.button_pressed {
-        color: $dark-shade-50;
+    &_theme {
+        &_border {
+            padding: 2px;
+            color: $primary-color;
+            background-image: $primary-gradient;
+            .button__text {
+                display: inline-block;
+                width: 100%;
+                text-align: center;
+                background: $white-color;
+                border-radius: 22px;
+            }
+        }
+        &_plain {
+            width: auto;
+            height: auto;
+            background: $white-color;
+            color: $primary-color;
+        }
+        &_plain-g {
+            width: auto;
+            height: auto;
+            background: $white-color;
+            color: $dark-shade-50;
+        }
     }
 }

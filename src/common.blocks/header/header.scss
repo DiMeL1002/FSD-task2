@@ -14,19 +14,11 @@
     }
     &__button-logIn {
         flex-shrink: 0;
-        max-width: 87px;
         margin-left: 20px;
-        height: 34px;
-        .button__span {
-            height: 30px;
-            line-height: 30px;
-        }
     }
     &__button-reg {
         flex-shrink: 0;
         margin-left: 20px;
-        max-width: 196px;
-        height: 34px;
         @media screen and (max-width: $sm-desktop-width) {
             display: none;
         }
