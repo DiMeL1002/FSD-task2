@@ -6,4 +6,11 @@ export function mobileNav() {
         this.classList.toggle('is-active');
         menu.classList.toggle('mobile-nav_opened')
     })
+
+    document.addEventListener('click', function(e) {
+        if (!menu.contains(e.target)) {
+            hamburger.classList.remove('is-active');
+            menu.classList.remove('mobile-nav_opened')
+        }
+    })
 }
