@@ -89,6 +89,7 @@ mixin form-reg(options = false)
                 elem: "button-pay"
             },
             mods: {
+                type: "submit",
                 size: "l",
                 arrow: true
             },
@@ -97,7 +98,12 @@ mixin form-reg(options = false)
         div(class = blockClassName + "__logIn")
             span(class = blockClassName + "__has-acc") Уже есть аккаунт на Toxin
             +button({
-                mods: { theme: "border" },
-                text: "Войти"
+                mods: {
+                    type: "link",
+                    theme: "border",
+                    size: "s"
+                },
+                text: "Войти",
+                url: "/signIn.html"
             })
 

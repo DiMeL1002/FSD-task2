@@ -8,7 +8,7 @@ mixin logo(options = false)
     - blockFullClassName += options.mixBlock ? (" " + options.mixBlock) : ""
 
     div(class = blockFullClassName)
-        a(class = blockClassName + "__link", href="#")
+        a(class = blockClassName + "__link", href="/index.html")
             +image({
                 mix: {
                     block: blockClassName,

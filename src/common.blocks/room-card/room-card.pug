@@ -1,6 +1,7 @@
 include ../image/image.pug
 include ../room-price/room-price.pug
 include ../rating/rating.pug
+include ../icon/icon.pug
 
 mixin room-card(options = false)
     - var blockClassName = "room-card"
@@ -9,33 +10,44 @@ mixin room-card(options = false)
     - blockFullClassName += options.mix ? (" " + options.mix.block + "__" + options.mix.elem) : ""
     - blockFullClassName += options.mixBlock ? (" " + options.mixBlock) : ""
 
-    div(class = blockFullClassName) 
-        +image({
-            mix: {
-                block: blockClassName,
-                elem: "img"
-            },
-            src: "img/rooms/room1.jpg",
-            alt: "Фотография номера"
-        })
-        div(class = blockClassName + "__desc")
-            +room-price({
-                mix: {
-                    block: blockClassName,
-                    elem: "price"
-                },
-                mods: { lux: true },
-                number: "888",
-                price: "9 990"
-            })
-            div(class = blockClassName + "__rating")
-                +rating({
+    div(class = blockFullClassName)
+        a(class = blockClassName + "__link", href = options.url)
+            div(class = blockClassName + "__carousel")
+                div(class = blockClassName + "__body")
+                    +image({
+                        src: "img/rooms/room1.jpg",
+                        alt: "Фотография номера"
+                    })
+                    +image({
+                        src: "img/rooms/room1.jpg",
+                        alt: "Фотография номера"
+                    })
+                    +image({
+                        src: "img/rooms/room1.jpg",
+                        alt: "Фотография номера"
+                    })
+                    +image({
+                        src: "img/rooms/room1.jpg",
+                        alt: "Фотография номера"
+                    })
+            div(class = blockClassName + "__desc")
+                +room-price({
                     mix: {
                         block: blockClassName,
-                        elem: "stars"
+                        elem: "price"
                     },
-                    raiting: 5
+                    mods: { lux: true },
+                    number: "888",
+                    price: "9 990"
                 })
-                div(class = blockClassName + "__reviews")
-                    span(class = blockClassName + "__reviews-count") 145
-                    span(class = blockClassName + "__reviews-text") Отзывов
+                div(class = blockClassName + "__rating")
+                    +rating({
+                        mix: {
+                            block: blockClassName,
+                            elem: "stars"
+                        },
+                        raiting: 5
+                    })
+                    div(class = blockClassName + "__reviews")
+                        span(class = blockClassName + "__reviews-count") 145
+                        span(class = blockClassName + "__reviews-text") Отзывов

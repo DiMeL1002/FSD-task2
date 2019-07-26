@@ -8,14 +8,6 @@ mixin subscribe-form (options = false)
     - blockFullClassName += options.mixBlock ? (" " + options.mixBlock) : ""
 
     div(class = blockFullClassName)
-        +title({
-            mix: {
-                block: blockClassName,
-                elem: 'title'
-            },
-            mods: { level: 3 },
-            content: options.title
-        })
         +input({
             mix: {
                 block: blockClassName,

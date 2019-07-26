@@ -15,18 +15,20 @@ mixin rooms(options = false)
             content: "Номера, которые мы для вас подобрали"
         })
         div(class = blockClassName + "__list")
-            +room-card({})
-            +room-card({})
-            +room-card({})
-            +room-card({})
-            +room-card({})
-            +room-card({})
-            +room-card({})
-            +room-card({})
-            +room-card({})
-            +room-card({})
-            +room-card({})
-            +room-card({})
+            +room-card({
+                url: "/room-details.html"
+            })
+            +room-card()
+            +room-card()
+            +room-card()
+            +room-card()
+            +room-card()
+            +room-card()
+            +room-card()
+            +room-card()
+            +room-card()
+            +room-card()
+            +room-card()
         +pagination({
             mix: {
                 block: blockClassName,

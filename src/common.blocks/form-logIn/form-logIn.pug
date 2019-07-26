@@ -38,6 +38,7 @@ mixin form-logIn(options = false)
                 elem: "button-logIn"
             },
             mods: {
+                type: "submit",
                 size: "l",
                 arrow: true
             },
@@ -46,6 +47,11 @@ mixin form-logIn(options = false)
         div(class = blockClassName + "__create")
             span(class = blockClassName + "__no-acc") Нет аккаунта на Toxin?
             +button({
-                mods: { theme: "border" },
-                text: "Создать"
+                mods: {
+                    type: "link",
+                    theme: "border",
+                    size: "s"
+                },
+                text: "Создать",
+                url: "/registration.html"
             })

@@ -4,6 +4,55 @@
     overflow: hidden;
     background-color: $white-color;
     box-shadow: 0px 10px 20px $dark-shade-5;
+    &:hover {
+        .room-card__btn-prev, .room-card__btn-next { display: block !important; }
+    }
+    &__link { cursor: pointer; }
+    &__btn-prev, &__btn-next {
+        display: none !important;
+        position: absolute;
+        top: 50%;
+        width: 44px;
+        height: 44px;
+        text-align: center;
+        color: $white-color;
+        font-size: 1.71rem;
+        line-height: 44px;
+        cursor: pointer;
+        z-index: 999;
+    }
+    &__btn-prev {
+        left: 0;
+        transform: rotate(90deg) translateX(-50%);
+    }
+    &__btn-next {
+        right: 0;
+        transform: rotate(-90deg) translateX(50%);
+    }
+    .slick-dots {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        right: 15px;
+        bottom: 15px;
+        li {
+            &:not(:last-child) { margin-right: 4px; }
+        }
+        .slick-active {
+            button { background-color: $white-color; }
+        }
+        button {
+            box-sizing: border-box;
+            width: 8px;
+            height: 8px;
+            padding: 0;
+            border: 1px solid $white-color;
+            border-radius: 50%;
+            background-color: transparent;
+            box-shadow: 0px 5px 5px rgba(31, 32, 65, 0.3);
+            font-size: 0;
+        }
+    }
     &__desc { padding: 20px; }
     &__price {
         padding-bottom: 10px;
