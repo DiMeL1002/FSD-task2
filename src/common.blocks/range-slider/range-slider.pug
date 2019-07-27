@@ -1,0 +1,21 @@
+include ../title/title.pug
+
+mixin range-slider (options = false)
+    - var blockClassName = "range-slider"
+    - var blockFullClassName = blockClassName
+
+    - blockFullClassName += options.mix ? (" " + options.mix.block + "__" + options.mix.elem) : ""
+    - blockFullClassName += options.mixBlock ? (" " + options.mixBlock) : ""
+
+    div(class = blockFullClassName)
+        div(class = blockClassName + "__header")
+            +title({
+                mods: { level: 3 },
+                content: "Диапазон цены"
+            })
+            div(class = blockClassName + "__value")
+                span(class = blockClassName + "__min-value")
+                span(class = blockClassName + "__dash")= ' - '
+                span(class = blockClassName + "__max-value")
+        div(class = blockClassName + "__slider")
+        div(class = blockClassName + "__desc") Стоимость за сутки пребывания в номере

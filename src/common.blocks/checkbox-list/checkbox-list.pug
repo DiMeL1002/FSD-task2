@@ -14,7 +14,7 @@ mixin checkbox-list (options = false)
     - blockFullClassName += options.mods.opened ? (" " + blockClassName + "_opened") : ""
 
     div(class = blockFullClassName)
-        div(class = blockClassName + "__head")
+        div(class = blockClassName + "__header")
             +title({
                 mix: {
                     block: blockClassName,
