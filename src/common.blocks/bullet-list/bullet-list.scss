@@ -1,6 +1,9 @@
 .bullet-list {
     max-width: 292px;
-    &__items { margin-top: 16px; }
+    &__title {
+        padding-left: 20px;
+    }
+    &__items { margin-top: 20px; }
     &__text {
         display: inline-block;
         max-width: 242px;

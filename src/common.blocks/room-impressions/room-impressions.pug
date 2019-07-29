@@ -1,0 +1,41 @@
+include ../title/title.pug
+
+mixin room-impressions(options = false)
+    - var blockClassName = "room-impressions"
+    - var blockFullClassName = blockClassName
+
+    - options.mods = options.mods || {}
+
+    - blockFullClassName += options.mix ? (" " + options.mix.block + "__" + options.mix.elem) : ""
+    - blockFullClassName += options.mixBlock ? (" " + options.mixBlock) : ""
+
+    div(class = blockFullClassName)
+        +title({
+            mix: {
+                block: blockClassName,
+                elem: "title"
+            },
+            mods: { level: 2 },
+            content: "Впечатления от номера"
+        })
+        figure(class = blockClassName + "__diagram")
+            div(class = blockClassName + "__doughnut-wrapper")
+                canvas(class = blockClassName + "__doughnut")
+                div(class = blockClassName + "__votes-count")
+                    span(class = blockClassName + "__count") 260
+                    | голосов
+            <figcaption>
+                ul(class = blockClassName + "__list")
+                    li(class = blockClassName + "__item")
+                        - var pointClassName = blockClassName + "__point"
+                        span(class = pointClassName + " " + pointClassName + "_sumptuously")
+                        | Великолепно
+                    li(class = blockClassName + "__item")
+                        span(class = pointClassName + " " + pointClassName + "_good")
+                        | Хорошо
+                    li(class = blockClassName + "__item")
+                        span(class = pointClassName + " " + pointClassName + "_satisfactorily")
+                        | Удовлетворительно
+                    li(class = blockClassName + "__item")
+                        span(class = pointClassName + " " + pointClassName + "_disappointed")
+                        | Разочарован

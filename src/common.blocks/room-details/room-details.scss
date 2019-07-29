@@ -1,0 +1,51 @@
+.room-details {
+    border-bottom: 1px solid $dark-shade-25;
+    .room-details__photos-container { padding: 0; }
+    &__photos { display: flex; }
+    &__secondary-photo:first-child { margin-bottom: -1px; }
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding-top: 70px;
+        padding-bottom: 70px;
+        @media screen and (max-width: $sm-desktop-width) { flex-wrap: wrap; }
+    }
+    &__desc { 
+        max-width: 710px;
+        margin-right: 50px;
+        @media screen and (max-width: $sm-desktop-width) { margin-right: 0; }
+    }
+    &__main-info {
+        display: flex;
+        justify-content: space-between;
+        max-width: 672px;
+        @media screen and (max-width: 500px) { flex-wrap: wrap; }
+    }
+    &__info-group {
+        margin-right: 70px;
+        @media screen and (max-width: 500px) { margin-right: 0; }
+    }
+    &__room-impressions {
+        @media screen and (max-width: 500px) { margin-top: 30px; }
+    }
+    &__reviews { margin-top: 35px; }
+    &__desc-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-top: 30px;
+        @media screen and (max-width: $phone-width) { flex-wrap: wrap; }
+    }
+    &__rules {
+        margin-right: 50px;
+        @media screen and (max-width: $phone-width) { margin-right: 0; }
+    }
+    &__cancel {
+        @media screen and (max-width: $phone-width) { margin-top: 30px; }
+    }
+    &__room-card {
+        flex-shrink: 0;
+        @media screen and (max-width: $sm-desktop-width) { margin-top: 50px; }
+    }
+}
