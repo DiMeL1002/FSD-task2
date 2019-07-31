@@ -24,10 +24,28 @@ mixin aside (options = false)
                 block: blockClassName,
                 elem: "guests"
             },
-            mods: { size: "m" },
+            mixBlock: "dropdown_guests",
+            mods: { 
+                size: "m",
+                buttons: true
+            },
             title: "Гости",
             inputName: "guests-count",
-            inputValue: "3 гостя, 1 младенец"
+            inputValue: "3 гостя, 1 младенец",
+            items: [
+                {
+                    value: "Взрослые",
+                    data: "adults"
+                }, 
+                {
+                    value: "Дети",
+                    data: "children"
+                },
+                {
+                    value: "Младенцы",
+                    data: "babies"
+                }
+            ]
         })
         +range-slider({
             mix: {
@@ -83,10 +101,25 @@ mixin aside (options = false)
                 block: blockClassName,
                 elem: "comfort"
             },
+            mixBlock: "dropdown_comfort",
             mods: { size: "m" },
             title: "Удобства номера",
-            name: "comfort",
-            inputValue: "2 спальни, 2 кровати"
+            inputName: "comfort",
+            inputValue: "2 спальни, 2 кровати...",
+            items: [
+                {
+                    value: "Cпальни",
+                    data: "bedrooms"
+                }, 
+                {
+                    value: "Кровати",
+                    data: "beds"
+                },
+                {
+                    value: "Ванные комнаты",
+                    data: "bathrooms"
+                }
+            ]
         })
         +checkbox-list({
             mix: {

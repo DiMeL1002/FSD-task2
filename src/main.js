@@ -18,6 +18,6 @@ import { dropdownDates } from './common.blocks/dropdown-dates/dropdown-dates.js'
 window.addEventListener('load', function() {
     mobileNav();
     mainNav();
-    // openDropdown();
+    openDropdown();
     dropdownDates();
 })

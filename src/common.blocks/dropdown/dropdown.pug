@@ -31,7 +31,7 @@ mixin dropdown (options = false)
                 },
                 mods: { readonly: true },
                 type: "text",
-                name: options.name,
+                name: options.inputName,
                 value: options.inputValue,
                 readonly: true,
             })
@@ -48,7 +48,8 @@ mixin dropdown (options = false)
                 each val in options.items
                     div(
                         class = blockClassName + "__item",
-                        data-item = val
+                        data-item = val.data,
+                        data-count = "0"
                     )
                         +title({
                             mix: {
@@ -56,7 +57,7 @@ mixin dropdown (options = false)
                                 elem: 'text'
                             },
                             mods: { level: 3 },
-                            content: val
+                            content: val.value
                         })
                         div(class = blockClassName + "__toggle")
                             span(class = blockClassName + "__minus") -
@@ -74,7 +75,7 @@ mixin dropdown (options = false)
                     +button({
                         mix: {
                             block: blockClassName,
-                            elem: 'reset-button',
+                            elem: 'reset-btn',
                         },
                         mods: { theme: "plain-g" },
                         text: "Очистить"
@@ -82,7 +83,7 @@ mixin dropdown (options = false)
                     +button({
                         mix: {
                             block: blockClassName,
-                            elem: 'apply-button',
+                            elem: 'apply-btn',
                         },
                         mods: { theme: "plain" },
                         text: "Применить"

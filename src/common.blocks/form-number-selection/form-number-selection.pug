@@ -47,14 +47,28 @@ mixin form-number-selection(options = false)
                 block: blockClassName,
                 elem: "dropdown"
             },
+            mixBlock: "dropdown_guests",
             mods: {
                 size: "l",
                 buttons: true
             },
-            inputValue: "Сколько гостей",
             title: "Гости",
-            name: "guests-count",
-            items: ["Взрослые", "Дети", "Младенцы"]
+            inputName: "guests-count",
+            inputValue: "Сколько гостей",
+            items: [
+                {
+                    value: "Взрослые",
+                    data: "adults"
+                }, 
+                {
+                    value: "Дети",
+                    data: "children"
+                },
+                {
+                    value: "Младенцы",
+                    data: "babies"
+                }
+            ]
         })
         +button({
             mix: {

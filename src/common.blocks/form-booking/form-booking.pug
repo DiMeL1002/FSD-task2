@@ -49,10 +49,28 @@ mixin form-booking(options = false)
                 block: blockClassName,
                 elem: "dropdown-guests"
             },
-            mods: { size: "l" },
-            inputValue: "3 гостя",
+            mixBlock: "dropdown_guests",
+            mods: {
+                size: "l",
+                buttons: true
+            },
             title: "Гости",
-            name: "guests-count"
+            inputName: "guests-count",
+            inputValue: "3 гостя",
+            items: [
+                {
+                    value: "Взрослые",
+                    data: "adults"
+                }, 
+                {
+                    value: "Дети",
+                    data: "children"
+                },
+                {
+                    value: "Младенцы",
+                    data: "babies"
+                }
+            ]
         })
         div(class = blockClassName + "__services")
             div(class = blockClassName + "__service")
