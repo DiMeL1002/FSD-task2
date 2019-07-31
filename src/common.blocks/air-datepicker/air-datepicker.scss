@@ -1,0 +1,90 @@
+.datepicker {
+    box-sizing: border-box;
+    width: 320px;
+    height: auto;
+    padding: 20px;
+    border: 1px solid $dark-shade-25;
+    border-radius: 4px;
+    background: $white-color;
+    box-shadow: 0px 10px 20px $dark-shade-5;
+    &--pointer { display: none; }
+    &--nav {
+        min-height: auto;
+        padding: 0;
+        border-bottom: none;
+        &-title {
+            color: $dark-shade-100;
+            font-family: $secondary-bold-font;
+            font-size: 1.36rem;
+            line-height: 1.26;
+        }
+    }
+    &--content {
+        margin-top: 30px;
+        padding: 0;
+    }
+    &--days-names { margin: 0; }
+    &--day-name, &--cell-day {
+        height: 40px;
+        font-size: 0.86rem;
+        line-height: 1.25;
+    }
+    &--day-name {
+        color: $primary-color;
+        font-family: $main-bold-font;
+        text-transform: none;
+    }
+    &--cell {
+        &-day {
+            color: $dark-shade-50;
+            font-family: $main-regular-font;
+            &.-focus- { border-radius: 50%; }
+            &.-other-month- { color: $dark-shade-25; }
+        }
+        &.-current-, &.-selected- {
+            border-radius: 50%;
+            color: $white-color;
+            font-family: $main-bold-font;
+        }
+        &.-current- {
+            background: $secondary-gradient;
+            &.-focus- {
+                background: $secondary-gradient;
+                color: $white-color;
+            }
+            &.-in-range- {
+                color: $white-color;
+                background: $primary-gradient-25;
+                border-radius: 0;
+            }
+        }
+        &.-selected- {
+            background: $primary-gradient;
+            &.-focus-, &.-current- { background: $primary-gradient; }
+            &.-range-from-, &.-range-to- {
+                position: relative;
+                &::before {
+                    position: absolute;
+                    right: 0 ;
+                    content: "";
+                    width: 50%;
+                    height: 100%;
+                    background: $primary-gradient-25;
+                }
+            }
+            &.-range-to- {
+                &::before { left: 0 ; }
+            }
+        }
+        &.-in-range- {
+            color: $dark-shade-50;
+            background: $primary-gradient-25;
+        }
+    }
+    .material-icons {
+        width: 24px;
+        height: 24px;
+        color: $primary-color;
+        font-size: 1.71rem;
+    }
+}

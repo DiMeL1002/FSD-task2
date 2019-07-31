@@ -1,0 +1,43 @@
+include ../input-form/input-form.pug
+include ../icon/icon.pug
+
+mixin dropdown-dates (options = false)
+    - var blockClassName = "dropdown-dates"
+    - var blockFullClassName = blockClassName
+
+    - options.mods = options.mods || {}
+
+    - blockFullClassName += options.mix ? (" " + options.mix.block + "__" + options.mix.elem) : ""
+    - blockFullClassName += options.mixBlock ? (" " + options.mixBlock) : ""
+
+    - blockFullClassName += " " + blockClassName + "_size_" + options.mods.size
+
+    div(class = blockFullClassName)
+        +title({
+            mix: {
+                block: blockClassName,
+                elem: 'title'
+            },
+            mods: { level: 3 },
+            content: options.title
+        })
+        div(class = blockClassName + "__header")
+            +input({
+                mix: {
+                    block: blockClassName,
+                    elem: 'input'
+                },
+                mods: { readonly: true },
+                type: "text",
+                name: options.inputName,
+                value: options.inputValue,
+                readonly: true,
+            })(data-range = options.dataRange)
+            +icon({
+                mix: {
+                    block: blockClassName,
+                    elem: "icon"
+                },
+                mixBlock: "material-icons",
+                content: "expand_more"
+            })

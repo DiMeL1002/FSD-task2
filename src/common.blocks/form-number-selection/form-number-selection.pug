@@ -1,5 +1,6 @@
 include ../title/title.pug
 include ../dropdown/dropdown.pug
+include ../dropdown-dates/dropdown-dates.pug
 include ../button/button.pug
 
 mixin form-number-selection(options = false)
@@ -19,27 +20,27 @@ mixin form-number-selection(options = false)
             content: "Найдём номера под ваши пожелания"
         })
         div(class = blockClassName + "__dates")
-            +dropdown({
+            +dropdown-dates({
                 mix: {
                     block: blockClassName,
                     elem: "dropdown"
                 },
-                mods: {
-                    size: "s"
-                },
+                mods: { size: "s" },
+                inputName: "date-arrival",
                 inputValue: "ДД.ММ.ГГГГ",
-                title: "Прибытие"
+                title: "Прибытие",
+                dataRange: "false"
             })
-            +dropdown({
+            +dropdown-dates({
                 mix: {
                     block: blockClassName,
                     elem: "dropdown"
                 },
-                mods: {
-                    size: "s"
-                },
+                mods: { size: "s" },
+                inputName: "date-departure",
                 inputValue: "ДД.ММ.ГГГГ",
-                title: "Выезд"
+                title: "Выезд",
+                dataRange: "false"
             })
         +dropdown({
             mix: {

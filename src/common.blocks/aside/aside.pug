@@ -1,4 +1,5 @@
 include ../dropdown/dropdown.pug
+include ../dropdown-dates/dropdown-dates.pug
 include ../range-slider/range-slider.pug
 include ../checkbox-form/checkbox-form.pug
 include ../checkbox-list/checkbox-list.pug
@@ -11,11 +12,12 @@ mixin aside (options = false)
     - blockFullClassName += options.mixBlock ? (" " + options.mixBlock) : ""
 
     aside(class = blockFullClassName)
-        +dropdown({
+        +dropdown-dates({
             mods: { size: "m" },
             title: "Даты пребывания в отеле",
-            name: "dates-interval",
-            inputValue: "19 авг - 23 авг"
+            inputName: "dates-interval",
+            inputValue: "19 авг - 23 авг",
+            dataRange: "true"
         })
         +dropdown({
             mix: {
@@ -24,7 +26,7 @@ mixin aside (options = false)
             },
             mods: { size: "m" },
             title: "Гости",
-            name: "guests-count",
+            inputName: "guests-count",
             inputValue: "3 гостя, 1 младенец"
         })
         +range-slider({

@@ -3,6 +3,7 @@ mixin input (options = false)
     - var blockFullClassName = blockClassName
 
     - options.mods = options.mods || {}
+    - options.datas = options.datas || {}
 
     - blockFullClassName += options.mix ? (" " + options.mix.block + "__" + options.mix.elem) : ""
     - blockFullClassName += options.mixBlock ? (" " + options.mixBlock) : ""
@@ -17,4 +18,4 @@ mixin input (options = false)
         value = options.value,
         readonly = options.readonly
         required
-    )
+    )&attributes(attributes)

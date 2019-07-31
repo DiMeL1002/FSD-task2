@@ -1,4 +1,4 @@
-export function menuListOpen() {
+export function mainNav() {
     let dropdowns = document.querySelectorAll('.main-nav__dropdown');
     let menu = document.querySelector('.main-nav');
 
