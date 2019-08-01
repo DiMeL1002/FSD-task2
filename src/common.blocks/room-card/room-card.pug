@@ -15,6 +15,10 @@ mixin room-card(options = false)
             div(class = blockClassName + "__carousel")
                 div(class = blockClassName + "__body")
                     +image({
+                        mix: {
+                            block: blockClassName,
+                            elem: 'img'
+                        },
                         src: "img/rooms/room1.jpg",
                         alt: "Фотография номера"
                     })

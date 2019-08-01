@@ -16,19 +16,78 @@ mixin rooms(options = false)
         })
         div(class = blockClassName + "__list")
             +room-card({
+                mix: {
+                    block: blockClassName,
+                    elem: "room-card"
+                },
                 url: "/room-details.html"
             })
-            +room-card()
-            +room-card()
-            +room-card()
-            +room-card()
-            +room-card()
-            +room-card()
-            +room-card()
-            +room-card()
-            +room-card()
-            +room-card()
-            +room-card()
+            +room-card({
+                mix: {
+                    block: blockClassName,
+                    elem: "room-card"
+                }
+            })
+            +room-card({
+                mix: {
+                    block: blockClassName,
+                    elem: "room-card"
+                }
+            })
+            +room-card({
+                mix: {
+                    block: blockClassName,
+                    elem: "room-card"
+                }
+            })
+            +room-card({
+                mix: {
+                    block: blockClassName,
+                    elem: "room-card"
+                }
+            })
+            +room-card({
+                mix: {
+                    block: blockClassName,
+                    elem: "room-card"
+                }
+            })
+            +room-card({
+                mix: {
+                    block: blockClassName,
+                    elem: "room-card"
+                }
+            })
+            +room-card({
+                mix: {
+                    block: blockClassName,
+                    elem: "room-card"
+                }
+            })
+            +room-card({
+                mix: {
+                    block: blockClassName,
+                    elem: "room-card"
+                }
+            })
+            +room-card({
+                mix: {
+                    block: blockClassName,
+                    elem: "room-card"
+                }
+            })
+            +room-card({
+                mix: {
+                    block: blockClassName,
+                    elem: "room-card"
+                }
+            })
+            +room-card({
+                mix: {
+                    block: blockClassName,
+                    elem: "room-card"
+                }
+            })
         +pagination({
             mix: {
                 block: blockClassName,

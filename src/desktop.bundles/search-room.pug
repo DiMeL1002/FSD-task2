@@ -1,6 +1,6 @@
 extends ../common.blocks/page/_template/page_template_main
 
-include ../common.blocks/aside/aside.pug
+include ../common.blocks/filters/filters.pug
 include ../common.blocks/rooms/rooms.pug
 
 block variables
@@ -11,10 +11,10 @@ block variables
 block content
     div(class = pageClass + "__body")
         .container(class = pageClass + "__container")
-            +aside({
+            +filters({
                 mix: {
                     block: pageClass,
-                    elem: "aside"
+                    elem: "filters"
                 }
             })
             +rooms({

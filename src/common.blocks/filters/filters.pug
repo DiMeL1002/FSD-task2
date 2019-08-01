@@ -1,0 +1,171 @@
+include ../dropdown/dropdown.pug
+include ../dropdown-dates/dropdown-dates.pug
+include ../range-slider/range-slider.pug
+include ../checkbox-form/checkbox-form.pug
+include ../checkbox-list/checkbox-list.pug
+include ../button/button.pug
+
+mixin filters (options = false)
+    - var blockClassName = "filters"
+    - var blockFullClassName = blockClassName
+
+    - blockFullClassName += options.mix ? (" " + options.mix.block + "__" + options.mix.elem) : ""
+    - blockFullClassName += options.mixBlock ? (" " + options.mixBlock) : ""
+
+    aside(class = blockFullClassName)
+        +button({
+            mix: {
+                block: blockClassName,
+                elem: "button-open"
+            },
+            mods: {
+                size: "xs"
+            },
+            text: "Фильтры"
+        })
+        div(class = blockClassName + "__body")
+            +dropdown-dates({
+                mods: { size: "m" },
+                title: "Даты пребывания в отеле",
+                inputName: "dates-interval",
+                inputValue: "19 авг - 23 авг",
+                dataRange: "true"
+            })
+            +dropdown({
+                mix: {
+                    block: blockClassName,
+                    elem: "guests"
+                },
+                mixBlock: "dropdown_guests",
+                mods: { 
+                    size: "m",
+                    buttons: true
+                },
+                title: "Гости",
+                inputName: "guests-count",
+                inputValue: "3 гостя, 1 младенец",
+                items: [
+                    {
+                        value: "Взрослые",
+                        data: "adults"
+                    }, 
+                    {
+                        value: "Дети",
+                        data: "children"
+                    },
+                    {
+                        value: "Младенцы",
+                        data: "babies"
+                    }
+                ]
+            })
+            +range-slider({
+                mix: {
+                    block: blockClassName,
+                    elem: "range-slider"
+                }
+            })
+            +checkbox-form({
+                mix: {
+                    block: blockClassName,
+                    elem: "permissions"
+                },
+                title: "Checkbox Buttons",
+                items: [
+                    {
+                        text: "Можно курить",
+                        name: "Можно курить"
+                    },
+                    {
+                        text: "Можно с питомцами",
+                        name: "Можно с питомцами",
+                        checked: true
+                    },
+                    {
+                        text: "Можно пригласить гостей (до 10 человек)",
+                        name: "Можно пригласить гостей (до 10 человек)",
+                        checked: true
+                    }
+                ]
+            })
+            +checkbox-form({
+                mix: {
+                    block: blockClassName,
+                    elem: "accessibility"
+                },
+                mods: { theme: "rich" },
+                title: "Доступность",
+                items: [
+                    {
+                        title: "Широкий коридор",
+                        text: "Ширина коридоров в номере<br>не менее 91 см.",
+                        name: "Широкий коридор"
+                    },
+                    {
+                        title: "Помощник для инвалидов",
+                        text: "На 1 этаже вас встретит специалист<br>и проводит до номера.",
+                        name: "Помощник для инвалидов",
+                    }
+                ]
+            })
+            +dropdown({
+                mix: {
+                    block: blockClassName,
+                    elem: "comfort"
+                },
+                mixBlock: "dropdown_comfort",
+                mods: { size: "m" },
+                title: "Удобства номера",
+                inputName: "comfort",
+                inputValue: "2 спальни, 2 кровати...",
+                items: [
+                    {
+                        value: "Cпальни",
+                        data: "bedrooms"
+                    }, 
+                    {
+                        value: "Кровати",
+                        data: "beds"
+                    },
+                    {
+                        value: "Ванные комнаты",
+                        data: "bathrooms"
+                    }
+                ]
+            })
+            +checkbox-list({
+                mix: {
+                    block: blockClassName,
+                    elem: "extra-comfort"
+                },
+                title: "Дополнительные удобства",
+                items: [
+                    { text: "Завтрак" },
+                    {
+                        text: "Письменный стол",
+                        checked: true
+                    },
+                    {
+                        text: "Стул для кормления",
+                        checked: true
+                    },
+                    {
+                        text: "Кроватка",
+                        checked: true
+                    },
+                    { text: "Телевизор" },
+                    { text: "Шампунь" },
+                    { text: "Телевизор" },
+                    { text: "Шампунь" }
+                ]
+            })
+            +button({
+                mix: {
+                    block: blockClassName,
+                    elem: "button-apply"
+                },
+                mods: {
+                    size: "m"
+                },
+                text: "Применить"
+            })
