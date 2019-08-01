@@ -41,13 +41,18 @@
 @import "/common.blocks/mobile-nav/mobile-nav";
 @import "/common.blocks/header/header";
 @import "/common.blocks/footer/footer";
-@import "/common.blocks/aside/aside";
+@import "/common.blocks/filters/filters";
 @import "/common.blocks/rooms/rooms";
 @import "/common.blocks/image/image";
 @import "/common.blocks/cancel/cancel";
 @import "/common.blocks/range-slider/range-slider";
 @import "/common.blocks/room-details/room-details";
 @import "/common.blocks/room-impressions/room-impressions";
+
+* { // Фикс бага с шириной слайдеров
+    min-height: 0;
+    min-width: 0;
+  }
 
 html {
     width: 100%;

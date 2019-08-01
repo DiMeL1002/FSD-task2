@@ -13,23 +13,26 @@ mixin room-card(options = false)
     div(class = blockFullClassName)
         a(class = blockClassName + "__link", href = options.url)
             div(class = blockClassName + "__carousel")
-                div(class = blockClassName + "__body")
-                    +image({
-                        src: "img/rooms/room1.jpg",
-                        alt: "Фотография номера"
-                    })
-                    +image({
-                        src: "img/rooms/room1.jpg",
-                        alt: "Фотография номера"
-                    })
-                    +image({
-                        src: "img/rooms/room1.jpg",
-                        alt: "Фотография номера"
-                    })
-                    +image({
-                        src: "img/rooms/room1.jpg",
-                        alt: "Фотография номера"
-                    })
+                +image({
+                    mix: {
+                        block: blockClassName,
+                        elem: 'img'
+                    },
+                    src: "img/rooms/room1.jpg",
+                    alt: "Фотография номера"
+                })
+                +image({
+                    src: "img/rooms/room1.jpg",
+                    alt: "Фотография номера"
+                })
+                +image({
+                    src: "img/rooms/room1.jpg",
+                    alt: "Фотография номера"
+                })
+                +image({
+                    src: "img/rooms/room1.jpg",
+                    alt: "Фотография номера"
+                })
             div(class = blockClassName + "__desc")
                 +room-price({
                     mix: {

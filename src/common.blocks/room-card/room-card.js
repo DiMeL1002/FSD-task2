@@ -1,5 +1,5 @@
 export function roomCard() {
-    $('.room-card__body').slick({
+    $('.room-card__carousel').slick({
         infinite: false,
         slidesToShow: 1,
         slidesToScroll: 1,
