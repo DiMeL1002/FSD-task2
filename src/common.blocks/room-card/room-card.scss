@@ -1,6 +1,5 @@
 .room-card {
     max-width: 270px;
-    width: 100%;
     border-radius: 4px;
     overflow: hidden;
     background-color: $white-color;
@@ -9,25 +8,6 @@
         .room-card__btn-prev, .room-card__btn-next { display: block !important; }
     }
     &__link { cursor: pointer; }
-    &__img { width: 100%; }
-    &__desc { padding: 20px; }
-    &__price {
-        padding-bottom: 10px;
-        border-bottom: 1px solid rgba(31, 32, 65, 0.1);
-    }
-    &__rating {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-top: 8px;
-        color: $dark-shade-50;
-        font-size: 1rem;
-        line-height: 1;
-    }
-    &__reviews-count {
-        font-family: $main-bold-font;
-        margin-right: 3px;
-    }
     &__btn-prev, &__btn-next {
         display: none !important;
         position: absolute;
@@ -72,5 +52,23 @@
             box-shadow: 0px 5px 5px rgba(31, 32, 65, 0.3);
             font-size: 0;
         }
+    }
+    &__desc { padding: 20px; }
+    &__price {
+        padding-bottom: 10px;
+        border-bottom: 1px solid rgba(31, 32, 65, 0.1);
+    }
+    &__rating {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 8px;
+        color: $dark-shade-50;
+        font-size: 1rem;
+        line-height: 1;
+    }
+    &__reviews-count {
+        font-family: $main-bold-font;
+        margin-right: 3px;
     }
 }

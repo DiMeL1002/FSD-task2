@@ -5,14 +5,9 @@
         flex-wrap: wrap;
         justify-content: space-between;
         align-items: center;
+        align-content: space-between;
+        height: 1100px;
         margin-top: 20px;
     }
-    &__room-card {
-        margin-bottom: 20px;
-        max-width: none;
-        width: calc(100% / 3 - 24px / 3);
-        @media screen and (max-width: 1400px) { width: calc(100% / 2 - 24px / 2); }
-        @media screen and (max-width: $phone-width) { width: 100%; }
-    }
-    &__pagination { margin: 20px auto 0 auto; }
+    &__pagination { margin: 40px auto 0 auto; }
 }

@@ -15,16 +15,12 @@
         line-height: 44px;
     }
     &__body {
-        height: 0;
         transform: scaleY(0);
         transform-origin: 50% 0;
         margin-top: 2px;
         overflow: hidden;
         transition: 0.3s;
-        &_visible { 
-            transform: scaleY(1);
-            height: auto;
-        }
+        &_visible { transform: scaleY(1); }
     }
     &__checkbox:not(:last-child) { margin-bottom: 10px; }
     &_opened {
