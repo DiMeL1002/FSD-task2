@@ -31,6 +31,7 @@ mixin dropdown-dates (options = false)
                 type: "text",
                 name: options.inputName,
                 value: options.inputValue,
+                placeholder: options.inputPlaceholder,
                 readonly: true,
             })(data-range = options.dataRange)
             +icon({

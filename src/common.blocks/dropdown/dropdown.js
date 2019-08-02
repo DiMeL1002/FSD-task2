@@ -129,7 +129,7 @@ export function openDropdown() {
             let btnApply = dropdownBody.find('.dropdown__apply-btn');
 
             btnReset.on('click', function() {
-                input.attr('value', 'Сколько гостей');
+                input.removeAttr('value');
                 items.each(function() {
                     $(this).attr('data-count', '0');
                     $(this).find('.dropdown__count').html('0');

@@ -2,6 +2,7 @@
     position: relative;
     max-width: 260px;
     width: 100%;
+    &__input { padding-right: 44px; }
     &__icon {
         position: absolute;
         right: 0;
