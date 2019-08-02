@@ -49,6 +49,11 @@
 @import "/common.blocks/room-details/room-details";
 @import "/common.blocks/room-impressions/room-impressions";
 
+* { // Фикс бага с шириной слайдеров
+    min-height: 0;
+    min-width: 0;
+}
+
 html {
     width: 100%;
     height: 100%;

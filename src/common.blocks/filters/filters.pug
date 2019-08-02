@@ -19,9 +19,10 @@ mixin filters (options = false)
                 elem: "button-open"
             },
             mods: {
-                size: "xs"
+                size: "xs",
+                type: "button"
             },
-            text: "Фильтры"
+            text: "Фильтр"
         })
         div(class = blockClassName + "__body")
             +dropdown-dates({
@@ -165,7 +166,8 @@ mixin filters (options = false)
                     elem: "button-apply"
                 },
                 mods: {
-                    size: "m"
+                    size: "m",
+                    type: "button"
                 },
                 text: "Применить"
             })

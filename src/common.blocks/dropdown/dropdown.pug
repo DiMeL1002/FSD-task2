@@ -77,7 +77,10 @@ mixin dropdown (options = false)
                             block: blockClassName,
                             elem: 'reset-btn',
                         },
-                        mods: { theme: "plain-g" },
+                        mods: {
+                            theme: "plain-g",
+                            type: "button"
+                        },
                         text: "Очистить"
                     })
                     +button({
@@ -85,6 +88,9 @@ mixin dropdown (options = false)
                             block: blockClassName,
                             elem: 'apply-btn',
                         },
-                        mods: { theme: "plain" },
+                        mods: {
+                            theme: "plain",
+                            type: "button"
+                        },
                         text: "Применить"
                     })

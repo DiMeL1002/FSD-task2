@@ -4,8 +4,7 @@
     align-items: center;
     position: relative;
     box-sizing: border-box;
-    width: 100%;
-    padding: 0;
+    padding: 15px 20px;
     border: none;
     border-radius: 22px;
     outline: none;
@@ -16,27 +15,22 @@
     line-height: 1.07rem;
     white-space: nowrap;
     text-transform: uppercase;
+    transition: 0.3s;
     cursor: pointer;
+    &:hover { opacity: 0.8; }
     &:active { opacity: 0.5; }
-    &_size_xs { 
-        max-width: 87px;
-        height: 34px;
-        .button__text { line-height: 30px; }
+    &_size_xs {
+        padding: 10px 20px;
+        &.button_theme_border {
+            .button__text { padding: 8px 18px; }
+        }
     }
-    &_size_s { 
-        max-width: 99px;
-        height: 44px;
-        .button__text { line-height: 40px; }
-    }
-    &_size_m { 
-        max-width: 196px;
-        height: 34px;
-        .button__text { line-height: 30px; }
+    &_size_s {
+        width: 99px;
+        .button__text { padding: 13px 0; }
     }
     &_size_l {
-        max-width: 320px;
-        height: 44px;
-        .button__text { line-height: 40px; }
+        .button__text { width: 280px; }
     }
     &__icon {
         position: absolute;
@@ -65,14 +59,12 @@
             }
         }
         &_plain {
-            width: auto;
-            height: auto;
+            padding: 0;
             background: $white-color;
             color: $primary-color;
         }
         &_plain-g {
-            width: auto;
-            height: auto;
+            padding: 0;
             background: $white-color;
             color: $dark-shade-50;
         }
