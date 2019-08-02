@@ -7,13 +7,22 @@ mixin main-nav(options = false)
     - blockFullClassName += options.mix ? (" " + options.mix.block + "__" + options.mix.elem) : ""
     - blockFullClassName += options.mixBlock ? (" " + options.mixBlock) : ""
 
+    mixin link(elemClassName, url, text)
+        li(class = blockClassName + elemClassName)
+            a(class = blockClassName + "__link" href = url)= text
+
     nav(class = blockFullClassName)
+        button(
+                class = blockClassName + "__button" + " hamburger hamburger--squeeze"
+                type="button"
+        )
+                <span class="hamburger-box">
+                    <span class="hamburger-inner"></span>
+                </span>
         ul(class = blockClassName + "__list")
-            li(class = blockClassName + "__item")
-                a(class = blockClassName + "__link") О нас
-            li(class = blockClassName + "__item")
-                div(class = blockClassName + "__dropdown")
-                    span(class = blockClassName + "__link") Услуги
+            +link("__item", "#", "О нас")
+            li(class = blockClassName + "__item" + " " + blockClassName + "__item_dropdown")
+                div(class = blockClassName + "__link") Услуги
                     +icon({
                         mix: {
                             block: blockClassName,
@@ -23,19 +32,13 @@ mixin main-nav(options = false)
                         content: "expand_more"
                     })
                 ul(class = blockClassName + "__inner-list")
-                    li(class = blockClassName + "__inner-item")
-                        a(class = blockClassName + "__link") Услуга 1
-                    li(class = blockClassName + "__inner-item")
-                        a(class = blockClassName + "__link") Услуга 2
-                    li(class = blockClassName + "__inner-item")
-                        a(class = blockClassName + "__link") Услуга 3
-            li(class = blockClassName + "__item")
-                a(class = blockClassName + "__link") Вакансии
-            li(class = blockClassName + "__item")
-                a(class = blockClassName + "__link") Новости
-            li(class = blockClassName + "__item")
-                div(class = blockClassName + "__dropdown")
-                    span(class = blockClassName + "__link") Соглашения
+                    +link("__inner-item", "#", "Услуга 1")
+                    +link("__inner-item", "#", "Услуга 2")
+                    +link("__inner-item","#", "Услуга 3")
+            +link("__item", "#", "Вакансии")
+            +link("__item", "#", "Новости")
+            li(class = blockClassName + "__item" + " " + blockClassName + "__item_dropdown")
+                div(class = blockClassName + "__link") Соглашения
                     +icon({
                         mix: {
                             block: blockClassName,
@@ -45,9 +48,6 @@ mixin main-nav(options = false)
                         content: "expand_more"
                     })
                 ul(class = blockClassName + "__inner-list")
-                    li(class = blockClassName + "__inner-item")
-                        a(class = blockClassName + "__link") Соглашение 1
-                    li(class = blockClassName + "__inner-item")
-                        a(class = blockClassName + "__link") Соглашение 2
-                    li(class = blockClassName + "__inner-item")
-                        a(class = blockClassName + "__link") Соглашение 3
+                    +link("__inner-item", "#", "Соглашение 1")
+                    +link("__inner-item", "#", "Соглашение 2")
+                    +link("__inner-item", "#", "Соглашение 3")

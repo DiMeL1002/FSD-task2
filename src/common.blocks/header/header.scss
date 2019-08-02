@@ -10,7 +10,11 @@
     }
     &__logo { margin-right: auto; }
     &__nav {
-        @media screen and (max-width: $table-width) { display: none; }
+        @media screen and (max-width: $table-width) {
+            align-self: flex-end;
+            order: 1;
+            margin-left: 30px;
+        }
     }
     &__button-logIn {
         flex-shrink: 0;
@@ -19,15 +23,6 @@
     &__button-reg {
         flex-shrink: 0;
         margin-left: 20px;
-        @media screen and (max-width: $sm-desktop-width) {
-            display: none;
-        }
-    }
-    &__mobile-nav {
-        display: none;
-        position: absolute;
-        top: 100%;
-        right: 0;
-        @media screen and (max-width: $table-width) { display: block; }
+        @media screen and (max-width: $sm-desktop-width) { display: none; }
     }
 }

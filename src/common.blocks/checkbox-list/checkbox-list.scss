@@ -21,12 +21,12 @@
         margin-top: 2px;
         overflow: hidden;
         transition: 0.3s;
-        &_visible { transform: scaleY(1); }
+        &_visible {
+            transform: scaleY(1);
+            height: auto;
+        }
     }
-    &__checkbox:not(:last-child) {
-        margin-bottom: 10px;
-        height: auto;
-    }
+    &__checkbox:not(:last-child) { margin-bottom: 10px; }
     &_opened {
         .checkbox-list__icon { transform: rotate(-180deg) }
     }

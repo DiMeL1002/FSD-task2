@@ -30,7 +30,8 @@
         .button__text { padding: 13px 0; }
     }
     &_size_l {
-        .button__text { width: 280px; }
+        max-width: 320px;
+        width: 100%;
     }
     &__icon {
         position: absolute;

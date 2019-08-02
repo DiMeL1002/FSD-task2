@@ -1,7 +1,6 @@
 include ../logo/logo.pug
 include ../button/button.pug
 include ../main-nav/main-nav.pug
-include ../mobile-nav/mobile-nav.pug
 
 mixin header(options = false)
     - var blockClassName = "header"
@@ -49,9 +48,3 @@ mixin header(options = false)
                 text: "Зарегистрироваться",
                 url: "/registration.html"
             })
-        +mobile-nav({
-            mix: {
-                block: blockClassName,
-                elem: "mobile-nav"
-            }
-        })
