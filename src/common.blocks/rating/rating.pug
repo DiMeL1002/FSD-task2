@@ -7,9 +7,9 @@ mixin rating (options = false)
     - blockFullClassName += options.mix ? (" " + options.mix.block + "__" + options.mix.elem) : ""
     - blockFullClassName += options.mixBlock ? (" " + options.mixBlock) : ""
 
-    - var stars = ["star", "star", "star", "star", "star"]
-    - for (var i = 0; i < rating; i ++)
-        - stars[i] = "star_border"
+    - var stars = ["star_border", "star_border", "star_border", "star_border", "star_border"]
+    - for (var i = 0; i < options.rating; i++)
+        - stars[i] = "star"
 
     div(class = blockFullClassName)
         each val in stars

@@ -6,7 +6,6 @@
 @import "/common.blocks/hamburger/hamburger";
 @import "/library.blocks/hamburgers/hamburgers";
 
-@import '/library.blocks/air-datepicker/datepicker.css';
 @import '/common.blocks/air-datepicker/air-datepicker';
 
 @import "/common.blocks/logo/logo";
@@ -95,7 +94,9 @@ button { outline: none; }
     min-height: 100%;
     margin: 0 auto;
 }
+
 .content { flex: 1 0 auto; }
+
 .footer { flex: 0 0 auto; }
 
 .container {
