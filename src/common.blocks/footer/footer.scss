@@ -35,8 +35,7 @@
         &-list { margin-top: 20px; }
         &-item {
             margin-top: 20px;
-            font-size: 1rem;
-            line-height: 1.29;
+            @include text-level-4;
         }
         &-link {
             color: $dark-shade-50;
@@ -53,6 +52,7 @@
             margin: 0;
         }
     }
+    &__title { @include text-level-3; }
     &__sub {
         flex: 0 1 280px;
         max-width: 260px;

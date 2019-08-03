@@ -1,4 +1,3 @@
-include ../title/title.pug
 include ../input/input.pug
 include ../button/button.pug
 
@@ -10,10 +9,7 @@ mixin form-logIn(options = false)
     - blockFullClassName += options.mixBlock ? (" " + options.mixBlock) : ""
 
     form(class = blockFullClassName, action="", method="post")
-        +title({
-            mods: { level: 1 },
-            content: "Войти"
-        })
+        h1(class = blockClassName + "__title") Войти
         +input({
             mix: {
                 block: blockClassName,

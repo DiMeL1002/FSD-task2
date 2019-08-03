@@ -15,14 +15,7 @@ mixin dropdown (options = false)
     - blockFullClassName += " " + blockClassName + "_size_" + options.mods.size
 
     div(class = blockFullClassName)
-        +title({
-            mix: {
-                block: blockClassName,
-                elem: 'title'
-            },
-            mods: { level: 3 },
-            content: options.title
-        })
+        h3(class = blockClassName + "__title")= options.title
         div(class = blockClassName + "__header")
             +input({
                 mix: {
@@ -52,24 +45,10 @@ mixin dropdown (options = false)
                         data-item = val.data,
                         data-count = "0"
                     )
-                        +title({
-                            mix: {
-                                block: blockClassName,
-                                elem: 'text'
-                            },
-                            mods: { level: 3 },
-                            content: val.value
-                        })
+                        span(class = blockClassName + "__text")= val.value
                         div(class = blockClassName + "__toggle")
                             span(class = blockClassName + "__minus") -
-                            +title({
-                                mix: {
-                                    block: blockClassName,
-                                    elem: 'count'
-                                },
-                                mods: { level: 3 },
-                                content: "0"
-                            })
+                            span(class = blockClassName + "__count") 0
                             span(class = blockClassName + "__plus") +
             if (options.mods.buttons)
                 div(class = blockClassName + "__apply-form")

@@ -5,6 +5,7 @@
     width: 100%;
     background-color: $white-color;
     @include placeholder {color: $dark-shade-75; }
+    &__title { @include text-level-3; }
     &__header {
         display: flex;
         justify-content: space-between;

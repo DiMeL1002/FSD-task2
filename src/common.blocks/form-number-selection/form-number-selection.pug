@@ -1,4 +1,3 @@
-include ../title/title.pug
 include ../dropdown/dropdown.pug
 include ../dropdown-dates/dropdown-dates.pug
 include ../button/button.pug
@@ -11,14 +10,7 @@ mixin form-number-selection(options = false)
     - blockFullClassName += options.mixBlock ? (" " + options.mixBlock) : ""
 
     form(class = blockFullClassName, action="", method="post")
-        +title({
-            mix: {
-                block: blockClassName,
-                elem: 'title'
-            },
-            mods: { level: 1 },
-            content: "Найдём номера под ваши пожелания"
-        })
+        h1(class = blockClassName + "__title") Найдём номера под ваши пожелания
         div(class = blockClassName + "__dates")
             +dropdown-dates({
                 mix: {

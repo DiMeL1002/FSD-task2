@@ -88,23 +88,9 @@ mixin form-booking(options = false)
                 div(class = blockClassName + "__service-icon") i
                 span(class = blockClassName + "__service-price") 300Р
         div(class = blockClassName + "__final")
-            +title({
-                mix: {
-                    block: blockClassName,
-                    elem: 'final-text'
-                },
-                mods: { level: 2 },
-                content: "Итого"
-            })
+            span(class = blockClassName + "__final-text") Итого
             div(class = blockClassName + "__final-space")
-            +title({
-                mix: {
-                    block: blockClassName,
-                    elem: 'final-price'
-                },
-                mods: { level: 2 },
-                content: "38 081Р"
-            })
+            span(class = blockClassName + "__final-text") 38 081Р
         +button({
             mix: {
                 block: blockClassName,

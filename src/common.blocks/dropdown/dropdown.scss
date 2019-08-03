@@ -4,7 +4,8 @@
     max-width: 320px - $icon-width;
     width: 100%;
     background-color: $white-color;
-    @include placeholder {color: $dark-shade-75; }
+    @include placeholder { color: $dark-shade-75; }
+    &__title { @include text-level-3; }
     &__header {
         display: flex;
         justify-content: space-between;
@@ -52,6 +53,7 @@
         align-items: center;
         &:not(:first-child) { margin-top: 7px; }
     }
+    &__text { @include text-level-3; }
     &__toggle {
         display: flex;
         justify-content: space-between;
@@ -76,6 +78,7 @@
         color: $dark-shade-25;
         cursor: default;
     }
+    &__count { @include text-level-3; }
     &__apply-form {
         display: flex;
         justify-content: space-between;

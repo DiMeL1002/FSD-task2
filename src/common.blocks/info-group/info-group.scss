@@ -1,5 +1,8 @@
 .info-group {
-    &__title { margin-bottom: 20px; }
+    &__title {
+        margin-bottom: 20px;
+        @include text-level-2;
+    }
     &__info {
         &:not(:first-child) { margin-top: 20px; }
         &:last-child {

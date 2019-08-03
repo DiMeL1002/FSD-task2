@@ -1,4 +1,3 @@
-include ../title/title.pug
 include ../checkbox/checkbox.pug
 
 mixin checkbox-form (options = false)
@@ -13,16 +12,9 @@ mixin checkbox-form (options = false)
     - blockFullClassName += options.mods.theme ? (" " + blockClassName + "_theme_" + options.mods.theme) : ""
 
     div(class = blockFullClassName)
-        +title({
-            mix: {
-                block: blockClassName,
-                elem: "title"
-            },
-            content: options.title,
-            mods: { level: 3 }
-        })
+        h3(class = blockClassName + "__title")= options.title
         div(class = blockClassName + "__checkboxes")
-            each val in options.items           
+            each val in options.items
                 +checkbox({
                     mix: {
                         block: blockClassName,

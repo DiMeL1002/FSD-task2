@@ -1,5 +1,3 @@
-include ../title/title.pug
-
 mixin cancel (options = false)
     - var blockClassName = "cancel"
     - var blockFullClassName = blockClassName
@@ -10,10 +8,7 @@ mixin cancel (options = false)
     - blockFullClassName += options.mixBlock ? (" " + options.mixBlock) : ""
 
     div(class = blockFullClassName)
-        +title({
-            content: "Отмена",
-            mods: { level: 2 }
-        })
+        h2(class = blockClassName + "__title") Отмена
         p(class = blockClassName + "__text").
             Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн.
             до прибытия вы получите полный возврат за вычетом сбора за услуги.

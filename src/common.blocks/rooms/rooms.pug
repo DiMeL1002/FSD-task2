@@ -1,4 +1,3 @@
-include ../title/title.pug
 include ../room-card/room-card.pug
 include ../pagination/pagination.pug
 
@@ -10,10 +9,7 @@ mixin rooms(options = false)
     - blockFullClassName += options.mixBlock ? (" " + options.mixBlock) : ""
 
     section(class = blockFullClassName)
-        +title({
-            mods: { level: 1 },
-            content: "Номера, которые мы для вас подобрали"
-        })
+        h1(class = blockClassName + "__title") Номера, которые мы для вас подобрали
         div(class = blockClassName + "__list")
             +room-card({
                 mix: {

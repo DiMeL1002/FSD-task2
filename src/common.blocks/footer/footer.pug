@@ -19,10 +19,7 @@ mixin footer(options = false)
                     | ассоциации «Отельные взгляды»
                 div(class = blockClassName + "__nav")
                     div(class = blockClassName + "__nav-col")
-                        +title({
-                            mods: { level: 3 },
-                            content: "Навигация"
-                        })
+                        h3(class = blockClassName + "__title") Навигация
                         ul(class = blockClassName + "__nav-list")
                             li(class = blockClassName + "__nav-item")
                                 a(class = blockClassName + "__nav-link", href="#") О нас
@@ -33,10 +30,7 @@ mixin footer(options = false)
                             li(class = blockClassName + "__nav-item")
                                 a(class = blockClassName + "__nav-link", href="#") Услуги
                     div(class = blockClassName + "__nav-col")
-                        +title({
-                            mods: { level: 3 },
-                            content: "О нас"
-                        })
+                        h3(class = blockClassName + "__title") О нас
                         ul(class = blockClassName + "__nav-list")
                             li(class = blockClassName + "__nav-item")
                                 a(class = blockClassName + "__nav-link", href="#") О сервисе
@@ -47,10 +41,7 @@ mixin footer(options = false)
                             li(class = blockClassName + "__nav-item")
                                 a(class = blockClassName + "__nav-link", href="#") Инвесторы
                     div(class = blockClassName + "__nav-col")
-                        +title({
-                            mods: { level: 3 },
-                            content: "Служба поддержки"
-                        })
+                        h3(class = blockClassName + "__title") Служба поддержки
                         ul(class = blockClassName + "__nav-list")
                             li(class = blockClassName + "__nav-item")
                                 a(class = blockClassName + "__nav-link", href="#") Соглашения
@@ -59,10 +50,7 @@ mixin footer(options = false)
                             li(class = blockClassName + "__nav-item")
                                 a(class = blockClassName + "__nav-link", href="#") Связь с нами
                 div(class = blockClassName + "__sub")
-                    +title({
-                        mods: { level: 3 },
-                        content: "Подписка"
-                    })
+                    h3(class = blockClassName + "__title") Подписка
                     p(class = blockClassName + "__sub-text").
                         Получайте специальные предложения и новости сервиса
                     +subscribe-form({

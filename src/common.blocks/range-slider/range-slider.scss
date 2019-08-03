@@ -5,6 +5,7 @@
         justify-content: space-between;
         align-items: center
     }
+    &__title { @include text-level-3; }
     &__value {
         color: $dark-shade-50;
         font-size: 0.86rem;

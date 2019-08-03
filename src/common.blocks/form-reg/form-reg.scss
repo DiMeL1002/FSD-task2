@@ -7,14 +7,11 @@
     border-radius: 4px;
     background-color: $white-color;
     box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
-    &__input-firstName { margin-top: 20px; }
-    &__input-secondName { margin-top: 10px; }
-    &__radio-form { margin-top: 10px; }
-    &__input-form-birthday { margin-top: 20px; }
-    &__input-form-email { margin-top: 20px; }
-    &__input-form-password { margin-top: 10px; }
-    &__toggle-form { margin-top: 10px; }
+    &__title { @include text-level-1; }
+    &__input-firstName, &__input-form-birthday, &__input-form-email,
     &__button-pay { margin-top: 20px; }
+    &__input-secondName, &__radio-form, &__input-form-password,
+    &__toggle-form { margin-top: 10px; }
     &__logIn {
         display: flex;
         justify-content: space-between;

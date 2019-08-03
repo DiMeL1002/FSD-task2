@@ -5,7 +5,10 @@
         align-items: baseline;
         margin-bottom: 20px; 
     }
-    &__title { margin-right: 30px; }
+    &__title {
+        margin-right: 30px;
+        @include text-level-2;
+    }
     &__count {
         flex-shrink: 0;
         color: $dark-shade-50;

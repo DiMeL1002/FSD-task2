@@ -1,5 +1,3 @@
-include ../title/title.pug
-
 mixin bullet-list (options = false)
     - var blockClassName = "bullet-list"
     - var blockFullClassName = blockClassName
@@ -8,14 +6,7 @@ mixin bullet-list (options = false)
     - blockFullClassName += options.mixBlock ? (" " + options.mixBlock) : ""
 
     div(class = blockFullClassName)
-        +title({
-            mix: {
-                block: blockClassName,
-                elem: "title"
-            },
-            content: options.title,
-            mods: { level: 2 }
-        })
+        h2(class = blockClassName + "__title")= options.title
         div(class = blockClassName + "__items")
             each val in options.items
                 span(class = blockClassName + "__text")= val

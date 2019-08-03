@@ -1,4 +1,3 @@
-include ../title/title.pug
 include ../input/input.pug
 include ../button/button.pug
 include ../radio-form/radio-form.pug
@@ -12,10 +11,7 @@ mixin form-reg(options = false)
     - blockFullClassName += options.mixBlock ? (" " + options.mixBlock) : ""
 
     form(class = blockFullClassName, action="", method="post")
-        +title({
-            mods: { level: 1 },
-            content: "Регистрация аккаунта"
-        })
+        h1(class = blockClassName + "__title") Регистрация аккаунта
         +input({
             mix: {
                 block: blockClassName,

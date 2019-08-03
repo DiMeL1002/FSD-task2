@@ -1,6 +1,7 @@
 .room-impressions {
     max-width: 311px;
     width: 100%;
+    &__title { @include text-level-2; }
     &__diagram {
         display: flex;
         flex-wrap: wrap;

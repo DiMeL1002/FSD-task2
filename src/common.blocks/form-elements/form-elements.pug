@@ -1,4 +1,3 @@
-include ../title/title.pug
 include ../input-form/input-form.pug
 include ../dropdown/dropdown.pug
 include ../subscribe-form/subscribe-form.pug
@@ -104,10 +103,6 @@ section.form-elements
                     ]
                 })
                 .form-elements__toggles
-                    +title({
-                        mods: { level: 3 },
-                        content: "Toggle"
-                    })
                     +toggle-form({
                         title: "Получать спецпредложения",
                         mods: { checked: true }
@@ -116,10 +111,6 @@ section.form-elements
                         title: "Получать спецпредложения",
                     })
                 .form-elements__like-buttons
-                    +title({
-                        mods: { level: 3 },
-                        content: "like button",
-                    })
                     .form-elements__like-buttons-block
                         +btn-like({
                             count: 2
@@ -129,10 +120,6 @@ section.form-elements
                             mods: { pressed: true }  
                         })
                 .form-elements__rate-buttons
-                    +title({
-                        mods: { level: 3 },
-                        content: "rate button"
-                    })
                     .form-elements__rate-buttons-block
                         +rating({
                             count: [ "star_rate", "star_rate", "star_rate", "star_rate", "star_border" ]
@@ -142,10 +129,6 @@ section.form-elements
                         })
             .form-elements__col
                 .form-elements__buttons
-                    +title({
-                        mods: { level: 3 },
-                        content: "buttons"
-                    })
                     .form-elements__buttons-body
                         +button({
                             text: "click me"
@@ -188,10 +171,6 @@ section.form-elements
                     text: "перейти к оплате"
                 })
                 .form-elements__pagination-block
-                    +title({
-                        mods: { level: 3 },
-                        content: "pagination"
-                    })
                     +pagination({
                         mix: {
                             block: "form-elements",

@@ -1,4 +1,3 @@
-include ../title/title.pug
 include ../icon/icon.pug
 include ../checkbox/checkbox.pug
 
@@ -15,14 +14,7 @@ mixin checkbox-list (options = false)
 
     div(class = blockFullClassName)
         div(class = blockClassName + "__header")
-            +title({
-                mix: {
-                    block: blockClassName,
-                    elem: "title"
-                },
-                content: options.title,
-                mods: { level: 3 }
-            })
+            h3(class = blockClassName + "__title")= options.title
             +icon({
                 mix: {
                     block: blockClassName,

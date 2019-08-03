@@ -1,4 +1,3 @@
-include ../title/title.pug
 include ../review/review.pug
 
 mixin review-group (options = false)
@@ -14,14 +13,7 @@ mixin review-group (options = false)
 
     div(class = blockFullClassName)
         div(class = blockClassName + "__top-line")
-            +title({
-                mix: {
-                    block: blockClassName,
-                    elem: "title"
-                },
-                mods: { level: 2 },
-                content: "Отзывы посетителей номера"
-            })
+            h2(class = blockClassName + "__title") Отзывы посетителей номера
             span(class = blockClassName + "__count")= reviewCounts + " отзыва"
         each val in options.items
             +review({

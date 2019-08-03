@@ -11,3 +11,31 @@
     input::-moz-placeholder { @content };
     input:-ms-input-placeholder { @content };
 }
+@mixin text-level-1 {
+    color: $dark-shade-100;
+    font-family: $secondary-bold-font;
+    font-size: 1.71rem;
+    line-height: 1.25;
+}
+
+@mixin text-level-2 {
+    color: $dark-shade-100;
+    font-family: $secondary-bold-font;
+    font-size: 1.36rem;
+    line-height: 1.26;
+}
+
+@mixin text-level-3 {
+    color: $dark-shade-100;
+    font-family: $main-bold-font;
+    font-size: 0.86rem;
+    line-height: 1.25;
+    text-transform: uppercase;
+}
+
+@mixin text-level-4 {
+    color: $dark-shade-50;
+    font-family: $main-regular-font;
+    font-size: 1rem;
+    line-height: 1.29;
+}

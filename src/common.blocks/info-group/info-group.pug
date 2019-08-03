@@ -1,4 +1,3 @@
-include ../title/title.pug
 include ../info/info.pug
 
 mixin info-group (options = false)
@@ -9,14 +8,7 @@ mixin info-group (options = false)
     - blockFullClassName += options.mixBlock ? (" " + options.mixBlock) : ""
 
     div(class = blockFullClassName)
-        +title({
-            mix: {
-                block: blockClassName,
-                elem: "title"
-            },
-            mods: { level: 2 },
-            content: "Сведения о номере"
-        })
+        h2(class = blockClassName + "__title") Сведения о номере
         each val in options.items
             +info({
                 mix: {

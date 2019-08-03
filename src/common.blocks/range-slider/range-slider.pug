@@ -1,5 +1,3 @@
-include ../title/title.pug
-
 mixin range-slider (options = false)
     - var blockClassName = "range-slider"
     - var blockFullClassName = blockClassName
@@ -9,10 +7,7 @@ mixin range-slider (options = false)
 
     div(class = blockFullClassName)
         div(class = blockClassName + "__header")
-            +title({
-                mods: { level: 3 },
-                content: "Диапазон цены"
-            })
+            h3(class = blockClassName + "__title") Диапазон цены
             div(class = blockClassName + "__value")
                 span(class = blockClassName + "__min-value")
                 span(class = blockClassName + "__dash")= ' - '

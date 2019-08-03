@@ -2,6 +2,7 @@
     max-width: 292px;
     &__title {
         padding-left: 20px;
+        @include text-level-2;
     }
     &__items { margin-top: 20px; }
     &__text {

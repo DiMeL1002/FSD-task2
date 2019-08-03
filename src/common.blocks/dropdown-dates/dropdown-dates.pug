@@ -13,14 +13,7 @@ mixin dropdown-dates (options = false)
     - blockFullClassName += " " + blockClassName + "_size_" + options.mods.size
 
     div(class = blockFullClassName)
-        +title({
-            mix: {
-                block: blockClassName,
-                elem: 'title'
-            },
-            mods: { level: 3 },
-            content: options.title
-        })
+        h3(class = blockClassName + "__title")= options.title
         div(class = blockClassName + "__header")
             +input({
                 mix: {

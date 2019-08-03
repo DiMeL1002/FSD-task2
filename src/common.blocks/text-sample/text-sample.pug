@@ -1,5 +1,3 @@
-include ../title/title.pug
-
 mixin text-sample(options = false)
     - var textSampleClassName = "text-sample"
     - var textSampleFullClassName = textSampleClassName
@@ -11,13 +9,3 @@ mixin text-sample(options = false)
         - textSampleFullClassName += " " + options.mixBlock
 
     div(class = textSampleFullClassName)
-        +title({
-            mix: {block: textSampleClassName, elem: "title"},
-            mods: {level: options.textLevel},
-            content: options.title
-        })
-        +title({
-            mix: {block: textSampleClassName, elem: "text"},
-            mods: {level: options.textLevel},
-            content: options.content
-        })
