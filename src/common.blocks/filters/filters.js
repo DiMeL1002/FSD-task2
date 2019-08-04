@@ -1,24 +1,30 @@
-export function filters() {
-    let filters = $('.filters');
-    let btnOpen = $('.filters__button-open');
-    let btnApply = $('.filters__button-apply');
-    let filtersBody = $('.filters__body');
+export function initFilters() {
+    let $filtersBody = $('.filters__body');
+    let $btnOpen = $('.filters__button-open');
 
-    btnOpen.on('click', function() {
-        filtersBody.addClass('filters__body_visible');
+    $btnOpen.on('click', function() {
+        $filtersBody.addClass('filters__body_visible');
     })
 
-    btnApply.on('click', function() {
+    let $btnApply = $('.filters__button-apply');
+
+    $btnApply.on('click', function() {
         close();
     })
+    
+    let $filters = $('.filters');
 
     $(document).on('click', function(e) {
-        if (!filters.is(e.target) && filters.has(e.target).length === 0) {
+        if (isOffElementClick($filters, e)) {
             close();
         }
     })
-    
+
     function close() {
-        filtersBody.removeClass('filters__body_visible');
+        $filtersBody.removeClass('filters__body_visible');
+    }
+
+    function isOffElementClick(elem, e) {
+        return (!elem.is(e.target)) && (elem.has(e.target).length === 0);
     }
 }

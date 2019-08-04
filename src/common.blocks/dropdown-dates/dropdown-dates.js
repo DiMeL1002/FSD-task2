@@ -1,9 +1,8 @@
-export function dropdownDates() {
-    let myDatepickersCount = 0;
-
+export function initDropdownDates() {
     $('.dropdown-dates__input').each(function () {
-        let that = $(this);
-        let myDatepicker = $(this).datepicker({
+        let $that = $(this);
+
+        let $myDatepicker = $(this).datepicker({
             navTitles: {
                 days: 'MM yyyy'
             },
@@ -13,27 +12,26 @@ export function dropdownDates() {
             multipleDatesSeparator: " - "
         });
 
-        let myDatepickerData = myDatepicker.data('datepicker');
+        let $btn = $myDatepicker.next('.dropdown-dates__icon');
 
-        let btn = myDatepicker.next('.dropdown-dates__icon');
-        btn.on('click', function() {
-            that[0].focus();
+        $btn.on('click', function() {
+            $that.focus();
         });
 
-        let buttons = $('<div class = "datepicker__buttons">');
-        let cancelBtn = $('<button\
+        let $buttons = $('<div class = "datepicker__buttons">');
+        let $cancelBtn = $('<button\
                             class = "button button_theme_plain-g datepicker__cancel-btn",\
                             type = "button">Очистить</button>')
-                        .appendTo(buttons);
-        let applyBtn = $('<button\
+                        .appendTo($buttons);
+        let $applyBtn = $('<button\
                             class = "button button_theme_plain datepicker__apply-btn"\
                             type = "button">Применить</button>')
-                        .appendTo(buttons);
+                        .appendTo($buttons);
 
-        let datepicker = $('.datepicker').eq(myDatepickersCount).append(buttons);
-        myDatepickersCount++;
+        let $myDatepickerData = $myDatepicker.data('datepicker');
+        $($myDatepickerData.$datepicker[0]).append($buttons);
 
-        cancelBtn.on('click', function() { myDatepickerData.clear(); })
-        applyBtn.on('click', function() { myDatepickerData.hide(); })
+        $cancelBtn.on('click', function() { $myDatepickerData.clear(); })
+        $applyBtn.on('click', function() { $myDatepickerData.hide(); })
     })
 }

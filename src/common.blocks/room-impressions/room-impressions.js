@@ -1,6 +1,7 @@
-export function roomImpressions() {
-    var ctx = document.querySelector('.room-impressions__doughnut');
-    var myChart = new Chart(ctx, {
+export function initRoomImpressions() {
+    let $doughnut = $('.room-impressions__doughnut');
+
+    new Chart($doughnut, {
         type: 'doughnut',
         data: {
             datasets: [{

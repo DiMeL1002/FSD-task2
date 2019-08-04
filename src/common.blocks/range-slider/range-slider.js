@@ -1,4 +1,4 @@
-export function rangeSlider() {
+export function initRangeSlider() {
     let dragSlider = document.querySelector('.range-slider__slider');
 
     noUiSlider.create(dragSlider, {

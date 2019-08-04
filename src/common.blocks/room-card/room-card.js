@@ -1,4 +1,4 @@
-export function roomCard() {
+export function initRoomCard() {
     $('.room-card__carousel').slick({
         infinite: false,
         slidesToShow: 1,
@@ -8,11 +8,11 @@ export function roomCard() {
         dots: true
     });
 
-    let link = document.querySelector('.room-card__link');
+    let $link = $('.room-card__link');
 
-    link.addEventListener('click', function(e) {
-        if (e.target.classList.contains('slick-arrow')) {
-            e.preventDefault();
+    $link.on('click', function(event) {
+        if ($(event.target).hasClass('slick-arrow')) {
+            event.preventDefault();
         }
     })
 }

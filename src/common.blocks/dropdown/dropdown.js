@@ -1,40 +1,40 @@
-export function openDropdown() {
-    let dropdown = $('.dropdown');
+export function initDropdown() {
+    let $dropdown = $('.dropdown');
 
-    dropdown.each(function() {
-        let dropdown = $(this);
-        let dropdownHead = dropdown.children('.dropdown__header');
-        let dropdownBody = dropdown.children('.dropdown__body');
-        let input = dropdownHead.children('.dropdown__input');
-        let items = dropdownBody.children('.dropdown__item');
-
+    $dropdown.each(function() {
+        let $dropdown = $(this);
+        let $dropdownHead = $dropdown.children('.dropdown__header');
+        let $dropdownBody = $dropdown.children('.dropdown__body');
+        
         // Открытие дропдауна
-        dropdownHead.on('click', function() {
-            dropdown.toggleClass('dropdown_opened');
-            dropdownBody.toggleClass('dropdown__body_visible');
+        $dropdownHead.on('click', function() {
+            $dropdown.toggleClass('dropdown_opened');
+            $dropdownBody.toggleClass('dropdown__body_visible');
         })
 
-        // Кнопки плюс и минус
-        items.each(function() {
-            let item = $(this);
-            let btnMinus = item.find('.dropdown__minus');
-            let btnPlus = item.find('.dropdown__plus');
+        let $items = $dropdownBody.children('.dropdown__item');
 
-            btnPlus.on('click', function() {
-                let count = item.attr('data-count');
-                counting('+', count, item);
+        // Увеличение и уменьшение значения элемента
+        $items.each(function() {
+            let $item = $(this);
+            let $btnPlus = $item.find('.dropdown__plus');
+            let $btnMinus = $item.find('.dropdown__minus');
+           
+            $btnPlus.on('click', function() {
+                let count = $item.attr('data-count');
+                counting('+', count, $item);
             })
-            btnMinus.on('click', function() {
-                let count = item.attr('data-count');
+            $btnMinus.on('click', function() {
+                let count = $item.attr('data-count');
                 if (count > 0) {
-                    counting('-', count, item);
+                    counting('-', count, $item);
                 }
             })
         })
 
         function counting(op, count, item) {
-            let countText = item.find('.dropdown__count');
-            
+            let $countText = item.find('.dropdown__count');
+
             switch (op) {
                 case '+':
                     count++;
@@ -45,19 +45,21 @@ export function openDropdown() {
             }
 
             item.attr('data-count', count);
-            countText.html(count);
+            $countText.html(count);
             totalCounting();
         }
+
+        let $input = $dropdownHead.children('.dropdown__input');
 
         // Общий подсчет количества элементов и запись в инпут
         function totalCounting() {
             let totalCount = '';
             let counts = [];
 
-            if (dropdown.hasClass('dropdown_guests')) {
+            if ($dropdown.hasClass('dropdown_guests')) {
                 let guestCount = 0;
 
-                items.each(function() {
+                $items.each(function() {
                     let count = parseInt( $(this).attr('data-count') );
 
                     switch ( $(this).attr('data-item') ) {
@@ -68,93 +70,97 @@ export function openDropdown() {
 
                                 if (counts.length > 0) {
                                     counts[0] = (guestCount + ' '
-                                        + word(guestCount, ['гость', 'гостя', 'гостей']));
+                                        + bowWord(guestCount, ['гость', 'гостя', 'гостей']));
                                 }
                                 else {
                                     counts.push(guestCount + ' '
-                                        + word(guestCount, ['гость', 'гостя', 'гостей']));
+                                        + bowWord(guestCount, ['гость', 'гостя', 'гостей']));
                                 }
                             }
                             break;
                         case 'babies':
                             if (count > 0) {
                                 counts.push(count + ' '
-                                    + word(count, ['младенец', 'младенца', 'младенцев']));
+                                    + bowWord(count, ['младенец', 'младенца', 'младенцев']));
                             }
                             break;
                     }
                 })
             }
 
-            if ( dropdown.hasClass('dropdown_comfort') ) {
-                items.each(function() {
+            if ( $dropdown.hasClass('dropdown_comfort') ) {
+                $items.each(function() {
                     let count = parseInt( $(this).attr('data-count') );
                     
                     switch ( $(this).attr('data-item') ) {
                         case 'bedrooms':
                             if (count > 0) {
                                 counts.push(count + ' '
-                                    + word(count, ['спальня', 'спальни', 'спален']));
+                                    + bowWord(count, ['спальня', 'спальни', 'спален']));
                             }
                             break;
                         case 'beds':
                             if (count > 0) {
                                 counts.push(count + ' '
-                                    + word(count, ['кровать', 'кровати', 'кроватей']));
+                                    + bowWord(count, ['кровать', 'кровати', 'кроватей']));
                             }
                             break;
                         case 'bathrooms':
                             if (count > 0) {
                                 counts.push(count + ' '
-                                    + word(count, ['ванная комната', 'ванные комнаты', 'ванных комнат']));
+                                    + bowWord(count, ['ванная комната', 'ванные комнаты', 'ванных комнат']));
                             }
                             break;
                     }
                 })
             }
 
-            for(let i = 0; i < counts.length; i++) {
-                totalCount += counts[i];
-                if (i < counts.length - 1) {
+            counts.forEach(function(item, i) {
+                totalCount += item;
+                if (i < (counts.length - 1) ) {
                     totalCount += ', ';
                 }
-            }
+            })
 
-            input.attr('value', totalCount);
+            $input.attr('value', totalCount);
         }
 
-        // Кнопки очистить и применить
-        if ( dropdown.hasClass('dropdown_has-buttons') ) {
-            let btnReset = dropdownBody.find('.dropdown__reset-btn');
-            let btnApply = dropdownBody.find('.dropdown__apply-btn');
+        // очистка формы и работа кнопки "применить"
+        if ( $dropdown.hasClass('dropdown_has-buttons') ) {
+            let $btnReset = $dropdownBody.find('.dropdown__reset-btn');
+            let $btnApply = $dropdownBody.find('.dropdown__apply-btn');
 
-            btnReset.on('click', function() {
-                input.removeAttr('value');
-                items.each(function() {
+            $btnReset.on('click', function() {
+                $input.removeAttr('value');
+                $items.each(function() {
                     $(this).attr('data-count', '0');
                     $(this).find('.dropdown__count').html('0');
                 })
             })
 
-            btnApply.on('click', function() {
+            $btnApply.on('click', function() {
                 close();
             })
         }
 
         // закрытие дропдауна
         $(document).on('click', function(e) {
-            if (!dropdown.is(e.target) && dropdown.has(e.target).length === 0) {
+            if (isOffElementClick($dropdown, e)) {
                 close();
             }
         })
 
         function close() {
-            dropdown.removeClass('dropdown_opened');
-            dropdownBody.removeClass('dropdown__body_visible');
+            $dropdown.removeClass('dropdown_opened');
+            $dropdownBody.removeClass('dropdown__body_visible');
         }
     })
 
-    function word (n, words) {
+    function isOffElementClick(elem, e) {
+        return (!elem.is(e.target)) && (elem.has(e.target).length === 0);
+    }
+
+    function bowWord (n, words) {
         let word;
         /*
         * товар - 1 | 21 | 31 | 41 | 51 | 61 |71 | 81 | 91 | 101 ...

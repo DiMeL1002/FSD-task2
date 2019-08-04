@@ -12,12 +12,12 @@ import Chart from 'chart.js';
 import 'normalize.css';
 import './main.scss';
 
-import { mainNav } from './common.blocks/main-nav/main-nav.js';
-import { openDropdown } from './common.blocks/dropdown/dropdown.js';
-import { dropdownDates } from './common.blocks/dropdown-dates/dropdown-dates.js';
+import { initMainNav } from './common.blocks/main-nav/main-nav.js';
+import { initDropdown } from './common.blocks/dropdown/dropdown.js';
+import { initDropdownDates } from './common.blocks/dropdown-dates/dropdown-dates.js';
 
 window.addEventListener('load', function() {
-    mainNav();
-    openDropdown();
-    dropdownDates();
+    initMainNav();
+    initDropdown();
+    initDropdownDates();
 })
