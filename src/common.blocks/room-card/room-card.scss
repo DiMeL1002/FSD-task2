@@ -49,28 +49,4 @@
         right: 0;
         transform: rotate(-90deg) translateX(50%);
     }
-    .slick-dots {
-        display: flex;
-        align-items: center;
-        position: absolute;
-        right: 15px;
-        bottom: 15px;
-        li {
-            &:not(:last-child) { margin-right: 4px; }
-        }
-        .slick-active {
-            button { background-color: $white-color; }
-        }
-        button {
-            box-sizing: border-box;
-            width: 8px;
-            height: 8px;
-            padding: 0;
-            border: 1px solid $white-color;
-            border-radius: 50%;
-            background-color: transparent;
-            box-shadow: 0px 5px 5px rgba(31, 32, 65, 0.3);
-            font-size: 0;
-        }
-    }
 }
