@@ -6,46 +6,47 @@
 @import "./common.blocks/hamburger/hamburger";
 @import "./library.blocks/hamburgers/hamburgers";
 
-@import './common.blocks/air-datepicker/air-datepicker';
-@import "./common.blocks/btn-like/btn-like";
-@import "./common.blocks/bullet-list/bullet-list";
-@import "./common.blocks/button/button";
-@import "./common.blocks/cancel/cancel";
+@import '/common.blocks/air-datepicker/air-datepicker';
+
+@import "./common.blocks/logo/logo";
+@import "./common.blocks/input-form/input-form";
+@import "./common.blocks/input/input";
+@import "./common.blocks/dropdown/dropdown";
+@import "./common.blocks/dropdown-dates/dropdown-dates";
+@import "./common.blocks/subscribe-form/subscribe-form";
 @import "./common.blocks/checkbox/checkbox";
 @import "./common.blocks/checkbox-form/checkbox-form";
 @import "./common.blocks/checkbox-list/checkbox-list";
-@import "./common.blocks/dropdown/dropdown";
-@import "./common.blocks/dropdown-dates/dropdown-dates";
-@import "./common.blocks/filters/filters";
-@import "./common.blocks/footer/footer";
-@import "./common.blocks/form-booking/form-booking";
-@import "./common.blocks/form-number-selection/form-number-selection";
-@import "./common.blocks/form-logIn/form-logIn";
-@import "./common.blocks/form-reg/form-reg";
-@import "./common.blocks/header/header";
+@import "./common.blocks/radio-form/radio-form";
+@import "./common.blocks/toggle-form/toggle-form";
+@import "./common.blocks/btn-like/btn-like";
 @import "./common.blocks/icon/icon";
-@import "./common.blocks/image/image";
+@import "./common.blocks/rating/rating";
+@import "./common.blocks/button/button";
+@import "./common.blocks/pagination/pagination";
+@import "./common.blocks/bullet-list/bullet-list";
 @import "./common.blocks/info/info";
 @import "./common.blocks/info-group/info-group";
-@import "./common.blocks/input/input";
-@import "./common.blocks/input-form/input-form";
-@import "./common.blocks/logo/logo";
-@import "./common.blocks/main-nav/main-nav";
-@import "./common.blocks/nouislider/nouislider";
-@import "./common.blocks/pagination/pagination";
-@import "./common.blocks/radio-form/radio-form";
-@import "./common.blocks/range-slider/range-slider";
-@import "./common.blocks/rating/rating";
 @import "./common.blocks/review/review";
 @import "./common.blocks/review-group/review-group";
+@import "./common.blocks/form-number-selection/form-number-selection";
+@import "./common.blocks/form-reg/form-reg";
+@import "./common.blocks/form-logIn/form-logIn";
+@import "./common.blocks/form-booking/form-booking";
+@import "./common.blocks/room-price/room-price";
 @import "./common.blocks/room-card/room-card";
+@import "./common.blocks/main-nav/main-nav";
+@import "./common.blocks/header/header";
+@import "./common.blocks/footer/footer";
+@import "./common.blocks/filters/filters";
+@import "./common.blocks/rooms/rooms";
+@import "./common.blocks/image/image";
+@import "./common.blocks/cancel/cancel";
+@import "./common.blocks/range-slider/range-slider";
 @import "./common.blocks/room-details/room-details";
 @import "./common.blocks/room-impressions/room-impressions";
-@import "./common.blocks/room-price/room-price";
-@import "./common.blocks/rooms/rooms";
+@import "./common.blocks/nouislider/nouislider";
 @import "./common.blocks/slick-carousel/slick";
-@import "./common.blocks/subscribe-form/subscribe-form";
-@import "./common.blocks/toggle-form/toggle-form";
 
 * { // Фикс бага с шириной слайдеров
     min-height: 0;
@@ -62,9 +63,7 @@ html {
     @media screen and (max-width: $table-width) and (min-width: $phone-width) {
         font-size: 13px;
     }
-    @media screen and (max-width: $phone-width) {
-        font-size: 12px;
-    }
+    @media screen and (max-width: $phone-width) { font-size: 12px; }
 }
 
 body {

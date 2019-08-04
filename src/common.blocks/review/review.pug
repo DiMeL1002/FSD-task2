@@ -27,7 +27,7 @@ mixin review(options = false)
                     block: blockClassName,
                     elem: "button"
                 },
-                mods: { pressed: true },
+                mods: { pressed: options.btnPressed },
                 count: options.countLikes
             })
             p(class = blockClassName + "__text")!= options.text

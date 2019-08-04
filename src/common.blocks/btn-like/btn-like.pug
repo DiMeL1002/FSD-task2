@@ -1,28 +1,26 @@
 include ../icon/icon.pug
 
 mixin btn-like (options = false)
-    - var btnLikeClassName = "btn-like"
-    - var btnLikeFullClassName = btnLikeClassName
+    - var blockClassName = "btn-like"
+    - var blockFullClassName = blockClassName
     - var icon = "favorite_border"
 
-    if (options.mix)
-        - btnLikeFullClassName += " " + options.mix.block + "__" + options.mix.elem
+    - options.mods = options.mods || {}
 
-    if (options.mixBlock)
-        - btnLikeFullClassName += " " + options.mixBlock
+    - blockFullClassName += options.mix ? (" " + options.mix.block + "__" + options.mix.elem) : ""
+    - blockFullClassName += options.mixBlock ? (" " + options.mixBlock) : ""
 
-    if (options.mods)
-        if (options.mods.pressed)
-            - btnLikeFullClassName += " " + btnLikeClassName + "_pressed"
-            - icon = "favorite"
+    if (options.mods.pressed)
+        - blockFullClassName += " " + blockClassName + "_pressed"
+        - icon = "favorite"
 
-    a(class = btnLikeFullClassName, href="#")
+    a(class = blockFullClassName, href="#", title = "Нравится",data-count = options.count)
         +icon({
             mix: {
-                block: btnLikeClassName,
+                block: blockClassName,
                 elem: "icon"
             },
             mixBlock: "material-icons",
             content: icon
         })
-        span(class = btnLikeClassName + "__count")= options.count
+        span(class = blockClassName + "__count")
