@@ -1,11 +1,8 @@
 mixin text-sample(options = false)
-    - var textSampleClassName = "text-sample"
-    - var textSampleFullClassName = textSampleClassName
+    - var blockClassName = "text-sample"
+    - var blockFullClassName = blockClassName
 
-    if (options.mix)
-        - textSampleFullClassName += " " + options.mix.block + "__" + options.mix.elem
+    - blockFullClassName += options.mix ? (" " + options.mix.block + "__" + options.mix.elem) : ""
+    - blockFullClassName += options.mixBlock ? (" " + options.mixBlock) : ""
 
-    if (options.mixBlock)
-        - textSampleFullClassName += " " + options.mixBlock
-
-    div(class = textSampleFullClassName)
+    div(class = blockFullClassName + " " + options.textClass)= options.content

@@ -1,9 +1,0 @@
-.cards {
-    &__row { display: flex; }
-    &__col {
-        flex-shrink: 0;
-        flex-basis: 380px;
-        &:not(:last-child) { margin-right: 40px; }
-    }
-    &__form-reg, &__form-logIn { margin-top: 40px; }
-}

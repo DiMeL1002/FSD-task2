@@ -27,7 +27,10 @@
     }
     &_size_s {
         width: 99px;
-        .button__text { padding: 13px 0; }
+        &.button_theme_border {
+            .button__text { padding: 13px 0; }
+        }
+        // .button__text { padding: 13px 0; }
     }
     &_size_l {
         max-width: 320px;

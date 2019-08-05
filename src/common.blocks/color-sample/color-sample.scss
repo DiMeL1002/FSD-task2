@@ -14,24 +14,12 @@
         margin-right: 40px;
         border-radius: 6px;
         background-color: $dark-shade-100;
-        &_purple {
-            background-color: $primary-color;
-        }
-        &_green {
-            background-color: $green;
-        }
-        &_opacity_5 {
-            background-color: $dark-shade-5;
-        }
-        &_opacity_25 {
-            background-color: $dark-shade-25;
-        }
-        &_opacity_50 {
-            background-color: $dark-shade-50;
-        }
-        &_opacity_75 {
-            background-color: $dark-shade-75;
-        }
+        &_color_purple { background-color: $primary-color; }
+        &_color_green { background-color: $green; }
+        &_opacity_5 { background-color: $dark-shade-5; }
+        &_opacity_25 { background-color: $dark-shade-25; }
+        &_opacity_50 { background-color: $dark-shade-50; }
+        &_opacity_75 { background-color: $dark-shade-75; }
     }
     &__text {
         display: flex;

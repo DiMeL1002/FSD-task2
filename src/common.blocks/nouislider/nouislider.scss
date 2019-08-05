@@ -13,6 +13,7 @@
         border: 2px solid $white-color;
         border-radius: 50%;
         background: $secondary-gradient;
+        box-shadow: none;
         cursor: pointer;
         &::before, &::after { display: none; }
         &-upper { right: -5px !important; }

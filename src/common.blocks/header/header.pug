@@ -2,12 +2,15 @@ include ../logo/logo.pug
 include ../button/button.pug
 include ../main-nav/main-nav.pug
 
-mixin header(options = false)
+mixin header (options = false)
     - var blockClassName = "header"
     - var blockFullClassName = blockClassName
 
     - blockFullClassName += options.mix ? (" " + options.mix.block + "__" + options.mix.elem) : ""
     - blockFullClassName += options.mixBlock ? (" " + options.mixBlock) : ""
+
+    if options.mods
+        - blockFullClassName += options.mods.authorized ? (" " + blockClassName + "_authorized") : ""
 
     header(class = blockFullClassName)
         div(class = "container" + " " + blockClassName + "__container")
@@ -48,3 +51,4 @@ mixin header(options = false)
                 text: "Зарегистрироваться",
                 url: "/registration.html"
             })
+            div(class = blockClassName + "__user-name")= options.userName

@@ -1,30 +1,20 @@
 mixin color-sample(options = false)
-    
-    //- block
     - var colorSampleClassName = "color-sample"
     - var colorSampleFullClassName = colorSampleClassName
     
-    if (options.mix)
-        - colorSampleFullClassName += " " + options.mix.block + "__" + options.mix.elem
+    - options.mods = options.mods || {}
 
-    if (options.mixBlock)
-        - colorSampleFullClassName += " " + options.mixBlock
+    - blockFullClassName += options.mix ? (" " + options.mix.block + "__" + options.mix.elem) : ""
+    - blockFullClassName += options.mixBlock ? (" " + options.mixBlock) : ""
 
-    //- elements
     - var squareClassName = colorSampleClassName + "__square"
     - var squareFullClassName = squareClassName
 
-    if (options.mods)
-        if (options.mods.color)
-            - squareFullClassName += " " + squareClassName + "_" + options.mods.color
+    - squareFullClassName += options.mods.color ? (" " + squareClassName + "_color_" + options.mods.color) : ""
+    - squareFullClassName += options.mods.opacity ? (" " + squareClassName + "_opacity_" + options.mods.opacity) : ""
 
-        if (options.mods.opacity)
-            - squareFullClassName += " " + squareClassName + "_opacity_" + options.mods.opacity
-
-    //- html
     div(class = colorSampleFullClassName)
         div(class = squareFullClassName)
         div(class = colorSampleClassName + "__text")
             span(class = colorSampleClassName + "__name")= options.text
             span(class = colorSampleClassName + "__code")= options.code
-            

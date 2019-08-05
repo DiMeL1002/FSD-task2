@@ -1,4 +1,29 @@
-extends ../common.blocks/page/_template/page_template_main
+include ../common.blocks/color-sample/color-sample.pug
+include ../common.blocks/text-sample/text-sample.pug
+include ../common.blocks/input/input.pug
+include ../common.blocks/dropdown/dropdown.pug
+include ../common.blocks/dropdown-dates/dropdown-dates.pug
+include ../common.blocks/subscribe-form/subscribe-form.pug
+include ../common.blocks/checkbox-form/checkbox-form.pug
+include ../common.blocks/radio-form/radio-form.pug
+include ../common.blocks/toggle-form/toggle-form.pug
+include ../common.blocks/btn-like/btn-like.pug
+include ../common.blocks/rating/rating.pug
+include ../common.blocks/range-slider/range-slider.pug
+include ../common.blocks/button/button.pug
+include ../common.blocks/pagination/pagination.pug
+include ../common.blocks/checkbox-list/checkbox-list.pug
+include ../common.blocks/bullet-list/bullet-list.pug
+include ../common.blocks/info-group/info-group.pug
+include ../common.blocks/review-group/review-group.pug
+include ../common.blocks/form-number-selection/form-number-selection.pug
+include ../common.blocks/form-booking/form-booking.pug
+include ../common.blocks/form-reg/form-reg.pug
+include ../common.blocks/form-logIn/form-logIn.pug
+include ../common.blocks/room-card/room-card.pug
+include ../common.blocks/header/header.pug
+include ../common.blocks/footer/footer.pug
+include ../common.blocks/footer-creative/footer-creative.pug
 
 block variables
     - var title = 'Ui-Kit'
@@ -6,7 +31,287 @@ block variables
     - var pageClass = 'ui-kit-page'
 
 block content
-    include ../common.blocks/colors-and-type/colors-and-type
-    include ../common.blocks/form-elements/form-elements
-    include ../common.blocks/cards/cards
-    include ../common.blocks/headers-and-footers/headers-and-footers
+    section.colors-and-type
+        .colors-and-type__colors
+            +color-sample({
+                text: "Dark Shade 100%",
+                code: "#1F2041",
+            })
+            +color-sample({
+                mods: { opacity: 75 },
+                text: "Dark Shade 75%",
+                code: "#1F2041"
+            })
+            +color-sample({
+                mods: { opacity: 50 },
+                text: "Dark Shade 50%",
+                code: "#1F2041"
+            })
+            +color-sample({
+                mods: { opacity: 25 },
+                text: "Dark Shade 25%", 
+                code: "#1F2041",
+            })
+            +color-sample({
+                mods: { opacity: 5 },
+                text: "Dark Shade 5%",
+                code: "#1F2041"
+            })
+            +color-sample({
+                mods: { color: "purple" },
+                text: "Purple",
+                code: "#BC9CFF",
+            })
+            +color-sample({
+                mods: { color: "green" },
+                text: "Green",
+                code: "#6FCF97",
+            })
+        .colors-and-type__texts
+            +text-sample({
+                content: "This one is the sub-section or widget title",
+                textClass: "h1"
+            })
+            +text-sample({
+                content: "Next one is the item title inside widgets",
+                textClass: "h2"
+            })
+            +text-sample({
+                content: "This is a label or CTA text",
+                textClass: "h3"
+            })
+            +text-sample({
+                content: "This is the body text which is used for most of the design, like\
+                        paragraphs, lists, etc.",
+            })
+    section.items
+        .items__row
+            .items__col
+                +input({ placeholder: "Email" })
+                +dropdown-dates({
+                    mods: { size: "s" },
+                    inputName: "date-arrival",
+                    inputPlaceholder: "ДД.ММ.ГГГГ",
+                    title: "Прибытие",
+                    dataRange: "false"
+                })
+                +dropdown-dates({
+                    mods: { size: "m" },
+                    title: "Даты пребывания в отеле",
+                    inputName: "dates-interval",
+                    inputValue: "19 авг - 23 авг",
+                    inputPlaceholder: "ДД.ММ.ГГГГ",
+                    dataRange: "true"
+                })
+                +subscribe-form()
+            .items__col
+                +checkbox-form({
+                    title: "Checkbox Buttons",
+                    items: [
+                        {
+                            text: "Можно курить",
+                            name: "Можно курить"
+                        },
+                        {
+                            text: "Можно с питомцами",
+                            name: "Можно с питомцами",
+                            checked: true
+                        },
+                        {
+                            text: "Можно пригласить гостей (до 10 человек)",
+                            name: "Можно пригласить гостей (до 10 человек)",
+                            checked: true
+                        }
+                    ]
+                })
+                +radio-form({
+                    name: "gender",
+                    items: [
+                        {
+                            text: "Мужчина",
+                            checked: true
+                        },
+                        { text: "Женщина" }
+                    ]
+                })
+                +toggle-form({ title: "Получать спецпредложения" })
+                +btn-like({ count: 12 })
+                +rating({ rating: 4 })
+            .items__col
+                +range-slider()
+                +button({
+                    mods: {
+                        type: "link",
+                        size: "s"
+                    },
+                    text: "Войти",
+                    url: "/signIn.html"
+                })
+                +button({
+                    mods: {
+                        type: "link",
+                        theme: "border",
+                        size: "s"
+                    },
+                    text: "Войти",
+                    url: "/signIn.html"
+                })
+                +button({
+                    mods: {
+                        theme: "plain-g",
+                        type: "button"
+                    },
+                    text: "Очистить"
+                })
+                +button({
+                    mods: {
+                        theme: "plain",
+                        type: "button"
+                    },
+                    text: "Применить"
+                })
+                +button({
+                    mods: {
+                        type: "submit",
+                        size: "l",
+                        arrow: true
+                    },
+                    text: "Перейти к оплате"
+                })
+                +pagination()
+        .items__row
+            +dropdown({
+                mixBlock: "dropdown_comfort",
+                mods: { size: "m" },
+                title: "Удобства номера",
+                inputName: "comfort",
+                inputValue: "2 спальни, 2 кровати...",
+                items: [
+                    {
+                        value: "Cпальни",
+                        data: "bedrooms"
+                    }, 
+                    {
+                        value: "Кровати",
+                        data: "beds"
+                    },
+                    {
+                        value: "Ванные комнаты",
+                        data: "bathrooms"
+                    }
+                ]
+            })
+            +dropdown({
+                mixBlock: "dropdown_guests",
+                mods: {
+                    size: "l",
+                    buttons: true
+                },
+                title: "Гости",
+                inputName: "guests-count",
+                inputPlaceholder: "Сколько гостей",
+                items: [
+                    {
+                        value: "Взрослые",
+                        data: "adults"
+                    }, 
+                    {
+                        value: "Дети",
+                        data: "children"
+                    },
+                    {
+                        value: "Младенцы",
+                        data: "babies"
+                    }
+                ]
+            })
+        .items__row
+            +checkbox-list({
+                title: "Дополнительные удобства",
+                items: [
+                    { text: "Завтрак" },
+                    {
+                        text: "Письменный стол",
+                        checked: true
+                    },
+                    {
+                        text: "Стул для кормления",
+                        checked: true
+                    },
+                    {
+                        text: "Кроватка",
+                        checked: true
+                    },
+                    { text: "Телевизор" },
+                    { text: "Шампунь" },
+                    { text: "Телевизор" },
+                    { text: "Шампунь" }
+                ]
+            })
+            +checkbox-form({
+                mods: { theme: "rich" },
+                title: "Доступность",
+                items: [
+                    {
+                        title: "Широкий коридор",
+                        text: "Ширина коридоров в номере<br>не менее 91 см.",
+                        name: "Широкий коридор"
+                    },
+                    {
+                        title: "Помощник для инвалидов",
+                        text: "На 1 этаже вас встретит специалист<br>и проводит до номера.",
+                        name: "Помощник для инвалидов",
+                    }
+                ]
+            })
+            +bullet-list({
+                title: "Правила",
+                items: [
+                    "Нельзя с питомцами",
+                    "Без вечеринок и мероприятий",
+                    "Время прибытия — после 13:00, а выезд до 12:00"
+                ]
+            })
+        .items__row
+            +info-group({
+                items: [
+                    {
+                        icon: "insert_emoticon",
+                        title: "Комфорт",
+                        text: "Шумопоглощающие стены"
+                    },
+                    {
+                        icon: "location_city",
+                        title: "Удобство",
+                        text: "Окно в каждой из спален"
+                    }
+                ]
+            })
+            +review-group({
+                items: [
+                    {
+                        img: "/img/humans/human1.jpg",
+                        name: "Мурад Сарафанов",
+                        online: "5 дней назад",
+                        countLikes: "12",
+                        text: "Великолепный матрас на кровати в основной спальне! А пуфик\
+                            вообще потрясающий.<br/>И стены, действительно, шумоподавляющие.\
+                            Выкрикивал комплименты повару — никто не жаловался из соседей.",
+                        btnPressed: true
+                    }
+                ]
+            })
+    section.items
+        +form-number-selection()
+        +form-booking()
+        +form-reg()
+        +form-logIn()
+        +room-card()
+    section.header-and-footer
+        +header()
+        +header({
+            mods: { authorized: true },
+            userName: "Cosmin Negoita"
+        })
+        +footer()
+        +footer-creative()
