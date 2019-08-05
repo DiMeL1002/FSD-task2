@@ -115,20 +115,30 @@ export function initDropdown() {
                 })
             }
 
-            counts.forEach(function(item, i) {
-                totalCount += item;
-                if (i < (counts.length - 1) ) {
-                    totalCount += ', ';
-                }
-            })
+            if (counts.length > 0) {
+                $btnReset.addClass('dropdown__reset-btn_visible');
+
+                counts.forEach(function(item, i) {
+                    totalCount += item;
+                    if (i < (counts.length - 1) ) {
+                        totalCount += ', ';
+                    }
+                })
+            }
+            else {
+                $btnReset.removeClass('dropdown__reset-btn_visible');
+            }
 
             $input.attr('value', totalCount);
         }
 
         // очистка формы и работа кнопки "применить"
+        let $btnReset;
+        let $btnApply;
+
         if ( $dropdown.hasClass('dropdown_has-buttons') ) {
-            let $btnReset = $dropdownBody.find('.dropdown__reset-btn');
-            let $btnApply = $dropdownBody.find('.dropdown__apply-btn');
+            $btnReset = $dropdownBody.find('.dropdown__reset-btn');
+            $btnApply = $dropdownBody.find('.dropdown__apply-btn');
 
             $btnReset.on('click', function() {
                 $input.removeAttr('value');
@@ -136,6 +146,7 @@ export function initDropdown() {
                     $(this).attr('data-count', '0');
                     $(this).find('.dropdown__count').html('0');
                 })
+                $btnReset.removeClass('dropdown__reset-btn_visible');
             })
 
             $btnApply.on('click', function() {

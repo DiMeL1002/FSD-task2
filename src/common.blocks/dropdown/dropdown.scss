@@ -81,8 +81,16 @@
     &__count { @include text-level-3; }
     &__apply-form {
         display: flex;
-        justify-content: space-between;
         margin-top: 19px;
+    }
+    &__reset-btn {
+        display: none;
+        & + .dropdown__apply-btn {
+            margin-left: auto;
+        }
+        &_visible {
+            display: block;
+        }
     }
     &_size{
         &_s { max-width: 150px; }
