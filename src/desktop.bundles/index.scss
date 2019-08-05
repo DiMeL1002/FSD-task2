@@ -5,9 +5,11 @@
     &__container {
         padding-top: 70px;
         padding-bottom: 18px;
+        background-image: url('../static/img/index.jpg');
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
+        @include retina { background-image: url('../static/img/index2x.jpg'); }
     }
     &__text {
         max-width: 297px;

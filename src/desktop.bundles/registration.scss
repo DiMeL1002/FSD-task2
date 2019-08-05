@@ -1,10 +1,15 @@
+@import "../static/utils/vars";
+@import "../static/utils/mixins";
+
 .registration-page {
     &__container {
         padding-top: 30px;
         padding-bottom: 30px;
+        background-image: url('../static/img/reg.jpg');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
+        @include retina { background-image: url('../static/img/reg2x.jpg'); }
     }
     &__form-reg { margin: 0 auto; }
 }

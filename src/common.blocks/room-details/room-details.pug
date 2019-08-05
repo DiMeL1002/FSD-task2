@@ -20,7 +20,9 @@ mixin room-details(options = false)
             div(class = blockClassName + "__photos")
                 div(class = blockClassName + "__main-photo")
                     +image({
-                        src: "/img/rooms/big/room1/room1.1.jpg",
+                        src: "./img/rooms/big/room1/room1.1.jpg",
+                        srcset: "./img/rooms/big/room1/room1.1.jpg 1x,\
+                                ./img/rooms/big/room1/room1.1-2x.jpg 2x",
                         alt: "Фотография номера"
                     })
                 div(class = blockClassName + "__secondary-photos")
@@ -29,7 +31,9 @@ mixin room-details(options = false)
                             block: blockClassName,
                             elem: "secondary-photo"
                         },
-                        src: "/img/rooms/big/room1/room1.2.jpg",
+                        src: "./img/rooms/big/room1/room1.2.jpg",
+                        srcset: "./img/rooms/big/room1/room1.2.jpg 1x,\
+                                ./img/rooms/big/room1/room1.2-2x.jpg 2x",
                         alt: "Фотография номера"
                     })
                     +image({
@@ -37,7 +41,9 @@ mixin room-details(options = false)
                             block: blockClassName,
                             elem: "secondary-photo"
                         },
-                        src: "/img/rooms/big/room1/room1.3.jpg",
+                        src: "./img/rooms/big/room1/room1.3.jpg",
+                        srcset: "./img/rooms/big/room1/room1.3.jpg 1x,\
+                                ./img/rooms/big/room1/room1.3-2x.jpg 2x",
                         alt: "Фотография номера"
                     })
         .container(class = blockClassName + "__container")
@@ -79,7 +85,7 @@ mixin room-details(options = false)
                     },
                     items: [
                         {
-                            img: "/img/humans/human1.jpg",
+                            img: "./img/humans/human1.jpg",
                             name: "Мурад Сарафанов",
                             online: "5 дней назад",
                             countLikes: "12",
@@ -89,7 +95,7 @@ mixin room-details(options = false)
                             btnPressed: true
                         },
                         {
-                            img: "/img/humans/image4.svg",
+                            img: "./img/humans/image4.svg",
                             name: "Патрисия Стёклышкова",
                             online: "Неделю назад",
                             countLikes: "2",

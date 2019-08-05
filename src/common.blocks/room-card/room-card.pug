@@ -13,26 +13,12 @@ mixin room-card(options = false)
     div(class = blockFullClassName)
         a(class = blockClassName + "__link", href = options.url)
             div(class = blockClassName + "__carousel")
-                +image({
-                    mix: {
-                        block: blockClassName,
-                        elem: 'img'
-                    },
-                    src: "img/rooms/room1.jpg",
-                    alt: "Фотография номера"
-                })
-                +image({
-                    src: "img/rooms/room1.jpg",
-                    alt: "Фотография номера"
-                })
-                +image({
-                    src: "img/rooms/room1.jpg",
-                    alt: "Фотография номера"
-                })
-                +image({
-                    src: "img/rooms/room1.jpg",
-                    alt: "Фотография номера"
-                })
+                each val in options.imgs
+                    +image({
+                        src: val.src,
+                        srcset: val.srcset,
+                        alt: "Фотография номера"
+                    })
             div(class = blockClassName + "__desc")
                 +room-price({
                     mix: {
@@ -40,8 +26,8 @@ mixin room-card(options = false)
                         elem: "price"
                     },
                     mods: { lux: true },
-                    number: "888",
-                    price: "9 990"
+                    number: options.number,
+                    price: options.price
                 })
                 div(class = blockClassName + "__rating")
                     +rating({
@@ -49,8 +35,8 @@ mixin room-card(options = false)
                             block: blockClassName,
                             elem: "stars"
                         },
-                        rating: 5
+                        rating: options.rating
                     })
                     div(class = blockClassName + "__reviews")
-                        span(class = blockClassName + "__reviews-count") 145
+                        span(class = blockClassName + "__reviews-count")= options.reviewsCount
                         span(class = blockClassName + "__reviews-text") Отзывов

@@ -5,4 +5,9 @@ mixin image(options = false)
     - blockFullClassName += options.mix ? (" " + options.mix.block + "__" + options.mix.elem) : ""
     - blockFullClassName += options.mixBlock ? (" " + options.mixBlock) : ""
 
-    img(class = blockFullClassName, src = options.src, alt = options.alt)
+    img(
+        class = blockFullClassName,
+        src = options.src,
+        srcset = options.srcset
+        alt = options.alt
+    )

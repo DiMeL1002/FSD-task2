@@ -8,10 +8,7 @@ block variables
     - var pageClass = 'signIn-page'
 
 block content
-    div(
-        class = "container" + " " + pageClass + "__container",
-        style="background-image: url('img/reg.jpg')"
-    )
+    div( class = "container" + " " + pageClass + "__container" )
         +form-logIn({
             mix: {
                 block: pageClass,
