@@ -1,12 +1,22 @@
+.datepickers-container {
+    max-width: calc(100% - 2 * 15px);
+    width: 100%;
+}
+
 .datepicker {
     box-sizing: border-box;
-    width: 320px;
+    max-width: 320px;
+    width: 100%;
     height: auto;
     padding: 20px;
     border: 1px solid $dark-shade-25;
     border-radius: 4px;
     background: $white-color;
     box-shadow: 0px 10px 20px $dark-shade-5;
+    @media screen and (max-width: $phone-width) { max-width: 287px; }
+    &.active {
+        @media screen and (max-width: $phone-width) { left: $table-offset !important; }
+    }
     &--pointer { display: none; }
     &--nav {
         min-height: auto;
@@ -28,6 +38,10 @@
         height: 40px;
         font-size: 0.86rem;
         line-height: 1.25;
+        @media screen and (max-width: $phone-width) {
+            height: 35px;
+            width: 35px;
+        }
     }
     &--day-name {
         color: $primary-color;
@@ -86,5 +100,7 @@
         height: 24px;
         color: $primary-color;
         font-size: 1.71rem;
+        line-height: 24px;
+        vertical-align: middle;
     }
 }

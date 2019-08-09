@@ -290,7 +290,7 @@ block content
             +review-group({
                 items: [
                     {
-                        img: "/img/humans/human1.jpg",
+                        img: "/img/humans/human1.png",
                         name: "Мурад Сарафанов",
                         online: "5 дней назад",
                         countLikes: "12",
@@ -306,7 +306,30 @@ block content
         +form-booking()
         +form-reg()
         +form-logIn()
-        //- +room-card()
+        +room-card({
+            imgs: [
+                {
+                    src: "./img/rooms/room1.jpg",
+                    srcset: "./img/rooms/room1.jpg 1x, img/rooms/room1-2x.jpg 2x"
+                },
+                {
+                    src: "./img/rooms/room1.jpg",
+                    srcset: "./img/rooms/room1.jpg 1x, img/rooms/room1-2x.jpg 2x"
+                },
+                {
+                    src: "./img/rooms/room1.jpg",
+                    srcset: "./img/rooms/room1.jpg 1x, img/rooms/room1-2x.jpg 2x"
+                },
+                {
+                    src: "./img/rooms/room1.jpg",
+                    srcset: "./img/rooms/room1.jpg 1x, img/rooms/room1-2x.jpg 2x"
+                }
+            ],
+            number: "888",
+            price: "9 990",
+            rating: 5,
+            reviewsCount: "145"
+        })
     section.header-and-footer
         +header()
         +header({

@@ -86,6 +86,13 @@ export function initDropdown() {
                             break;
                     }
                 })
+
+                if (counts.length > 0) {
+                    $btnReset.addClass('dropdown__reset-btn_visible');
+                }
+                else {
+                    $btnReset.removeClass('dropdown__reset-btn_visible');
+                }
             }
 
             if ( $dropdown.hasClass('dropdown_comfort') ) {
@@ -115,19 +122,12 @@ export function initDropdown() {
                 })
             }
 
-            if (counts.length > 0) {
-                $btnReset.addClass('dropdown__reset-btn_visible');
-
-                counts.forEach(function(item, i) {
-                    totalCount += item;
-                    if (i < (counts.length - 1) ) {
-                        totalCount += ', ';
-                    }
-                })
-            }
-            else {
-                $btnReset.removeClass('dropdown__reset-btn_visible');
-            }
+            counts.forEach(function(item, i) {
+                totalCount += item;
+                if (i < (counts.length - 1) ) {
+                    totalCount += ', ';
+                }
+            })
 
             $input.attr('value', totalCount);
         }

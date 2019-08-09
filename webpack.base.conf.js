@@ -31,25 +31,25 @@ module.exports = {
         uiKit: `${PATH.src}/common.bundles/uiKit.js`
     },
     output: { // точка выхода
-        filename: './js/[name].[hash].js',
+        filename: 'js/[name].[hash].js',
         path: path.resolve(__dirname, 'build'),  // указание абсолютного пути, __dirname - путь к текущей директории,
         publicPath: "/"
     },
 
     optimization: {
-        // splitChunks: {
-        //     cacheGroups: {
-        //         vendor: {
-        //             name: 'vendors',
-        //             test: /node_modules/,
-        //             chunks: 'all',
-        //             enforce: true
-        //         }
-        //     }
-        // }
+        splitChunks: {
+            cacheGroups: {
+                vendor: {
+                    name: 'vendors',
+                    test: /[\\/]node_modules[\\/](jquery|popper.js|chart.js)[\\/]/,
+                    chunks: 'all',
+                    enforce: true
+                }
+            }
+        }
     },
 
-    devtool: 'source-map', // карты js
+    // devtool: 'source-map', // карты js
     module: {
         rules: [
             {
@@ -64,14 +64,14 @@ module.exports = {
                 use: [
                     'style-loader',
                     MiniCssExtractPlugin.loader,
-                    { loader: 'css-loader', options: { sourceMap: true } },
+                    { loader: 'css-loader', options: { sourceMap: false } },
                     {
                         loader: 'postcss-loader',
                         options: {
-                            sourceMap: true, config: { path: './postcss.config.js'}
+                            sourceMap: false, config: { path: './postcss.config.js'}
                         }
                     },
-                    { loader: 'sass-loader', options: { sourceMap: true } }
+                    { loader: 'sass-loader', options: { sourceMap: false } }
                 ]
             },
             {
@@ -79,14 +79,14 @@ module.exports = {
                 use: [
                     'style-loader',
                     MiniCssExtractPlugin.loader,
-                    { loader: 'css-loader', options: { sourceMap: true } },
+                    { loader: 'css-loader', options: { sourceMap: false } },
                     {
                         loader: 'postcss-loader',
                         options: {
-                            sourceMap: true, config: { path: './postcss.config.js'}
+                            sourceMap: false, config: { path: './postcss.config.js'}
                         }
                     },
-                    { loader: 'sass-loader', options: { sourceMap: true } }
+                    { loader: 'sass-loader', options: { sourceMap: false } }
                 ]
             },
             {
@@ -145,12 +145,12 @@ module.exports = {
 
         ...COMMON_PAGES.map(page => new HtmlWebpackPlugin({
             template: `${COMMON_PAGES_DIR}/${page}`,
-            chunks: [`${page.replace(/\.pug/,'')}`,'main'],
+            chunks: [`${page.replace(/\.pug/,'')}`,'main', 'vendors'],
             filename: `./${page.replace(/\.pug/,'.html')}`
         })),
         ...DESKTOP_PAGES.map(page => new HtmlWebpackPlugin({
             template: `${DESKTOP_PAGES_DIR}/${page}`,
-            chunks: [`${page.replace(/\.pug/,'')}`,'main'],
+            chunks: [`${page.replace(/\.pug/,'')}`,'main', 'vendors'],
             filename: `./${page.replace(/\.pug/,'.html')}`
         }))
     ]

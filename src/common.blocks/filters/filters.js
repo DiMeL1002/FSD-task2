@@ -11,20 +11,8 @@ export function initFilters() {
     $btnApply.on('click', function() {
         close();
     })
-    
-    let $filters = $('.filters');
-
-    $(document).on('click', function(e) {
-        if (isOffElementClick($filters, e)) {
-            close();
-        }
-    })
 
     function close() {
         $filtersBody.removeClass('filters__body_visible');
-    }
-
-    function isOffElementClick(elem, e) {
-        return (!elem.is(e.target)) && (elem.has(e.target).length === 0);
     }
 }
