@@ -11,4 +11,6 @@ https://dimel1002.github.io/search-room.html - страница поиска н�
 
 https://dimel1002.github.io/room-details.html - страница номера
 
+https://dimel1002.github.io/404.html - страница 404 ошибки
+
 https://dimel1002.github.io/uiKit.html - страница UiKit
