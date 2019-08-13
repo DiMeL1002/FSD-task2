@@ -47,6 +47,7 @@
 @import "./common.blocks/room-impressions/room-impressions";
 @import "./common.blocks/nouislider/nouislider";
 @import "./common.blocks/slick-carousel/slick";
+@import "./common.blocks/error-404/error-404";
 
 * { // Фикс бага с шириной слайдеров
     min-height: 0;
@@ -91,6 +92,7 @@ button { outline: none; }
 .wrapper {
     display: flex;
     flex-direction: column;
+    width: 100%;
     min-height: 100%;
     margin: 0 auto;
 }

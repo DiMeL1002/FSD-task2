@@ -1,0 +1,13 @@
+mixin error-404 (options = false)
+    - var blockClassName = "error-404"
+    - var blockFullClassName = blockClassName
+
+    - blockFullClassName += options.mix ? (" " + options.mix.block + "__" + options.mix.elem) : ""
+    - blockFullClassName += options.mixBlock ? (" " + options.mixBlock) : ""
+
+    div(class = blockFullClassName)
+        span(class = blockFullClassName + "__error-number") 404
+        h1(class = blockFullClassName + "__title") Страница не найдена
+        p(class = blockFullClassName + "__desc").
+            По ссылке, которую вы пытались открыть, страницы не оказалось.
+            Введите правильный адрес страницы.

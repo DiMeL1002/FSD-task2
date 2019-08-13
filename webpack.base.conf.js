@@ -28,7 +28,8 @@ module.exports = {
         'room-details': `${PATH.src}/desktop.bundles/room-details.js`,
         registration: `${PATH.src}/desktop.bundles/registration.js`,
         signIn: `${PATH.src}/desktop.bundles/signIn.js`,
-        uiKit: `${PATH.src}/common.bundles/uiKit.js`
+        '404': `${PATH.src}/desktop.bundles/404.js`,
+        uiKit: `${PATH.src}/common.bundles/uiKit.js`,
     },
     output: { // точка выхода
         filename: 'js/[name].[hash].js',

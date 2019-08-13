@@ -9,7 +9,8 @@ block variables
     - var pageClass = 'index-page'
 
 block content
-    section.banner
-        .container.banner__container
+    section(class = pageClass + "__banner")
+        div(class = pageClass + "__container" + " container")
             +form-number-selection()
-            p.banner__text Лучшие номера для вашей работы, отдыха и просто вдохновения
+            p(class = pageClass + "__text").
+                Лучшие номера для вашей работы, отдыха и просто вдохновения

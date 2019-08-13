@@ -8,7 +8,7 @@ block variables
     - var pageClass = 'registration-page'
 
 block content
-    div( class = "container" + " " + pageClass + "__container" )
+    section(class = pageClass + "__container" + " container")
         +form-reg({
             mix: {
                 block: pageClass,
