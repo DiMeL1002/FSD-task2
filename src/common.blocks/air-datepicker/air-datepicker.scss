@@ -80,11 +80,13 @@
                 &::before {
                     position: absolute;
                     right: 0 ;
+                    z-index: -1;
                     content: "";
                     width: 50%;
                     height: 100%;
                     background: $primary-gradient-25;
                 }
+                &.-other-month- { background: $primary-gradient; }
             }
             &.-range-to- {
                 &::before { left: 0 ; }

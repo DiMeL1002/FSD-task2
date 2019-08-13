@@ -11,7 +11,7 @@ mixin input-form (options = false)
 
     div(class = blockFullClassName)
         if (options.title)
-            h3(class = blockClassName + "__title")= options.title
+            span(class = blockClassName + "__title")= options.title
         +input({
             mix: {
                 block: blockClassName,

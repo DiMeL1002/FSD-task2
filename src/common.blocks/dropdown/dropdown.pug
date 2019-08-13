@@ -16,7 +16,7 @@ mixin dropdown (options = false)
     - blockFullClassName += " " + blockClassName + "_size_" + options.mods.size
 
     div(class = blockFullClassName)
-        h3(class = blockClassName + "__title")= options.title
+        span(class = blockClassName + "__title")= options.title
         div(class = blockClassName + "__header")
             +input({
                 mix: {

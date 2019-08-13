@@ -6,6 +6,8 @@ import "popper.js"
 
 import 'normalize.css';
 
+import './static/favicons/favicons';
+
 import { initMainNav } from './common.blocks/main-nav/main-nav.js';
 import { initDropdown } from './common.blocks/dropdown/dropdown.js';
 import { initDropdownDates } from './common.blocks/dropdown-dates/dropdown-dates.js';

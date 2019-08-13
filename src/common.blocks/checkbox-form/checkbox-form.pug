@@ -12,7 +12,7 @@ mixin checkbox-form (options = false)
     - blockFullClassName += options.mods.theme ? (" " + blockClassName + "_theme_" + options.mods.theme) : ""
 
     div(class = blockFullClassName)
-        h3(class = blockClassName + "__title")= options.title
+        span(class = blockClassName + "__title")= options.title
         div(class = blockClassName + "__checkboxes")
             each val in options.items
                 +checkbox({
