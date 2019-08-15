@@ -1,8 +1,8 @@
 import 'air-datepicker'
 import 'air-datepicker/dist/css/datepicker.css';
 
-import "jquery"
-import "popper.js"
+import 'jquery'
+import 'popper.js'
 
 import 'normalize.css';
 

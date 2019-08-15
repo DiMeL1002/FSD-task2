@@ -9,9 +9,4 @@ block variables
 
 block content
     main(class = pageClass + "__container" + " container")
-        +form-logIn({
-            mix: {
-                block: pageClass,
-                elem: "form-logIn"
-            }
-        })
+        +form-logIn({ mixBlock: "form" })

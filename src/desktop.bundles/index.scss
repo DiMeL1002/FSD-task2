@@ -3,18 +3,22 @@
 
 .index-page {
     &__container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         padding-top: 70px;
         padding-bottom: 18px;
+        height: 830px;
         background-image: url('../static/img/index.jpg');
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
         @include retina { background-image: url('../static/img/index2x.jpg'); }
     }
+    &__form-number-selection { align-self: flex-start; }
     &__text {
+        align-self: flex-end;
         max-width: 297px;
-        margin-top: 320px;
-        margin-left: auto;
         text-align: right;
     }
 }

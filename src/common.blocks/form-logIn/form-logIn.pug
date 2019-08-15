@@ -40,6 +40,7 @@ mixin form-logIn(options = false)
             },
             text: "Войти"
         })
+        span(class = blockClassName + "__error-text")
         div(class = blockClassName + "__create")
             span(class = blockClassName + "__no-acc") Нет аккаунта на Toxin?
             +button({

@@ -85,12 +85,8 @@
     }
     &__reset-btn {
         display: none;
-        & + .dropdown__apply-btn {
-            margin-left: auto;
-        }
-        &_visible {
-            display: block;
-        }
+        & + .dropdown__apply-btn { margin-left: auto; }
+        &_visible { display: block; }
     }
     &_size{
         &_s { max-width: 150px; }

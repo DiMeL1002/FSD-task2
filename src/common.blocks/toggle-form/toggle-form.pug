@@ -13,6 +13,7 @@ mixin toggle-form (options = false)
         label(class = blockClassName + "__item")
             input(
                 class = blockClassName + "__input",
+                name = options.name,
                 type="checkbox",
                 checked = options.mods.checked
             )

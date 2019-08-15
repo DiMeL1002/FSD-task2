@@ -50,6 +50,7 @@ mixin form-reg(options = false)
                 elem: "input-form-birthday"
             },
             title: "Дата рождения",
+            name: "birthday",
             placeholder: "ДД.ММ.ГГГГ",
             inputType: "text",
         })
@@ -77,7 +78,8 @@ mixin form-reg(options = false)
                 block: blockClassName,
                 elem: "toggle-form"
             },
-            title: "Получать спецпредложения"
+            title: "Получать спецпредложения",
+            name: "special-offers"
         })
         +button({
             mix: {
@@ -89,8 +91,9 @@ mixin form-reg(options = false)
                 size: "l",
                 arrow: true
             },
-            text: "Перейти к оплате"
+            text: "Зарегистрироваться"
         })
+        span(class = blockClassName + "__error-text")
         div(class = blockClassName + "__logIn")
             span(class = blockClassName + "__has-acc") Уже есть аккаунт на Toxin
             +button({

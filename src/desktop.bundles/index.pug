@@ -11,6 +11,12 @@ block variables
 block content
     main(class = pageClass + "__banner")
         div(class = pageClass + "__container" + " container")
-            +form-number-selection()
+            +form-number-selection({
+                mix: {
+                    block: pageClass,
+                    elem: "form-number-selection"
+                },
+                mixBlock: "form"
+            })
             p(class = pageClass + "__text").
                 Лучшие номера для вашей работы, отдыха и просто вдохновения
