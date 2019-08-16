@@ -21,6 +21,7 @@
             box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
             transition: 0.3s;
         }
+        @media screen and (max-width: $phone-width) { max-width: 266px - 2 * $table-offset; }
         &_visible {
             @media screen and (max-width: $sm-desktop-width) { transform: translateX(0); }
         }

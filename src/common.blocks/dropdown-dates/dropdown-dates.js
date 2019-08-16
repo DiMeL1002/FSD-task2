@@ -9,7 +9,15 @@ export function initDropdownDates() {
             prevHtml: "<i class='material-icons'>arrow_back</i>",
             nextHtml: "<i class='material-icons'>arrow_forward</i>",
             offset: 5,
-            multipleDatesSeparator: " - "
+            multipleDatesSeparator: " - ",
+            onSelect: function(formattedDate) {
+                $that.attr('value', formattedDate);
+            },
+            onShow: function(inst, animationCompleted) {
+                if (animationCompleted === false) {
+                    centeringDatepickerInForm();
+                }
+            }
         });
 
         let $btn = $myDatepicker.next('.dropdown-dates__icon');
@@ -29,9 +37,29 @@ export function initDropdownDates() {
                         .appendTo($buttons);
 
         let $myDatepickerData = $myDatepicker.data('datepicker');
-        $($myDatepickerData.$datepicker[0]).append($buttons);
+        let $datepicker = $($myDatepickerData.$datepicker);
 
-        $cancelBtn.on('click', function() { $myDatepickerData.clear(); })
-        $applyBtn.on('click', function() { $myDatepickerData.hide(); })
+        $datepicker.append($buttons);
+
+        $cancelBtn.on('click', function() { $myDatepickerData.clear(); });
+        $applyBtn.on('click', function() { $myDatepickerData.hide(); });
+
+        function centeringDatepickerInForm() {
+            let $form;
+
+            if ( $that.closest('form').length > 0 ) {
+                $form = $that.closest('form');
+            }
+            else  {
+                $form = $that.closest('.filters__body');
+            }
+
+            let formWidth = $form.outerWidth();
+            let formOffset = $form.offset();
+            let datepickerWidth = $datepicker.outerWidth();
+            let datepickerOffsetLeft = (formWidth - datepickerWidth) / 2 + formOffset.left;
+
+            $datepicker.css('left', datepickerOffsetLeft);
+        }
     })
 }

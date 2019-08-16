@@ -13,10 +13,7 @@
     border-radius: 4px;
     background: $white-color;
     box-shadow: 0px 10px 20px $dark-shade-5;
-    @media screen and (max-width: $phone-width) { max-width: 287px; }
-    &.active {
-        @media screen and (max-width: $phone-width) { left: $table-offset !important; }
-    }
+    @media screen and (max-width: $phone-width) { max-width: 273px; }
     &--pointer { display: none; }
     &--nav {
         min-height: auto;
@@ -39,8 +36,8 @@
         font-size: 0.86rem;
         line-height: 1.25;
         @media screen and (max-width: $phone-width) {
-            height: 35px;
-            width: 35px;
+            height: 33px;
+            width: 33px;
         }
     }
     &--day-name {

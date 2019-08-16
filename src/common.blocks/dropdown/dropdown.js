@@ -19,35 +19,37 @@ export function initDropdown() {
             let $item = $(this);
             let $btnPlus = $item.find('.dropdown__plus');
             let $btnMinus = $item.find('.dropdown__minus');
+            let $countText = $item.find('.dropdown__count');
+            let itemCount = $item.attr('data-count');
+
+            $countText.html(itemCount);
            
             $btnPlus.on('click', function() {
-                let count = $item.attr('data-count');
-                counting('+', count, $item);
+                itemCount = $item.attr('data-count');
+                counting('+', itemCount, $item);
             })
             $btnMinus.on('click', function() {
-                let count = $item.attr('data-count');
-                if (count > 0) {
-                    counting('-', count, $item);
+                itemCount = $item.attr('data-count');
+                if (itemCount > 0) {
+                    counting('-', itemCount, $item);
                 }
             })
-        })
 
-        function counting(op, count, item) {
-            let $countText = item.find('.dropdown__count');
-
-            switch (op) {
-                case '+':
-                    count++;
-                    break;
-                case '-':
-                    count--;
-                    break;
+            function counting(op, count, item) {
+                switch (op) {
+                    case '+':
+                        count++;
+                        break;
+                    case '-':
+                        count--;
+                        break;
+                }
+    
+                item.attr('data-count', count);
+                $countText.html(count);
+                totalCounting();
             }
-
-            item.attr('data-count', count);
-            $countText.html(count);
-            totalCounting();
-        }
+        })
 
         let $input = $dropdownHead.children('.dropdown__input');
 
@@ -165,6 +167,8 @@ export function initDropdown() {
             $dropdown.removeClass('dropdown_opened');
             $dropdownBody.removeClass('dropdown__body_visible');
         }
+
+        totalCounting();
     })
 
     function isOffElementClick(elem, e) {

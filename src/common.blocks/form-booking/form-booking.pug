@@ -19,7 +19,8 @@ mixin form-booking(options = false)
             },
             mods: { lux: true },
             number: '888',
-            price: '9 990'
+            price: '9 990',
+            dataPrice: 9990
         })
         div(class = blockClassName + "__dates")
             +dropdown-dates({
@@ -75,22 +76,22 @@ mixin form-booking(options = false)
                 }
             ]
         })
+        div(class = blockClassName + "__rent-price")
+            span(class = blockClassName + "__rent-price-desc")
+            span(class = blockClassName + "__rent-price-full")
         div(class = blockClassName + "__services")
-            div(class = blockClassName + "__service")
-                span(class = blockClassName + "__service-name") 9 990Р х 4 суток
-                span(class = blockClassName + "__service-price") 39 960Р
-            div(class = blockClassName + "__service")
+            div(class = blockClassName + "__service", data-price = 0)
                 span(class = blockClassName + "__service-name") Сбор за услуги: скидка 2 179Р
                 div(class = blockClassName + "__service-icon") i
                 span(class = blockClassName + "__service-price") 0Р
-            div(class = blockClassName + "__service")
+            div(class = blockClassName + "__service", data-price = 300)
                 span(class = blockClassName + "__service-name") Сбор за дополнительные услуги
                 div(class = blockClassName + "__service-icon") i
                 span(class = blockClassName + "__service-price") 300Р
         div(class = blockClassName + "__final")
             span(class = blockClassName + "__final-text") Итого
             div(class = blockClassName + "__final-space")
-            span(class = blockClassName + "__final-text") 38 081Р
+            span(class = blockClassName + "__final-price")
         +button({
             mix: {
                 block: blockClassName,

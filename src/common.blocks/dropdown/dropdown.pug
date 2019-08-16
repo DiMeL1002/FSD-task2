@@ -44,7 +44,7 @@ mixin dropdown (options = false)
                     div(
                         class = blockClassName + "__item",
                         data-item = val.data,
-                        data-count = "0"
+                        data-count = val.dataCount || "0"
                     )
                         span(class = blockClassName + "__text")= val.value
                         div(class = blockClassName + "__toggle")

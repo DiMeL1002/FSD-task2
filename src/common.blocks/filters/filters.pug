@@ -29,7 +29,7 @@ mixin filters (options = false)
                 mods: { size: "m" },
                 title: "Даты пребывания в отеле",
                 inputName: "dates-interval",
-                inputValue: "19 авг - 23 авг",
+                inputValue: "08.08.2019 - 24.08.2019",
                 inputPlaceholder: "ДД.ММ.ГГГГ",
                 dataRange: "true"
             })
@@ -45,12 +45,12 @@ mixin filters (options = false)
                 },
                 title: "Гости",
                 inputName: "guests-count",
-                inputValue: "3 гостя, 1 младенец",
                 inputPlaceholder: "Сколько гостей",
                 items: [
                     {
                         value: "Взрослые",
-                        data: "adults"
+                        data: "adults",
+                        dataCount: 3
                     }, 
                     {
                         value: "Дети",
@@ -58,7 +58,8 @@ mixin filters (options = false)
                     },
                     {
                         value: "Младенцы",
-                        data: "babies"
+                        data: "babies",
+                        dataCount: 1
                     }
                 ]
             })
@@ -120,19 +121,21 @@ mixin filters (options = false)
                 mods: { size: "m" },
                 title: "Удобства номера",
                 inputName: "comfort",
-                inputValue: "2 спальни, 2 кровати...",
                 items: [
                     {
                         value: "Cпальни",
-                        data: "bedrooms"
+                        data: "bedrooms",
+                        dataCount: 2
                     }, 
                     {
                         value: "Кровати",
-                        data: "beds"
+                        data: "beds",
+                        dataCount: 2
                     },
                     {
                         value: "Ванные комнаты",
-                        data: "bathrooms"
+                        data: "bathrooms",
+                        dataCount: 1
                     }
                 ]
             })

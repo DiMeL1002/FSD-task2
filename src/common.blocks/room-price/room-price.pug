@@ -9,7 +9,7 @@ mixin room-price(options = false)
 
     - blockFullClassName += options.mods.lux ? (" " + blockClassName + "_is-lux") : ""
 
-    div(class = blockFullClassName)
+    div(class = blockFullClassName, data-price = options.dataPrice)
         div(class = blockClassName + "__left") 
             |№
             span(class = blockClassName + "__number")= options.number
