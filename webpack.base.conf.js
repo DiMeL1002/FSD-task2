@@ -42,7 +42,7 @@ module.exports = {
             cacheGroups: {
                 vendor: {
                     name: 'vendors',
-                    test: /[\\/]node_modules[\\/](jquery|popper.js)[\\/]/,
+                    test: /[\\/]node_modules[\\/](jquery|popper.js|jquery-validation)[\\/]/,
                     chunks: 'all',
                     enforce: true
                 }

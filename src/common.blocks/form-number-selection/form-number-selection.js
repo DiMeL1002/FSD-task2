@@ -10,7 +10,7 @@ export function initFormNumberSelection() {
         messages: {
             'date-arrival': { required: 'Выберите дату прибытия' },
             'date-departure': { required: 'Выберите дату выезда' },
-            'guests-count': { required: 'Выберите количества гостей' }
+            'guests-count': { required: 'Выберите количество гостей' }
         },
         errorPlacement: function (error, $element) {
             if ( $element.hasClass('dropdown-dates__input') ) {

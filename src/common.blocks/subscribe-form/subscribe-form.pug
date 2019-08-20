@@ -7,20 +7,23 @@ mixin subscribe-form (options = false)
     - blockFullClassName += options.mix ? (" " + options.mix.block + "__" + options.mix.elem) : ""
     - blockFullClassName += options.mixBlock ? (" " + options.mixBlock) : ""
 
-    div(class = blockFullClassName)
-        +input({
-            mix: {
-                block: blockClassName,
-                elem: 'input'
-            },
-            type: 'email',
-            placeholder: 'Email',
-        })
-        +icon({
-            mix: {
-                block: blockClassName,
-                elem: "icon"
-            },
-            mixBlock: "material-icons",
-            content: "arrow_forward"
-        })
+    form(class = blockFullClassName, action="", method="post")
+        div(class = blockClassName + "__input-container")
+            +input({
+                mix: {
+                    block: blockClassName,
+                    elem: 'input'
+                },
+                type: 'email',
+                name: 'email',
+                placeholder: 'Email',
+            })
+            +icon({
+                mix: {
+                    block: blockClassName,
+                    elem: "icon"
+                },
+                mixBlock: "material-icons",
+                content: "arrow_forward"
+            })
+        span(class = blockClassName + "__message")

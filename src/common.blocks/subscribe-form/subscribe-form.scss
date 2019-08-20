@@ -1,8 +1,10 @@
 .subscribe-form {
     $iconWidth: 44px;
-    position: relative;
     max-width: 260px;
-    width: 100%;
+    &__input-container {
+        position: relative;
+        width: 100%;
+    }
     &__input { padding-right: $iconWidth; }
     &__icon {
         position: absolute;
@@ -15,5 +17,18 @@
         line-height: $iconWidth;
         cursor: pointer;
         @include text-gradient($primary-gradient, $primary-color);
+    }
+    &__message {
+        display: inline-block;
+        margin-top: 10px;
+    }
+    input.error { border-color: $form-error; }
+    label.error {
+        display: inline-block;
+        margin-top: 10px;
+        color: $form-error;
+        font-family: $main-regular-font;
+        font-size: 1rem;
+        line-height: 1;
     }
 }

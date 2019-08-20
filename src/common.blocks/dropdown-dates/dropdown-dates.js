@@ -13,10 +13,21 @@ export function initDropdownDates() {
             onSelect: function(formattedDate) {
                 $that.attr('value', formattedDate);
             },
-            onShow: function(inst, animationCompleted) {
-                if (animationCompleted === false) {
-                    centeringDatepickerInForm();
-                }
+            onShow: function() {
+                centeringDatepickerInForm();
+            },
+            onChangeMonth: function() {
+                centeringDatepickerInForm();
+            },
+            onChangeYear: function() {
+                centeringDatepickerInForm();
+            },
+            onChangeDecade: function() {
+                centeringDatepickerInForm();
+            },
+            onChangeView: function() {
+                $myDatepickerData.hide();
+                $myDatepickerData.show();
             }
         });
 
