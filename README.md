@@ -1,5 +1,7 @@
 # FSD-task2
-layout practice
+
+Верстка страниц для последних версий браузеров Chrome и Firefox.
+Были использованы scss, pug, webpack, БЭМ, компонентность, jquery.
 
 https://dimel1002.github.io/ - главная страница
 
