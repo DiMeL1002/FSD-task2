@@ -1,7 +1,7 @@
 # FSD-task2
 
 Верстка страниц для последних версий браузеров Chrome и Firefox.
-Были использованы scss, pug, webpack, БЭМ, компонентность, jquery.
+Были использованы scss, pug, webpack, БЭМ, компонентный подход, jquery.
 
 https://dimel1002.github.io/ - главная страница
 
