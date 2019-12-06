@@ -91,6 +91,9 @@
             font-size: 24px;
             line-height: 1;
             color: $primary-color;
+            transition: color 0.3s;
+
+            &:hover { color: darken($primary-color, 30) }
         }
     }
 }

@@ -15,27 +15,10 @@
     line-height: 1.07rem;
     white-space: nowrap;
     text-transform: uppercase;
-    transition: 0.3s;
     cursor: pointer;
-    &:hover { opacity: 0.8; }
+    &:hover { background: $primary-gradient-darker; }
     &:active { opacity: 0.5; }
-    &_size_xs {
-        padding: 10px 20px;
-        &.button_theme_border {
-            .button__text { padding: 8px 18px; }
-        }
-    }
-    &_size_s {
-        width: 99px;
-        &.button_theme_border {
-            .button__text { padding: 13px 0; }
-        }
-        // .button__text { padding: 13px 0; }
-    }
-    &_size_l {
-        max-width: 320px;
-        width: 100%;
-    }
+    &__text { transition: color 0.3s; }
     &__icon {
         position: absolute;
         display: flex;
@@ -49,11 +32,30 @@
         height: 44px;
         color: $white-color;
     }
+    &_size_xs {
+        padding: 10px 20px;
+        &.button_theme_border {
+            .button__text { padding: 8px 18px; }
+        }
+    }
+    &_size_s {
+        width: 99px;
+        &.button_theme_border {
+            .button__text { padding: 13px 0; }
+        }
+    }
+    &_size_l {
+        max-width: 320px;
+        width: 100%;
+    }
     &_theme {
         &_border {
             padding: 2px;
             color: $primary-color;
             background-image: $primary-gradient;
+            &:hover { 
+                & .button__text { color: darken($primary-color, 10) };
+            }
             .button__text {
                 display: inline-block;
                 width: 100%;
@@ -66,11 +68,19 @@
             padding: 0;
             background: $white-color;
             color: $primary-color;
+            &:hover { 
+                background: none;
+                color: darken($primary-color, 30);
+            }
         }
         &_plain-g {
             padding: 0;
             background: $white-color;
             color: $dark-shade-50;
+            &:hover { 
+                background: none;
+                color: $dark-shade-75;
+            }
         }
     }
 }

@@ -15,7 +15,10 @@
         text-align: center;
         color: $primary-color;
         line-height: $iconWidth;
+        transition: color 0.3s;
         cursor: pointer;
+
+        &:hover { color: darken($primary-color, 30) }
     }
     &__message {
         display: inline-block;
