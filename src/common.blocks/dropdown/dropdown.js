@@ -141,9 +141,10 @@ export function initDropdown() {
         if ( $dropdown.hasClass('dropdown_has-buttons') ) {
             $btnReset = $dropdownBody.find('.dropdown__reset-btn');
             $btnApply = $dropdownBody.find('.dropdown__apply-btn');
+            
 
             $btnReset.on('click', function() {
-                $input.removeAttr('value');
+                $input.attr('value', '');
                 $items.each(function() {
                     $(this).attr('data-count', '0');
                     $(this).find('.dropdown__count').html('0');

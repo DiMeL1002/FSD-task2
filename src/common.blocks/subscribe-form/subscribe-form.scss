@@ -16,7 +16,6 @@
         color: $primary-color;
         line-height: $iconWidth;
         cursor: pointer;
-        @include text-gradient($primary-gradient, $primary-color);
     }
     &__message {
         display: inline-block;

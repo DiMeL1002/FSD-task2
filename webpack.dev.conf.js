@@ -9,7 +9,7 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     devServer: {
         contentBase: baseWebpackConfig.externals.path.src,
         index: 'search-room.html',
-        port: 8081,
+        port: 8082,
         overlay: {
             warnings: true,
             errors: true

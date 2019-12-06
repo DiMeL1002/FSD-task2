@@ -1,18 +1,25 @@
 # FSD-task2
 
-Верстка страниц для последних версий браузеров Chrome и Firefox.
-Были использованы scss, pug, webpack, БЭМ, компонентность, jquery.
+Адаптивная и кроссбраузерная верстка страниц сайта.
 
-https://dimel1002.github.io/ - главная страница
 
-https://dimel1002.github.io/signIn.html - страница входа
+**Стек технологий**
 
-https://dimel1002.github.io/registration.html - страница регистрации
+* HTML
+* CSS
+* SCSS
+* PUG
+* JavaScript
+* jQuery
+* БЭМ - компонентный подход
+* Webpack
 
-https://dimel1002.github.io/search-room.html - страница поиска номера
 
-https://dimel1002.github.io/room-details.html - страница номера
+**Список страниц**
 
-https://dimel1002.github.io/404.html - страница 404 ошибки
-
-https://dimel1002.github.io/uiKit.html - страница UiKit
+* https://dimel1002.github.io/ - главная страница
+* https://dimel1002.github.io/signIn.html - страница логина
+* https://dimel1002.github.io/registration.html - страница регистрации
+* https://dimel1002.github.io/search-room.html - страница поиска номера
+* https://dimel1002.github.io/room-details.html - страница номера
+* https://dimel1002.github.io/404.html - страница 404 ошибки

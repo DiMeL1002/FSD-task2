@@ -5,7 +5,7 @@
         display: flex;
         justify-content: space-between;
     }
-    &__page-number {
+    &__page-number, &__page-dots {
         text-align: center;
         vertical-align: center;
         width: 40px;
@@ -14,10 +14,22 @@
         color: $dark-shade-50;
         font-size: 0.86rem;
         line-height: 40px;
+        cursor: pointer;
+        &:hover { background:rgba(0,0,0,0.1); }
         &_active {
-            background-image: $primary-gradient;
+            background: $primary-gradient;
             color: $white-color;
             font-family: $main-bold-font;
+            &:hover {
+                background: $primary-gradient;
+                opacity: 0.9;
+            }
+        }
+    }
+    &__page-dots {
+        &:hover {
+            background:$white-color;
+            cursor: default;
         }
     }
     &__btn-next {
@@ -27,8 +39,13 @@
         width: 40px;
         height: 40px;
         border-radius: 22px;
-        background-image: $secondary-gradient;
+        background: $secondary-gradient;
         color: $white-color;
+        cursor: pointer;
+        &:hover {
+            background: $secondary-gradient;
+            opacity: 0.9;
+        }
     }
     &__text {
         display: inline-block;

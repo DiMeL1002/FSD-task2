@@ -34,7 +34,7 @@ module.exports = {
     output: { // точка выхода
         filename: 'js/[name].[hash].js',
         path: path.resolve(__dirname, 'build'),  // указание абсолютного пути, __dirname - путь к текущей директории,
-        publicPath: "/"
+        publicPath: "/" // нужен для того, чтобы система в режиме development понимала где лежит js файл
     },
 
     optimization: {

@@ -6,8 +6,8 @@
     border-bottom: 1px solid rgba(31, 32, 65, 0.1);
     &__icon {
         margin-right: 10px;
+        color: $primary-color;
         font-size: 48px;
-        @include text-gradient($primary-gradient, $primary-color)
     }
     &__title {
         display: block;

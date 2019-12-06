@@ -11,7 +11,7 @@ mixin room-card(options = false)
     - blockFullClassName += options.mixBlock ? (" " + options.mixBlock) : ""
 
     div(class = blockFullClassName)
-        a(class = blockClassName + "__link", href = options.url)
+        div(class = blockClassName + "__link")
             div(class = blockClassName + "__carousel")
                 each val in options.imgs
                     +image({

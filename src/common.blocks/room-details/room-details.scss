@@ -2,6 +2,8 @@
     border-bottom: 1px solid $dark-shade-25;
     .room-details__photos-container { padding: 0; }
     &__photos { display: flex; }
+    &__main-photo { width: 70%; }
+    &__secondary-photos { width: 32.8%; }
     &__secondary-photo:first-child { margin-bottom: -1px; }
     &__container {
         display: flex;
